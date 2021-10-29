@@ -7,7 +7,6 @@ export const RECEIVE_SESSION_ERRORS = "RECEIVE_SESSION_ERRORS";
 export const REMOVE_SESSION_ERRORS = "REMOVE_SESSION_ERRORS";
 
 const receiveCurrentUser = currentUser => {
-    debugger
     return {
         type: RECEIVE_CURRENT_USER,
         currentUser

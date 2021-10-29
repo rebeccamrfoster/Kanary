@@ -3,7 +3,7 @@ import ReactDOM from "react-dom";
 import configureStore from "./store/store";
 import Root from "./components/root";
 
-import { createUser, createSession } from "./actions/session_actions";
+import { createUser, createSession, deleteSession } from "./actions/session_actions";
 
 document.addEventListener("DOMContentLoaded", () => {
     const store = configureStore();
@@ -13,5 +13,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     window.createUser = createUser;
     window.createSession = createSession;
+    window.deleteSession = deleteSession;
     window.store = store;
 })
