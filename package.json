@@ -1,6 +1,9 @@
 {
   "name": "Kanary",
   "private": true,
+  "scripts": {
+    "start": "webpack --watch --mode=development"
+  },
   "dependencies": {
     "@babel/core": "^7.15.8",
     "@babel/preset-env": "^7.15.8",
