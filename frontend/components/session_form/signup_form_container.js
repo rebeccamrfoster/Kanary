@@ -12,7 +12,7 @@ const mSTP = state => {
 const mDTP = dispatch => {
     return {
         processForm: user => dispatch(createUser(user)),
-        clearErrors: () => dispatch(removeErrors())
+        removeErrors: () => dispatch(removeErrors())
     }
 };
 
