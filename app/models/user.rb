@@ -12,7 +12,7 @@
 #
 class User < ApplicationRecord
     validates :name, :email, :password_digest, :session_token, presence: true
-    validates :email, uniqueness: true
+    validates :email, uniqueness: { message: " address is already in use." }
     validates :password, length: { minimum: 6, allow_nil: true }
 
     attr_reader :password
