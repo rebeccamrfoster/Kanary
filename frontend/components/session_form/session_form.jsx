@@ -11,10 +11,11 @@ class SessionForm extends React.Component {
         };
 
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleDemoLogin = this.handleDemoLogin.bind(this);
     }
 
     componentDidMount() {
-        this.props.clearErrors();
+        this.props.removeErrors();
     }
 
     update(field) {
@@ -28,6 +29,16 @@ class SessionForm extends React.Component {
         const formUser = Object.assign({}, this.state);
         this.props.processForm(formUser);
     }
+
+    handleDemoLogin(event) {
+        event.preventDefault();
+        const demoUser = {
+            name: "Demo",
+            email: "demo@user.com",
+            password: "demouser"
+        };
+        this.props.processForm(demoUser);
+    }
     
     render() {
         return (
@@ -40,7 +51,10 @@ class SessionForm extends React.Component {
                                 onChange={this.update("name")} />
                         </label>
                     ) : (
-                        <Link to="/signup">Don't have an account yet? Get started.</Link>
+                        <div>
+                            <Link to="/signup">Don't have an account yet? Get started.</Link>
+                            <Link to="/movies" onClick={this.handleDemoLogin}>DEMO LOGIN</Link>
+                        </div>
                     )
                 }
 
