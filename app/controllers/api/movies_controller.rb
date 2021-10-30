@@ -1,7 +1,7 @@
 class Api::MoviesController < ApplicationController
     def index
         @movies = Movie.all
-        render :index
+        render "/api/movies/index"
     end
 
     def show
