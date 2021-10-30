@@ -3,9 +3,8 @@ import Navbar from "./navbar";
 import { deleteSession } from "../../utils/session_api_util";
 
 const mSTP = state => {
-    debugger
     return {
-        currentUser: state.session.currentUserId
+        currentUser: state.entities.users[state.session.currentUserId]
     }
 };
 
