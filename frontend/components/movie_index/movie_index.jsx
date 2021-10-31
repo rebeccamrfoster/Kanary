@@ -6,7 +6,7 @@ class MovieIndex extends React.Component {
     }
 
     componentDidMount() {
-        this.props.requestMovies();
+        this.props.fetchMovies();
     }
 
     render() {

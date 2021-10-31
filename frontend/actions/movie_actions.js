@@ -17,12 +17,12 @@ const receiveMovie = movie => {
     }
 };
 
-export const requestMovies = () => dispatch => {
+export const fetchMovies = () => dispatch => {
     return MovieApiUtil.fetchMovies()
         .then(movies => dispatch(receiveMovies(movies)))
 };
 
-export const requestMovie = movieId => dispatch => {
+export const fetchMovie = movieId => dispatch => {
     return MovieApiUtil.fetchMovie(movieId)
         .then(movie => dispatch(receiveMovie(movie)))
 };

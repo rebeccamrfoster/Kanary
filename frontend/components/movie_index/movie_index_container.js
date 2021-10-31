@@ -1,6 +1,6 @@
 import { connect } from "react-redux";
 import MovieIndex from "./movie_index";
-import { requestMovies, requestMovie } from "../../actions/movie_actions";
+import { fetchMovies, fetchMovie } from "../../actions/movie_actions";
 
 const mSTP = state => {
     return {
@@ -10,8 +10,8 @@ const mSTP = state => {
 
 const mDTP = dispatch => {
     return {
-        requestMovies: () => dispatch(requestMovies()),
-        requestMovie: movieId => dispatch(requestMovie(movieId))
+        fetchMovies: () => dispatch(fetchMovies()),
+        fetchMovie: movieId => dispatch(fetchMovie(movieId))
     }
 };
 
