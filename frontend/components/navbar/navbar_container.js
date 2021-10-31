@@ -1,6 +1,6 @@
 import { connect } from "react-redux";
 import Navbar from "./navbar";
-import { deleteSession } from "../../utils/session_api_util";
+import { logout } from "../../utils/session_api_util";
 
 const mSTP = state => {
     return {
@@ -10,7 +10,7 @@ const mSTP = state => {
 
 const mDTP = dispatch => {
     return {
-        deleteSession: () => dispatch(deleteSession())
+        logout: () => dispatch(logout())
     }
 };
 

@@ -32,19 +32,19 @@ export const removeErrors = () => {
     }
 }
 
-export const createUser = user => dispatch => {
+export const signup = user => dispatch => {
     return SessionApiUtil.createUser(user)
         .then(user => dispatch(receiveCurrentUser(user)),
         errors => dispatch(receiveErrors(errors.responseJSON)))
 };
 
-export const createSession = user => dispatch => {
+export const login = user => dispatch => {
     return SessionApiUtil.createSession(user)
         .then(user => dispatch(receiveCurrentUser(user)),
         errors => dispatch(receiveErrors(errors.responseJSON)))
 };
 
-export const deleteSession = () => dispatch => {
+export const logout = () => dispatch => {
     return SessionApiUtil.deleteSession()
         .then(dispatch(removeCurrentUser()))
 };

@@ -12,7 +12,7 @@ class Navbar extends React.Component {
                 {
                     !this.props.currentUser ? (
                         <Link to="/login">LOG IN</Link>
-                    ) : null
+                    ) : <button onClick={() => this.props.logout()}>Log out</button>
                 }
                 
             </nav>
