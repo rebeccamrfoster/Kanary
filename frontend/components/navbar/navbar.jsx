@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 
 class Navbar extends React.Component {
     render() {
-        debugger
         return (
             <nav>
                 <Link to="/">

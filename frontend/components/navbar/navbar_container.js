@@ -1,6 +1,6 @@
 import { connect } from "react-redux";
 import Navbar from "./navbar";
-import { logout } from "../../utils/session_api_util";
+import { logout } from "../../actions/session_actions";
 
 const mSTP = state => {
     return {

@@ -3,7 +3,8 @@ import ReactDOM from "react-dom";
 import configureStore from "./store/store";
 import Root from "./components/root";
 
-import { createUser, createSession, deleteSession } from "./actions/session_actions";
+import { fetchMovies } from "./actions/movie_actions";
+import { signup, login, logout } from "./actions/session_actions";
 
 document.addEventListener("DOMContentLoaded", () => {
     let store;
@@ -26,4 +27,6 @@ document.addEventListener("DOMContentLoaded", () => {
     ReactDOM.render(<Root store={store} />, root);
 
     window.store = store;
+    window.fetchMovies = fetchMovies;
+    window.logout = logout;
 })
