@@ -1,6 +1,7 @@
 import { connect } from "react-redux";
 import Navbar from "./navbar";
 import { logout } from "../../actions/session_actions";
+import { withRouter } from "react-router";
 
 const mSTP = state => {
     return {
@@ -14,4 +15,4 @@ const mDTP = dispatch => {
     }
 };
 
-export default connect(mSTP, mDTP)(Navbar);
+export default withRouter(connect(mSTP, mDTP)(Navbar));

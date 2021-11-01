@@ -1,22 +1,28 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-class Navbar extends React.Component {
-    render() {
+const Navbar = (props) => {
+    if (!props.currentUser) {
         return (
             <nav>
-                <Link to="/">
+                <Link to="/movies">
                     <h1>Kanary</h1>
                 </Link>
-                {
-                    !this.props.currentUser ? (
-                        <Link to="/login">LOG IN</Link>
-                    ) : <button onClick={() => this.props.logout()}>Log out</button>
-                }
-                
+                <Link to="/login">LOG IN</Link>
             </nav>
         )
     }
-};
+    else {
+        return (
+            <nav>
+                <p>Hello, {props.currentUser.name}</p>
+                <Link to="/movies">
+                    <h1>Kanary</h1>
+                </Link>
+                <button onClick={() => props.logout()}>Log out</button>
+            </nav>
+        )
+    }
+}
 
 export default Navbar;
