@@ -14,7 +14,7 @@ class SessionForm extends React.Component {
         this.handleDemoLogin = this.handleDemoLogin.bind(this);
     }
 
-    componentDidMount() {
+    componentWillUnmount() {
         this.props.removeErrors();
     }
 
