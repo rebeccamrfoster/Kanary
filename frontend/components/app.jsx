@@ -4,12 +4,16 @@ import SignupFormContainer from "./session_form/signup_form_container";
 import LoginFormContainer from "./session_form/login_form_container";
 import MovieIndexContainer from "./movie_index/movie_index_container";
 import { AuthRoute, ProtectedRoute } from "../utils/route_util";
-import { Switch } from "react-router";
+import { Route, Switch } from "react-router";
+import Splash from "./splash/splash";
 
 const App = () => {
     return (
         <div>
-            <NavbarContainer />
+            <Switch>
+                <Route exact path="/" component={Splash} />
+                <NavbarContainer />
+            </Switch>
 
             <Switch>
                 <AuthRoute exact path="/signup" component={SignupFormContainer} />
