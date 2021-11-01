@@ -14,7 +14,7 @@ ActiveRecord::Base.connection.reset_pk_sequence!("movies")
 
 #-------------------DEMO USER------------------#
 
-User.create!(name: "Demo", email: "demo@user.com", password: "demouser")
+demo = User.create!(name: "Demo", email: "demo@user.com", password: "demouser")
 
 #--------------------MOVIES--------------------#
 moonlight = Movie.create!(
@@ -28,8 +28,8 @@ moonlight = Movie.create!(
         support, empathy and love from the most unexpected places.}.squish,
     director: "Barry Jenkins"
 )
-# video_file = open()
-# moonlight.video_url.attach(io: File.open("../app/assets/images/video_1.mov"), filename: "video_1.mov")
+# video_file = open("https://kanary-bucket.s3.us-east-2.amazonaws.com/video_1.mov")
+# moonlight.video_url.attach(io: video_file, filename: "video_1.mov")
 # thumbnail_file = open()
 # moonlight.thumbnail.attach(io: File.open("../app/assets/images/thumbnail_1.jpg"), filename: "thumbnail_1.mov")
 
@@ -209,3 +209,9 @@ Moviegenre.create!(movie_id: some_girls.id, genre_id: ethnicity_and_identity.id)
 Moviegenre.create!(movie_id: love_gilda.id, genre_id: historical_perspectives.id)
 Moviegenre.create!(movie_id: no_maps_on_my_taps.id, genre_id: historical_perspectives.id)
 Moviegenre.create!(movie_id: the_last_black_man_in_san_francisco.id, genre_id: independent_cinema.id)
+
+#------------------WATCHLISTS------------------#
+
+Watchlist.create!(user_id: demo.id, movie_id: moonlight.id)
+Watchlist.create!(user_id: demo.id, movie_id: amazing_grace.id)
+Watchlist.create!(user_id: demo.id, movie_id: i_am_not_your_negro.id)
