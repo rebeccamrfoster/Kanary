@@ -3,8 +3,7 @@ import ReactDOM from "react-dom";
 import configureStore from "./store/store";
 import Root from "./components/root";
 
-import { fetchMovies } from "./actions/movie_actions";
-import { signup, login, logout } from "./actions/session_actions";
+import { fetchWatchlists, createWatchlist, deleteWatchlist } from "./actions/watchlist_actions";
 
 document.addEventListener("DOMContentLoaded", () => {
     let store;
@@ -27,6 +26,7 @@ document.addEventListener("DOMContentLoaded", () => {
     ReactDOM.render(<Root store={store} />, root);
 
     window.store = store;
-    window.fetchMovies = fetchMovies;
-    window.logout = logout;
+    window.fetchWatchlists = fetchWatchlists;
+    window.createWatchlist = createWatchlist;
+    window.deleteWatchlist = deleteWatchlist;
 })
