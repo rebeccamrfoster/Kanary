@@ -21,7 +21,11 @@ class Api::WatchlistsController < ApplicationController
     end
 
     def destroy
-        @watchlist = Watchlist.find_by(id: params[:id])
+        # @watchlist = Watchlist.find_by(id: params[:id])
+        @watchlist = Watchlist.find_by(
+            user_id: watchlist_params[:user_id],
+            movie_id: watchlist_params[:movie_id]
+        )
 
         if @watchlist.destroy
             render "/api/watchlists/show"
