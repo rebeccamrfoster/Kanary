@@ -1,5 +1,5 @@
 import { RECEIVE_CURRENT_USER } from "../actions/session_actions";
-import { RECEIVE_WATCHLIST } from "../actions/watchlist_actions";
+import { RECEIVE_WATCHLIST, REMOVE_WATCHLIST } from "../actions/watchlist_actions";
 
 const usersReducer = (oldState = {}, action) => {
     Object.freeze(oldState);
@@ -10,9 +10,24 @@ const usersReducer = (oldState = {}, action) => {
             nextState[action.currentUser.id] = action.currentUser;
             return nextState;
         case RECEIVE_WATCHLIST:
-            const { user_id, movie_id } = action.watchlist;
-            nextState[user_id].movieIds.push(movie_id);
+            nextState[action.watchlist.user_id].movieIds.push(action.watchlist.movie_id);
             return nextState;
+        case REMOVE_WATCHLIST:
+            let { user_id, movie_id } = action.watchlist;
+            let movieIds = nextState[user_id].movieIds;
+            movieIds.splice(movieIds.indexOf(movie_id), 1);
+
+            nextState[user_id].movieIds = movieIds;
+            return nextState;
+
+            // const watchlists = Object.values(nextState);
+            // const toRemove = watchlists.find(watchlist => (
+            //     watchlist.user_id === action.watchlist.user_id &&
+            //     watchlist.movie_id === action.watchlist.movie_id
+            // ));
+
+            // delete nextState[toRemove.id];
+            // return nextState;
         default:
             return oldState;
     }
