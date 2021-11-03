@@ -30,6 +30,7 @@ time, mark, audio, video {
 	text-align: inherit;
 	text-decoration: inherit;
 	background: transparent;
+	font-family: sans-serif;
 }
 
 /* HTML5 display-role reset for older browsers */

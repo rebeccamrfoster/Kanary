@@ -14,10 +14,11 @@ const Splash = () => {
                     <p className="content__body">Stream thousands of films for free, thanks to the generous support of your public library or university</p>
                 </div>
             </div>
+            <img src={window.splashUrl} />
             {/* <img src="https://static.kanopy.com/images/webshop-landing/hero-toppers/US/pl/1d-landing-page-hero-us-pl-1-moonlight.jpg" /> */}
-            <div id="bg">
+            {/* <div id="bg">
                 <img className="hero" src="https://kanary-bucket.s3.us-east-2.amazonaws.com/splash_1.jpg" />
-            </div>
+            </div> */}
         </div>
     )
 };

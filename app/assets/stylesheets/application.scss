@@ -13,7 +13,13 @@
  *= require_self
  */
 
- @import "./reset.css";
- @import "./movie_index/genre_carousel_item.scss";
+ // CSS Reset
+ @import "base/reset.css";
+
+ // Core
+ @import "base/fonts.scss";
+
+ // Components
+ @import "components/*";
 
 //  *= require_tree .
