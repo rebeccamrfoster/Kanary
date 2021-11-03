@@ -1,4 +1,5 @@
 import React from "react";
+import GenreCarouselItem from "./genre_carousel_item";
 
 class GenreCarousel extends React.Component {
     constructor(props) {
@@ -6,14 +7,21 @@ class GenreCarousel extends React.Component {
     }
 
     render() {
-        const { genre, allMovies } = this.props;
+        const { genre, allMovies, watchlists, createWatchlist, deleteWatchlist, currentUser } = this.props;
         return (
-            <div>
+            <div className="">
                 <label>{genre.name}</label>
-                <ul>
+                <ul className="genre-carousel">
                     {
                         genre.movieIds.map(movieId => {
-                            return <li key={movieId}>{allMovies[movieId].title}</li>
+                            return (
+                                <GenreCarouselItem key={movieId}
+                                                   movie={allMovies[movieId]}
+                                                   createWatchlist={createWatchlist}
+                                                   deleteWatchlist={deleteWatchlist}
+                                                   currentUser={currentUser}
+                                                   watchlists={watchlists} />
+                            )
                         })
                     }
                 </ul>
