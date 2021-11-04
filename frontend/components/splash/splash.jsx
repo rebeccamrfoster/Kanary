@@ -6,9 +6,7 @@ const Splash = () => {
         <div className="splash">
             <Link to="/" className="logo">kanary</Link>
 
-            <Link className="login" to="/login">
-                <h1>LOG IN</h1>
-            </Link>
+            <Link className="login" to="/login">LOG IN</Link>
             
             <div className="content">
                 <h1 className="header-content">Enjoy Thoughtful Entertainment</h1>

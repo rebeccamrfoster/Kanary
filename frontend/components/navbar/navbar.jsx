@@ -4,11 +4,9 @@ import { Link } from "react-router-dom";
 const Navbar = (props) => {
     if (!props.currentUser) {
         return (
-            <nav>
-                <Link to="/movies">
-                    <h1>Kanary</h1>
-                </Link>
-                <Link to="/login">LOG IN</Link>
+            <nav className="navbar">
+                <Link to="/movies" className="logo">kanary</Link>
+                <Link to="/login" className="login">LOG IN</Link>
             </nav>
         )
     }
