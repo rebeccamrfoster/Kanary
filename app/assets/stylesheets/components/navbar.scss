@@ -1,6 +1,30 @@
+$navbar-margin: 5%;
+
 .navbar {
-    border: 2px solid red;
     display: flex;
     justify-content: space-between;
+    align-items: center;
     padding: 10px 0;
+    background-color: black;
+    color: $white;
+
+    .logo {
+        font-family: $serif;
+        font-size: 40px;
+        margin-left: $navbar-margin;
+    }
+
+    .login {
+        font-family: $sans-serif;
+        font-size: 12px;
+        width: 80px;
+        height: 30px;
+        margin-right: $navbar-margin;
+        border: 2px solid $white;
+        border-radius: 1px;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 }
