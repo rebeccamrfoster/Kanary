@@ -42,62 +42,65 @@ class SessionForm extends React.Component {
     
     render() {
         return (
-            <div className="session-form">
+            <div className="main">
 
-                <div className="content">
-                    <div>
-                        <h1 className="header">{this.props.formType}</h1>
+                <div className="center">
+                    <div className="header">
+                        <h1 className="form-type-header">{this.props.formType}</h1>
                         
                         {
                             this.props.formType === "log in" ? (
-                                <Link to="/signup" className="get-started">Don't have an account yet? Get started.</Link>
+                                <Link to="/signup" className="get-started-header">Don't have an account yet? Get started.</Link>
                             ) : null
                         }
                     </div>
-
-                    {/* <div className="divider"></div> */}
-
-                    <form onSubmit={this.handleSubmit} className="form">
-                        {
-                            this.props.formType === "sign up" ? (
-                                <input type="text"
-                                    placeholder="Name"
-                                    value={this.state.name}
-                                    onChange={this.update("name")}
-                                    className="field" />
-                            ) : null
-                        }
-
-                        <input type="text"
-                            placeholder="Email Address"
-                            value={this.state.email}
-                            onChange={this.update("email")}
-                            className="field" />
-
-                        <input type="password"
-                            placeholder="Password"
-                            value={this.state.password}
-                            onChange={this.update("password")}
-                            className="field" />
-
-                        <ul>
-                            {
-                                this.props.errors.map((error, idx) => (
-                                    <li key={idx}>{error}</li>
-                                ))
-                            }
-                        </ul>
-
-                        <div className="buttons">
-                            <input type="submit"
-                                value={this.props.formType}
-                                className="left-button right" />
-                            <Link to="/movies" 
-                                onClick={this.handleDemoLogin} 
-                                className="right-button left">demo login</Link>
-                        </div>
-                    </form>
                 </div>
+
+                <div className="divider"></div>
+
+                <form onSubmit={this.handleSubmit} className="form">
+                    {
+                        this.props.formType === "sign up" ? (
+                            <input type="text"
+                                placeholder="Name"
+                                value={this.state.name}
+                                onChange={this.update("name")}
+                                className="field" />
+                        ) : null
+                    }
+
+                    <input type="text"
+                        placeholder="Email Address"
+                        value={this.state.email}
+                        onChange={this.update("email")}
+                        className="field" />
+
+                    <input type="password"
+                        placeholder="Password"
+                        value={this.state.password}
+                        onChange={this.update("password")}
+                        className="field" />
+
+                    
+
+                    <div className="buttons">
+                        <input type="submit"
+                            value={this.props.formType}
+                            className="left-button right" />
+                        <Link to="/movies" 
+                            onClick={this.handleDemoLogin} 
+                            className="right-button left">demo login</Link>
+                    </div>
+                    
+                </form>
+                
+                <ul>
+                    {
+                        this.props.errors.map((error, idx) => (
+                            <li key={idx}>{error}</li>
+                        ))
+                    }
+                </ul>
             </div>
         )
     }
