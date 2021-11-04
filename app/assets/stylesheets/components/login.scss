@@ -1,19 +1,45 @@
-.session-form {
-    display: flex;
-    justify-content: center;
-}
-
-.content {
+.main {
     display: flex;
     flex-direction: column;
+    align-items: center;
     // justify-content: space-between;
-    height: 70vh;
-    width: 40vw;
-    margin-top: 5%;
-    // height: 50%;
-    // max-width: 540px;
+}
 
-    .header {
+// .center {
+//     // border-bottom: 4px solid black;
+//     // border-bottom: .02px solid rgba(0, 0, 0, 0.1);
+//     // border-style: ;
+//     // filter: blur(1px);
+//     height: 100px;
+//     width: 100vw;
+//     margin-top: 60px;
+//     margin-bottom: 60px;
+    
+// }
+
+.header {
+    display: flex;
+    flex-direction: column;
+    // padding-left: 5%;
+    // padding-right: 5%;
+    width: 50vw;
+    height: 100px;
+    // margin: 0 auto;
+    margin-top: 80px;
+    margin-bottom: 20px;;
+}
+
+// .content {
+//     display: flex;
+//     flex-direction: column;
+//     // justify-content: space-between;
+//     height: 70vh;
+//     width: 40vw;
+//     margin-top: 5%;
+//     // height: 50%;
+//     // max-width: 540px;
+
+    .form-type-header {
         font-family: $sans-serif;
         font-size: 36px;
         font-weight: bold;
@@ -25,7 +51,7 @@
         margin-bottom: 8px;
     }
 
-    .get-started {
+    .get-started-header {
         font-family: $sans-serif;
         font-size: 14px;
         text-align: right;
@@ -38,12 +64,13 @@
         border-bottom: .02px solid rgba(0, 0, 0, 0.1);
         filter: blur(1px);
         width: 100vw;
-        position: absolute;
-        top: 24%;
+        // position: absolute;
+        // top: 24%;
         left: 50%;
         right: 50%;
         margin-left: -50vw;
         margin-right: -50vw;
+        margin-bottom: 40px;
     }
 
     .form {
@@ -51,7 +78,9 @@
         flex-direction: column;
         justify-content: space-between;
         // align-items: center;
-        height: 35%;
+        // height: 35%;
+        width: 50vw;
+        height: 260px;
         
 
         .field {
@@ -125,4 +154,4 @@
 
     
 
-}
+// }
