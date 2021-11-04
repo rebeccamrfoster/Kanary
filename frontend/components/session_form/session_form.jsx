@@ -42,44 +42,63 @@ class SessionForm extends React.Component {
     
     render() {
         return (
-            <form onSubmit={this.handleSubmit}>
-                {
-                    this.props.formType === "SIGN UP" ? (
-                        <label>Name
-                            <input type="text"
-                                value={this.state.name}
-                                onChange={this.update("name")} />
-                        </label>
-                    ) : (
-                        <div>
-                            <Link to="/signup">Don't have an account yet? Get started.</Link>
-                            <Link to="/movies" onClick={this.handleDemoLogin}>DEMO LOGIN</Link>
+            <div className="session-form">
+
+                <div className="content">
+                    <div>
+                        <h1 className="header">{this.props.formType}</h1>
+                        
+                        {
+                            this.props.formType === "log in" ? (
+                                <Link to="/signup" className="get-started">Don't have an account yet? Get started.</Link>
+                            ) : null
+                        }
+                    </div>
+
+                    {/* <div className="divider"></div> */}
+
+                    <form onSubmit={this.handleSubmit} className="form">
+                        {
+                            this.props.formType === "sign up" ? (
+                                <input type="text"
+                                    placeholder="Name"
+                                    value={this.state.name}
+                                    onChange={this.update("name")}
+                                    className="field" />
+                            ) : null
+                        }
+
+                        <input type="text"
+                            placeholder="Email Address"
+                            value={this.state.email}
+                            onChange={this.update("email")}
+                            className="field" />
+
+                        <input type="password"
+                            placeholder="Password"
+                            value={this.state.password}
+                            onChange={this.update("password")}
+                            className="field" />
+
+                        <ul>
+                            {
+                                this.props.errors.map((error, idx) => (
+                                    <li key={idx}>{error}</li>
+                                ))
+                            }
+                        </ul>
+
+                        <div className="buttons">
+                            <input type="submit"
+                                value={this.props.formType}
+                                className="left-button right" />
+                            <Link to="/movies" 
+                                onClick={this.handleDemoLogin} 
+                                className="right-button left">demo login</Link>
                         </div>
-                    )
-                }
-
-                <label>Email Address
-                    <input type="text"
-                           value={this.state.email}
-                           onChange={this.update("email")} />
-                </label>
-
-                <label>Password
-                    <input type="password"
-                        value={this.state.password}
-                        onChange={this.update("password")} />
-                </label>
-
-                <ul>
-                    {
-                        this.props.errors.map((error, idx) => (
-                            <li key={idx}>{error}</li>
-                        ))
-                    }
-                </ul>
-
-                <input type="submit" value={this.props.formType} />
-            </form>
+                    </form>
+                </div>
+            </div>
         )
     }
 }
