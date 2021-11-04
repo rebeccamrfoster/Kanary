@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { SIGN_UP, LOG_IN } from "../../actions/session_actions";
 
 class SessionForm extends React.Component {
     constructor(props) {
@@ -37,30 +38,33 @@ class SessionForm extends React.Component {
             email: "demo@user.com",
             password: "demouser"
         };
-        this.props.processForm(demoUser);
+
+        if (this.props.formType === LOG_IN) {
+            this.props.processForm(demoUser);
+        }
+        else {
+            this.props.demoLogin(demoUser);
+        }
     }
     
     render() {
         return (
             <div className="main">
-
-                <div className="center">
-                    <div className="header">
-                        <h1 className="form-type-header">{this.props.formType}</h1>
-                        
-                        {
-                            this.props.formType === "log in" ? (
-                                <Link to="/signup" className="get-started-header">Don't have an account yet? Get started.</Link>
-                            ) : null
-                        }
-                    </div>
+                <div className="header">
+                    <h1 className="form-type-header">{this.props.formType}</h1>
+                    {
+                        this.props.formType === LOG_IN ? (
+                            <Link to="/signup" className="get-started-header">Don't have an account yet? Get started.</Link>
+                        ) : <Link to="/login" className="get-started-header">Already have an account? Click here.</Link>
+                    }
                 </div>
 
                 <div className="divider"></div>
 
-                <form onSubmit={this.handleSubmit} className="form">
+                <form onSubmit={this.handleSubmit}
+                    className={`form ${this.props.formType.split(" ").join("")}-form`}>
                     {
-                        this.props.formType === "sign up" ? (
+                        this.props.formType === SIGN_UP ? (
                             <input type="text"
                                 placeholder="Name"
                                 value={this.state.name}
@@ -81,8 +85,6 @@ class SessionForm extends React.Component {
                         onChange={this.update("password")}
                         className="field" />
 
-                    
-
                     <div className="buttons">
                         <input type="submit"
                             value={this.props.formType}
@@ -94,7 +96,7 @@ class SessionForm extends React.Component {
                     
                 </form>
                 
-                <ul>
+                <ul className="errors">
                     {
                         this.props.errors.map((error, idx) => (
                             <li key={idx}>{error}</li>
