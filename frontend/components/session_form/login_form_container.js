@@ -1,11 +1,11 @@
 import { connect } from "react-redux";
 import SessionForm from "./session_form";
-import { login, removeErrors } from "../../actions/session_actions";
+import { login, removeErrors, LOG_IN } from "../../actions/session_actions";
 
 const mSTP = state => {
     return {
         errors: state.errors.session,
-        formType: "log in"
+        formType: LOG_IN
     }
 };
 

@@ -6,6 +6,9 @@ export const REMOVE_CURRENT_USER = "REMOVE_CURRENT_USER";
 export const RECEIVE_SESSION_ERRORS = "RECEIVE_SESSION_ERRORS";
 export const REMOVE_SESSION_ERRORS = "REMOVE_SESSION_ERRORS";
 
+export const SIGN_UP = "sign up";
+export const LOG_IN = "log in";
+
 const receiveCurrentUser = currentUser => {
     return {
         type: RECEIVE_CURRENT_USER,
