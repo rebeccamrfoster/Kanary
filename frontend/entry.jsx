@@ -3,7 +3,7 @@ import ReactDOM from "react-dom";
 import configureStore from "./store/store";
 import Root from "./components/root";
 
-import { fetchWatchlists, createWatchlist, deleteWatchlist } from "./actions/watchlist_actions";
+import { handleWatchlist, fetchWatchlists } from "./actions/watchlist_actions";
 
 document.addEventListener("DOMContentLoaded", () => {
     let store;
@@ -26,7 +26,6 @@ document.addEventListener("DOMContentLoaded", () => {
     ReactDOM.render(<Root store={store} />, root);
 
     window.store = store;
+    window.handleWatchlist = handleWatchlist;
     window.fetchWatchlists = fetchWatchlists;
-    window.createWatchlist = createWatchlist;
-    window.deleteWatchlist = deleteWatchlist;
 })
