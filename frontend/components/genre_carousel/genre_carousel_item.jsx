@@ -7,11 +7,16 @@ class GenreCarouselItem extends React.Component {
 
         this.handleWatchlist = this.handleWatchlist.bind(this);
     }
-    
-    handleWatchlist() {
-        const { currentUser, movie, createWatchlist, deleteWatchlist } = this.props;
-        const watchlist = { user_id: currentUser.id, movie_id: movie.id }
 
+    handleWatchlist() {
+        const {
+            currentUser,
+            movie,
+            createWatchlist,
+            deleteWatchlist
+        } = this.props;
+
+        const watchlist = { user_id: currentUser.id, movie_id: movie.id }
         if (currentUser.movieIds.includes(movie.id)) {
             deleteWatchlist(watchlist);
         }
