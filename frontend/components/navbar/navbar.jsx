@@ -12,12 +12,51 @@ const Navbar = (props) => {
     }
     else {
         return (
-            <nav>
-                <p>Hello, {props.currentUser.name}</p>
-                <Link to="/movies">
-                    <h1>Kanary</h1>
-                </Link>
-                <button onClick={() => props.logout()}>Log out</button>
+            <nav className="navbar">
+                <Link to="/movies" className="logo">kanary</Link>
+
+                <div className="searchbar">
+                    <input type="text"
+                        placeholder="Search videos, subjects..." />
+                    <button>
+                        <img src={window.search_icon} />
+                    </button>
+                </div>
+
+                <div className="dropdown-buttons">
+                    <div className="browse">
+                        <h1>Browse</h1>
+                        <div className="caret">
+                            <img src={window.caret_icon} />
+                        </div>
+                        
+                        <ul className="browse-dropdown">
+                            {
+                                props.genres.map(genre => (
+                                    <li key={genre.id}>{genre.name}</li>
+                                ))
+                            }
+                        </ul>
+                    </div>
+                            
+                    <div className="name">
+                        <h1>{props.currentUser.name.split(" ")[0]}</h1>
+                        <div className="caret">
+                            <img src={window.caret_icon} />
+                        </div>
+
+                        <ul className="name-dropdown">
+                            <li>
+                                <Link>My Watchlist</Link>
+                            </li>
+                            <li>
+                                <a onClick={() => props.logout()}>Log out</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                {/* <button onClick={() => props.logout()}>Log out</button> */}
             </nav>
         )
     }
