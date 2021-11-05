@@ -6,14 +6,32 @@ class MovieShow extends React.Component {
     }
 
     componentDidMount() {
+        this.props.fetchMovie(this.props.match.params.movieId)
         this.props.fetchWatchlists();
     }
 
     render() {
-        const { title, year, duration, description, director } = this.props;
+        if (!this.props.movie) return null;
+
+        const { title, year, duration, description, director } = this.props.movie;
 
         return (
-            <div>Movie show</div>
+            <div className="movie-show">
+                <div className="main-movie-show">
+                    <video></video>
+                    <h1>{title}</h1>
+                    <button>
+                        <img src={window.white_check_icon} />
+                        <h1>My List</h1>
+                    </button>
+                </div>
+
+                <div className="info-movie-show">
+
+                </div>
+
+
+            </div>
         )
     }
 }
