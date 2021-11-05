@@ -54,8 +54,14 @@ class SessionForm extends React.Component {
                     <h1 className="form-type-header">{this.props.formType}</h1>
                     {
                         this.props.formType === LOG_IN ? (
-                            <Link to="/signup" className="get-started-header">Don't have an account yet? Get started.</Link>
-                        ) : <Link to="/login" className="get-started-header">Already have an account? Click here.</Link>
+                            <Link to="/signup" className="get-started-header">
+                                Don't have an account yet? Get started.
+                            </Link>
+                        ) : (
+                            <Link to="/login" className="get-started-header">
+                                Already have an account? Click here.
+                            </Link>
+                        )
                     }
                 </div>
 
