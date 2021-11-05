@@ -5,7 +5,8 @@ import { withRouter } from "react-router";
 
 const mSTP = state => {
     return {
-        currentUser: state.entities.users[state.session.currentUserId]
+        currentUser: state.entities.users[state.session.currentUserId],
+        genres: Object.values(state.entities.genres)
     }
 };
 
