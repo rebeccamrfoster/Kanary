@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 class GenreCarouselItem extends React.Component {
     constructor(props) {
@@ -6,10 +7,9 @@ class GenreCarouselItem extends React.Component {
 
         this.handleWatchlist = this.handleWatchlist.bind(this);
     }
-
+    
     handleWatchlist() {
-        const { movie, watchlists, currentUser, createWatchlist, deleteWatchlist } = this.props;
-
+        const { currentUser, movie, createWatchlist, deleteWatchlist } = this.props;
         const watchlist = { user_id: currentUser.id, movie_id: movie.id }
 
         if (currentUser.movieIds.includes(movie.id)) {
@@ -18,27 +18,16 @@ class GenreCarouselItem extends React.Component {
         else {
             createWatchlist(watchlist);
         }
-
-        // const watchlist = watchlists.find(watchlist => (
-        //     watchlist.user_id === currentUser.id &&
-        //     watchlist.movie_id === movie.id
-        // ));
-
-        // if (watchlist) {
-        //     deleteWatchlist(watchlist.id);
-        // }
-        // else {
-        //     createWatchlist({ user_id: currentUser.id, movie_id: movie.id });
-        // }
     }
 
     render() {
         const { movie } = this.props;
+
         return (
-            <li key={movie.id} className="genre-carousel-item">
+            <Link to={`/movies/${movie.id}`} className="carousel-item">
                 <div className="thumbnail">
-                    <img src="https://m.media-amazon.com/images/M/MV5BODhkZGE0NDQtZDc0Zi00YmQ4LWJiNmUtYTY1OGM1ODRmNGVkXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_.jpg" />
                     {/* <img key={movie.id} src={movie.thumbnail} /> */}
+                    <img src="https://m.media-amazon.com/images/M/MV5BODhkZGE0NDQtZDc0Zi00YmQ4LWJiNmUtYTY1OGM1ODRmNGVkXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_.jpg" />
                     <div className="overlay"></div>
                 </div>
 
@@ -49,9 +38,10 @@ class GenreCarouselItem extends React.Component {
                 </div>
                 <div className="buttons">
                     <button className="left-button">Watch</button>
-                    <button className="right-button" onClick={this.handleWatchlist}>My List</button>
+                    <button className="right-button" 
+                        onClick={this.handleWatchlist}>My List</button>
                 </div>
-            </li>
+            </Link>
         )
     }
 };
