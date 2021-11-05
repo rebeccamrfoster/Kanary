@@ -1,5 +1,5 @@
 import React from "react";
-import GenreCarousel from "../genre_carousel/genre_carousel";
+import GenreCarousel from "./genre_carousel";
 
 class MovieIndex extends React.Component {
     constructor(props) {
@@ -20,7 +20,8 @@ class MovieIndex extends React.Component {
             deleteWatchlist
         } = this.props;
         
-        if (genres.length === 0 || movies.length === 0) return null;
+        if (genres.length === 0 || Object.keys(movies).length === 0) return null;
+        debugger
         return (
             <div>
                 <h1>All Movies</h1>
