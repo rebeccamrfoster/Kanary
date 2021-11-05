@@ -17,7 +17,8 @@
  @import "base/reset.css";
 
  // Core
- @import "base/*";
+ @import "base/fonts.scss";
+ @import "base/colors.scss";
 
  // Components
  @import "components/*";
