@@ -1,19 +1,17 @@
-.genre-carousel {
-    // overflow: scroll;
-    display: flex;
-    flex-wrap: wrap;
-}
-
-.genre-carousel-item {
+.carousel-item {
     border: 2px solid red;
     height: 300px;
-    width: 200px;
+    // width: 200px;
+    width: 16%;
+
+    // flex: 0 0 19%;
+    // margin-left: 5px;
+    // position: relative;
 
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 
-    position: relative;
 
     .info {
         visibility: hidden;
@@ -49,7 +47,8 @@
         z-index: -1;
         height: 100%;
         width: 100%;
-        position: absolute;
+        // position: absolute;
+        object-fit: cover;
     }  
 }
 
@@ -63,7 +62,7 @@
     z-index: -1;
 }
 
-.genre-carousel-item:hover {
+.carousel-item:hover {
     cursor: pointer;
 
     img {
