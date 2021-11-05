@@ -16,12 +16,11 @@ class MovieIndex extends React.Component {
             currentUser,
             genres,
             movies,
-            createWatchlist,
-            deleteWatchlist
+            handleWatchlist
         } = this.props;
         
         if (genres.length === 0 || Object.keys(movies).length === 0) return null;
-        debugger
+
         return (
             <div>
                 <h1>All Movies</h1>
@@ -31,8 +30,7 @@ class MovieIndex extends React.Component {
                             currentUser={currentUser}
                             genre={genre}
                             movies={movies}
-                            createWatchlist={createWatchlist}
-                            deleteWatchlist={deleteWatchlist} />
+                            handleWatchlist={handleWatchlist} />
                     ))
                 }
             </div>

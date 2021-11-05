@@ -6,8 +6,7 @@ const GenreCarousel = (props) => {
         currentUser,
         genre,
         movies,
-        createWatchlist,
-        deleteWatchlist
+        handleWatchlist
     } = props;
 
     return (
@@ -20,8 +19,7 @@ const GenreCarousel = (props) => {
                             <GenreCarouselItem key={movieId}
                                 currentUser={currentUser}
                                 movie={movies[movieId]}
-                                createWatchlist={createWatchlist}
-                                deleteWatchlist={deleteWatchlist} />
+                                handleWatchlist={handleWatchlist} />
                         )
                     })
                 }

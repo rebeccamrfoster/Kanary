@@ -30,12 +30,14 @@ export const fetchWatchlists = () => dispatch => {
         .then(watchlists => dispatch(receiveWatchlists(watchlists)))
 };
 
-export const createWatchlist = watchlist => dispatch => {
-    return WatchlistApiUtil.createWatchlist(watchlist)
-        .then(watchlist => dispatch(receiveWatchlist(watchlist)))
+export const handleWatchlist = (user, movie) => dispatch => {
+    const watchlist = { user_id: user.id, movie_id: movie.id }
+    if (user.movieIds.includes(movie.id)) {
+        return WatchlistApiUtil.deleteWatchlist(watchlist)
+            .then(dispatch(removeWatchlist(watchlist)))
+    }
+    else {
+        return WatchlistApiUtil.createWatchlist(watchlist)
+            .then(watchlist => dispatch(receiveWatchlist(watchlist)))
+    }
 };
-
-export const deleteWatchlist = watchlist => dispatch => {
-    return WatchlistApiUtil.deleteWatchlist(watchlist)
-        .then(dispatch(removeWatchlist(watchlist)))
-}

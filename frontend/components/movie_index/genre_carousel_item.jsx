@@ -5,28 +5,28 @@ class GenreCarouselItem extends React.Component {
     constructor(props) {
         super(props);
 
-        this.handleWatchlist = this.handleWatchlist.bind(this);
+        // this.handleWatchlist = this.handleWatchlist.bind(this);
     }
 
-    handleWatchlist() {
-        const {
-            currentUser,
-            movie,
-            createWatchlist,
-            deleteWatchlist
-        } = this.props;
+    // handleWatchlist() {
+    //     const {
+    //         currentUser,
+    //         movie,
+    //         createWatchlist,
+    //         deleteWatchlist
+    //     } = this.props;
 
-        const watchlist = { user_id: currentUser.id, movie_id: movie.id }
-        if (currentUser.movieIds.includes(movie.id)) {
-            deleteWatchlist(watchlist);
-        }
-        else {
-            createWatchlist(watchlist);
-        }
-    }
+    //     const watchlist = { user_id: currentUser.id, movie_id: movie.id }
+    //     if (currentUser.movieIds.includes(movie.id)) {
+    //         deleteWatchlist(watchlist);
+    //     }
+    //     else {
+    //         createWatchlist(watchlist);
+    //     }
+    // }
 
     render() {
-        const { movie } = this.props;
+        const { currentUser, movie, handleWatchlist } = this.props;
 
         return (
             <Link to={`/movies/${movie.id}`} className="carousel-item">
@@ -44,7 +44,7 @@ class GenreCarouselItem extends React.Component {
                 <div className="buttons">
                     <button className="left-button">Watch</button>
                     <button className="right-button" 
-                        onClick={this.handleWatchlist}>My List</button>
+                        onClick={() => handleWatchlist(currentUser, movie)}>My List</button>
                 </div>
             </Link>
         )
