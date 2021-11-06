@@ -7,7 +7,8 @@ const GenreCarousel = (props) => {
         currentUser,
         genre,
         movies,
-        handleWatchlist
+        handleWatchlist,
+        history
     } = props;
 
     // var settings = {
@@ -34,7 +35,8 @@ const GenreCarousel = (props) => {
                             <GenreCarouselItem key={movieId}
                                 currentUser={currentUser}
                                 movie={movies[movieId]}
-                                handleWatchlist={handleWatchlist} />
+                                handleWatchlist={handleWatchlist}
+                                history={history} />
                         )
                     })
                 }

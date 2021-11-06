@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { useHistory } from "react-router";
 
 class GenreCarouselItem extends React.Component {
     constructor(props) {
@@ -38,10 +39,12 @@ class GenreCarouselItem extends React.Component {
         if (!this.state) return null;
 
         const { movie } = this.props;
-
+        
         return (
-            <div className="carousel-item">
-                {/* <Link to={`/movies/${movie.id}`}></Link> */}
+            <div className="carousel-item" onClick={() => this.props.history.push(`/movies/${movie.id}`)}>
+                {/* <div className="carousel-item-link">
+                    <Link to={`/movies/${movie.id}`}></Link>
+                </div> */}
                 <div className="thumbnail">
                     {/* <img key={movie.id} src={movie.thumbnail} /> */}
                     <img className="thumbnail-image" src="https://m.media-amazon.com/images/M/MV5BODhkZGE0NDQtZDc0Zi00YmQ4LWJiNmUtYTY1OGM1ODRmNGVkXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_.jpg" />
