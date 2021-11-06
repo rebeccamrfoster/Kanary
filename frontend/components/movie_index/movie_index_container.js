@@ -4,6 +4,8 @@ import { fetchMovies } from "../../actions/movie_actions";
 import { fetchGenres } from "../../actions/genre_actions";
 import { handleWatchlist } from "../../actions/watchlist_actions";
 
+import { withRouter } from "react-router";
+
 const mSTP = state => {
     return {
         currentUser: state.entities.users[state.session.currentUserId],
@@ -20,4 +22,4 @@ const mDTP = dispatch => {
     }
 };
 
-export default connect(mSTP, mDTP)(MovieIndex);
+export default withRouter(connect(mSTP, mDTP)(MovieIndex));

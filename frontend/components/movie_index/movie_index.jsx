@@ -16,21 +16,22 @@ class MovieIndex extends React.Component {
             currentUser,
             genres,
             movies,
-            handleWatchlist
+            handleWatchlist,
+            history
         } = this.props;
         
         if (genres.length === 0 || Object.keys(movies).length === 0) return null;
-
+        
         return (
             <div className="movie-index">
-                <h1>All Movies</h1>
                 {
                     genres.map(genre => (
                         <GenreCarousel key={genre.id}
                             currentUser={currentUser}
                             genre={genre}
                             movies={movies}
-                            handleWatchlist={handleWatchlist} />
+                            handleWatchlist={handleWatchlist}
+                            history={history} />
                     ))
                 }
             </div>
