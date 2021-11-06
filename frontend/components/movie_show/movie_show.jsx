@@ -1,5 +1,4 @@
 import React from "react";
-import ReactDOM from "react-dom";
 import { Link } from "react-router-dom";
 import Popup from "./popup";
 
@@ -60,11 +59,11 @@ class MovieShow extends React.Component {
         return (
             <div className="movie-show">
                 <div className="main-movie-show">
-                    <video></video>
-                    <h1>{title}</h1>
-                    <button onClick={this.handleClick}>
-                        <img src={this.state.icon} />
-                        <h1>My List</h1>
+                    <video className="main-video"></video>
+                    <h1 className="main-title">{title}</h1>
+                    <button className="main-button" onClick={this.handleClick}>
+                        <img className="main-button-image" src={this.state.icon} />
+                        <h1 className="main-button-text">My List</h1>
                     </button>
                 </div>
 

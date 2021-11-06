@@ -21,13 +21,13 @@ $movie-show-padding: 14px;
     height: 400px;
     width: 500px;
 
-    video {
+    .main-video {
         background-color: pink;
         // width: 500px;
         height: 300px;
     }
 
-    h1 {
+    .main-title {
         font-family: $sans-serif;
         font-weight: 400;
         font-size: 20px;
@@ -35,21 +35,22 @@ $movie-show-padding: 14px;
         width: 100%;
     }
 
-    button {
+    .main-button {
         display: flex;
         align-items: center;
         width: 100px;
         padding: 10px;
         justify-content: space-around;
-        background-color: $light-gray;
+        background-color: $gray-button;
         cursor: pointer;
+        box-shadow: 0px 0px 0px 1px rgba(34, 36, 38, 15%) inset;
 
-        img {
+        .main-button-image {
             height: 12px;
             width: 12px;
         }
 
-        h1 {
+        .main-button-text {
             font-family: $sans-serif;
             font-weight: 400;
             font-size: 14px;
@@ -57,7 +58,7 @@ $movie-show-padding: 14px;
         }
 
         &:hover {
-            background-color: rgb(93, 92, 92);
+            background-color: $gray-button-hover;
         }
     }
 }
