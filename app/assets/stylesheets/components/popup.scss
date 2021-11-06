@@ -1,0 +1,48 @@
+.fade-in {
+    visibility: visible;
+    opacity: 1;
+}
+
+.popup {
+    background-color: rgba(33, 186, 69, 0.8);
+    border-radius: 6px;
+    padding: 14px;
+    width: 240px;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+
+    opacity: 0;
+    visibility: thidden;
+    transition: 2s opacity;
+
+    // visibility: hidden;
+    // opacity: 0;
+    // transition: opacity 650ms ease-in, visibility 0ms ease-in 650ms;
+
+    > * {
+        font-family: $sans-serif;
+        font-weight: 400;
+    }
+
+
+    .header-popup {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 10px;
+        
+        img {
+            height: 14px;
+            width: 14px;
+            cursor: pointer;
+        }
+    }
+
+    .body-popup {
+        line-height: 22px;
+
+        i {
+            font-style: italic;
+        }
+    }
+}
