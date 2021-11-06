@@ -41,12 +41,14 @@ class GenreCarouselItem extends React.Component {
         const { movie } = this.props;
         
         return (
-            <div className="carousel-item" onClick={() => this.props.history.push(`/movies/${movie.id}`)}>
+            <div className="carousel-item">
                 {/* <div className="carousel-item-link">
                     <Link to={`/movies/${movie.id}`}></Link>
                 </div> */}
-                <div className="thumbnail">
-                    {/* <img key={movie.id} src={movie.thumbnail} /> */}
+                <div className="thumbnail" onClick={() => this.props.history.push(`/movies/${movie.id}`)}>
+                    {/* <img key={movie.id}
+                        src={movie.thumbnail}
+                        className="thumbnail-image" /> */}
                     <img className="thumbnail-image" src="https://m.media-amazon.com/images/M/MV5BODhkZGE0NDQtZDc0Zi00YmQ4LWJiNmUtYTY1OGM1ODRmNGVkXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_.jpg" />
                     <div className="thumbnail-overlay"></div>
                     
