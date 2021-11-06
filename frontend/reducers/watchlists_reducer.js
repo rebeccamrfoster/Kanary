@@ -21,7 +21,7 @@ const watchlistsReducer = (oldState = {}, action) => {
                 watchlist.user_id === action.watchlist.user_id &&
                 watchlist.movie_id === action.watchlist.movie_id
             ));
-            
+
             delete nextState[toRemove.id];
             return nextState;
         default:
