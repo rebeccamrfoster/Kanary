@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import GenreCarouselItem from "./genre_carousel_item";
 
 const GenreCarousel = (props) => {
@@ -22,9 +23,11 @@ const GenreCarousel = (props) => {
     // };
 
     return (
-        <div>
-            <label>{genre.name}</label>
-            <div className="carousel">
+        <div className="carousel">
+            <Link to="/">
+                <h1 className="carousel-title">{genre.name}</h1>
+            </Link>
+            <div className="carousel-main">
                 {
                     genre.movieIds.map(movieId => {
                         return (
