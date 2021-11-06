@@ -1,6 +1,7 @@
 .movie-index {
     background-color: $dark-gray;
     width: 100vw;
+    overflow: hidden;
 }
 
 // GENRE CAROUSELS
@@ -19,16 +20,29 @@
     }
 }
 
-// .carousel-main {
-//     height: 300px;
-// }
+.carousel-main {
+    white-space: nowrap;
+
+}
 
 // GENRE CAROUSEL ITEMS
 
 .carousel-item {
+    display: inline-block;
+    margin-right: 10px;
+    margin-left: 10px;
+
     height: 260px;
     width: 170px;
     position: relative;
+
+    .carousel-item-link {
+        position: absolute;
+        top: 0;
+        height: 100%;
+        width: 100%;
+        z-index: 20;
+    }
 
     .thumbnail {
         position: relative;
@@ -57,6 +71,8 @@
         }
 
         .info {
+            white-space: normal;
+
             position: absolute;
             top: 0;
             padding: 10px 10px;
