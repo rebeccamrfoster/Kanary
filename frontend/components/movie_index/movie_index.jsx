@@ -22,7 +22,7 @@ class MovieIndex extends React.Component {
         if (genres.length === 0 || Object.keys(movies).length === 0) return null;
 
         return (
-            <div>
+            <div className="movie-index">
                 <h1>All Movies</h1>
                 {
                     genres.map(genre => (
