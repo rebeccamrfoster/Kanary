@@ -23,8 +23,8 @@ const Navbar = (props) => {
                     </button>
                 </div>
 
-                <div className="dropdown-buttons">
-                    <div className="browse">
+                <div className="dropdown-container">
+                    <div className="browse-dropdown-btn">
                         <h1>Browse</h1>
                         <div className="caret">
                             <img src={window.caret_icon} />
@@ -39,7 +39,7 @@ const Navbar = (props) => {
                         </ul>
                     </div>
                             
-                    <div className="name">
+                    <div className="name-dropdown-btn">
                         <h1>{props.currentUser.name.split(" ")[0]}</h1>
                         <div className="caret">
                             <img src={window.caret_icon} />
@@ -47,7 +47,7 @@ const Navbar = (props) => {
 
                         <ul className="name-dropdown">
                             <li>
-                                <Link>My Watchlist</Link>
+                                <Link to="/">My Watchlist</Link>
                             </li>
                             <li>
                                 <a onClick={() => props.logout()}>Log out</a>
