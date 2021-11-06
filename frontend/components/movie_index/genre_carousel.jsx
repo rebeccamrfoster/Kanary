@@ -9,10 +9,22 @@ const GenreCarousel = (props) => {
         handleWatchlist
     } = props;
 
+    // var settings = {
+    //     infinite: true,
+    //     speed: 500,
+    //     slidesToShow: 6,
+    //     slidesToScroll: 1,
+    //     centerPadding: "10px",
+    //     arrows: true,
+    //     variableWidth: false,
+    //     prevArrow: <img src={window.prev_arrow_icon} />,
+    //     nextArrow: <img src={window.next_arrow_icon} />
+    // };
+
     return (
         <div>
             <label>{genre.name}</label>
-            <ul className="carousel">
+            <div className="carousel">
                 {
                     genre.movieIds.map(movieId => {
                         return (
@@ -23,7 +35,7 @@ const GenreCarousel = (props) => {
                         )
                     })
                 }
-            </ul>
+            </div>
         </div>
     )
 }

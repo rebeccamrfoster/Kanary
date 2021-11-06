@@ -5,48 +5,73 @@ class GenreCarouselItem extends React.Component {
     constructor(props) {
         super(props);
 
-        // this.handleWatchlist = this.handleWatchlist.bind(this);
+        this.handleClick = this.handleClick.bind(this);
+        this.toggleIcon = this.toggleIcon.bind(this);
     }
 
-    // handleWatchlist() {
-    //     const {
-    //         currentUser,
-    //         movie,
-    //         createWatchlist,
-    //         deleteWatchlist
-    //     } = this.props;
+    componentDidMount() {
+        const { currentUser, movie } = this.props;
+        const icon = currentUser.movieIds.includes(movie.id) ? (
+            window.check_icon
+        ) : (
+            window.plus_icon
+        );
+        this.setState({ icon });
+    }
 
-    //     const watchlist = { user_id: currentUser.id, movie_id: movie.id }
-    //     if (currentUser.movieIds.includes(movie.id)) {
-    //         deleteWatchlist(watchlist);
-    //     }
-    //     else {
-    //         createWatchlist(watchlist);
-    //     }
-    // }
+    handleClick() {
+        const { currentUser, movie, handleWatchlist } = this.props;
+        handleWatchlist(currentUser, movie)
+            .then(this.toggleIcon);
+    }
+
+    toggleIcon() {
+        if (this.state.icon === window.plus_icon) {
+            this.setState({ icon: window.check_icon });
+        }
+        else {
+            this.setState({ icon: window.plus_icon });
+        }
+    }
 
     render() {
-        const { currentUser, movie, handleWatchlist } = this.props;
+        if (!this.state) return null;
+
+        const { movie } = this.props;
 
         return (
-            <Link to={`/movies/${movie.id}`} className="carousel-item">
+            <div className="carousel-item">
                 <div className="thumbnail">
                     {/* <img key={movie.id} src={movie.thumbnail} /> */}
-                    <img src="https://m.media-amazon.com/images/M/MV5BODhkZGE0NDQtZDc0Zi00YmQ4LWJiNmUtYTY1OGM1ODRmNGVkXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_.jpg" />
-                    <div className="overlay"></div>
+                    <img className="thumbnail-image" src="https://m.media-amazon.com/images/M/MV5BODhkZGE0NDQtZDc0Zi00YmQ4LWJiNmUtYTY1OGM1ODRmNGVkXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_.jpg" />
+                    <div className="thumbnail-overlay"></div>
+                    
+                    <div className="info">
+                        <p className="info-title">{movie.title}</p>
+                        <p className="info-duration">{movie.duration} mins</p>
+                        <p className="info-description">{movie.description}</p>
+                    </div>
                 </div>
 
-                <div className="info">
-                    <p className="title-info">{movie.title}</p>
-                    <p className="duration-info">{movie.duration}</p>
-                    <p className="description-info">{movie.description}</p>
-                </div>
-                <div className="buttons">
-                    <button className="left-button">Watch</button>
+
+                <div className="carousel-item-buttons">
+                    <Link to={`/movies/${movie.id}`} className="left-button">
+                        <img src={window.play_icon} className="icon-button" />
+                        <h1 className="text-button">Watch</h1>
+                    </Link>
+                    <button onClick={this.handleClick}
+                        className="right-button">
+                        <img src={this.state.icon} className="icon-button" />
+                        <h1 className="text-button">My List</h1>
+                    </button>
+
+                    {/* <button className="left-button">Watch</button>
                     <button className="right-button" 
-                        onClick={() => handleWatchlist(currentUser, movie)}>My List</button>
+                        onClick={() => handleWatchlist(currentUser, movie)}>My List</button> */}
                 </div>
-            </Link>
+
+                <p className="lower-title">{movie.title}</p>
+            </div>
         )
     }
 };
