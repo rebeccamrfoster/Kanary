@@ -39,6 +39,8 @@ moonlight = Movie.create!(
 
 file = open("https://kanary-seeds.s3.us-east-2.amazonaws.com/thumbnails/moonlight.jpg")
 moonlight.thumbnail.attach(io: file, filename: "moonlight.jpg")
+file = open("https://kanary-seeds.s3.us-east-2.amazonaws.com/videos/moonlight.mov")
+moonlight.video.attach(io: file, filename: "moonlight.mov")
 
 # video_file = open("https://kanary-bucket.s3.us-east-2.amazonaws.com/video_1.mov")
 # moonlight.video_url.attach(io: video_file, filename: "video_1.mov")
@@ -595,9 +597,9 @@ on_a_knife_edge.thumbnail.attach(io: file, filename: "on_a_knife_edge.jpg")
 #--------------------GENRES--------------------#
 
 independent_cinema = Genre.create!(name: "Independent Cinema")
-lgbtq_cinema = Genre.create!(name: "LGBTQ Cinema")
 ethnicity_and_identity = Genre.create!(name: "Ethnicity & Identity")
 historical_perspectives = Genre.create!(name: "Historical Perspectives")
+lgbtq_cinema = Genre.create!(name: "LGBTQ Cinema")
 
 #-----------------MOVIEGENRES------------------#
 
@@ -611,17 +613,6 @@ Moviegenre.create!(movie_id: hereditary.id, genre_id: independent_cinema.id)
 Moviegenre.create!(movie_id: the_watermelon_woman.id, genre_id: independent_cinema.id)
 Moviegenre.create!(movie_id: ida.id, genre_id: independent_cinema.id)
 Moviegenre.create!(movie_id: the_bookshop.id, genre_id: independent_cinema.id)
-
-Moviegenre.create!(movie_id: moonlight.id, genre_id: lgbtq_cinema.id)
-Moviegenre.create!(movie_id: hearts_beat_loud.id, genre_id: lgbtq_cinema.id)
-Moviegenre.create!(movie_id: no_ordinary_man.id, genre_id: lgbtq_cinema.id)
-Moviegenre.create!(movie_id: lorraine_hansberry.id, genre_id: lgbtq_cinema.id)
-Moviegenre.create!(movie_id: portrait_of_a_lady_on_fire.id, genre_id: lgbtq_cinema.id)
-Moviegenre.create!(movie_id: the_watermelon_woman.id, genre_id: lgbtq_cinema.id)
-Moviegenre.create!(movie_id: ammonite.id, genre_id: lgbtq_cinema.id)
-Moviegenre.create!(movie_id: scotty_and_the_secret_history_of_hollywood.id, genre_id: lgbtq_cinema.id)
-Moviegenre.create!(movie_id: love_is_all.id, genre_id: lgbtq_cinema.id)
-Moviegenre.create!(movie_id: portrait_of_jason.id, genre_id: lgbtq_cinema.id)
 
 Moviegenre.create!(movie_id: i_am_not_your_negro.id, genre_id: ethnicity_and_identity.id)
 Moviegenre.create!(movie_id: some_girls.id, genre_id: ethnicity_and_identity.id)
@@ -646,6 +637,17 @@ Moviegenre.create!(movie_id: love_is_all.id, genre_id: historical_perspectives.i
 Moviegenre.create!(movie_id: cold_case_hammarskjold.id, genre_id: historical_perspectives.id)
 Moviegenre.create!(movie_id: portrait_of_jason.id, genre_id: historical_perspectives.id)
 Moviegenre.create!(movie_id: stolen_education.id, genre_id: historical_perspectives.id)
+
+Moviegenre.create!(movie_id: moonlight.id, genre_id: lgbtq_cinema.id)
+Moviegenre.create!(movie_id: hearts_beat_loud.id, genre_id: lgbtq_cinema.id)
+Moviegenre.create!(movie_id: no_ordinary_man.id, genre_id: lgbtq_cinema.id)
+Moviegenre.create!(movie_id: lorraine_hansberry.id, genre_id: lgbtq_cinema.id)
+Moviegenre.create!(movie_id: portrait_of_a_lady_on_fire.id, genre_id: lgbtq_cinema.id)
+Moviegenre.create!(movie_id: the_watermelon_woman.id, genre_id: lgbtq_cinema.id)
+Moviegenre.create!(movie_id: ammonite.id, genre_id: lgbtq_cinema.id)
+Moviegenre.create!(movie_id: scotty_and_the_secret_history_of_hollywood.id, genre_id: lgbtq_cinema.id)
+Moviegenre.create!(movie_id: love_is_all.id, genre_id: lgbtq_cinema.id)
+Moviegenre.create!(movie_id: portrait_of_jason.id, genre_id: lgbtq_cinema.id)
 
 #------------------WATCHLISTS------------------#
 
