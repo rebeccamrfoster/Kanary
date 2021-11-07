@@ -53,13 +53,35 @@ class MovieShow extends React.Component {
         //     genres
         // } = this.props;
 
-        const { title, year, duration, description, director, genreIds } = this.props.movie;
+        const {
+            title,
+            year,
+            duration,
+            description,
+            director,
+            genreIds,
+            video
+         } = this.props.movie;
         const { genres } = this.props;
 
         return (
             <div className="movie-show">
                 <div className="main-movie-show">
-                    <video className="main-video"></video>
+                    {/* <video className="main-video" src={video}>
+                        <p>Your browser doesn't support HTML5 video.</p>
+                    </video> */}
+                    <video className="main-video">
+                        <p>Your browser doesn't support HTML5 video.</p>
+                    </video>
+
+                    {/* <div id="video-controls">
+                        <button type="button" id="play-pause">Play</button>
+                        <input type="range" id="seek-bar" value="0"/>
+                        <button type ="button" id="mute">Mute</button>
+                        <input type ="range" id="volume-bar" min="0" max="1" step="0.1" value="1"/>
+                        <button type ="button" id="full-screen">Full-Screen</button>
+                    </div> */}
+
                     <h1 className="main-title">{title}</h1>
                     <button className="main-button" onClick={this.handleClick}>
                         <img className="main-button-image" src={this.state.icon} />
