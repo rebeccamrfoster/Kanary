@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { SIGN_UP, LOG_IN } from "../../actions/session_actions";
 
 class SessionForm extends React.Component {
     constructor(props) {
@@ -14,7 +15,7 @@ class SessionForm extends React.Component {
         this.handleDemoLogin = this.handleDemoLogin.bind(this);
     }
 
-    componentDidMount() {
+    componentWillUnmount() {
         this.props.removeErrors();
     }
 
@@ -37,49 +38,78 @@ class SessionForm extends React.Component {
             email: "demo@user.com",
             password: "demouser"
         };
-        this.props.processForm(demoUser);
+
+        if (this.props.formType === LOG_IN) {
+            this.props.processForm(demoUser);
+        }
+        else {
+            this.props.demoLogin(demoUser);
+        }
     }
     
     render() {
         return (
-            <form onSubmit={this.handleSubmit}>
-                {
-                    this.props.formType === "SIGN UP" ? (
-                        <label>Name
+            <div className="main">
+                <div className="header">
+                    <h1 className="form-type-header">{this.props.formType}</h1>
+                    {
+                        this.props.formType === LOG_IN ? (
+                            <Link to="/signup" className="get-started-header">
+                                Don't have an account yet? Get started.
+                            </Link>
+                        ) : (
+                            <Link to="/login" className="get-started-header">
+                                Already have an account? Click here.
+                            </Link>
+                        )
+                    }
+                </div>
+
+                <div className="divider"></div>
+
+                <form onSubmit={this.handleSubmit}
+                    className={`form ${this.props.formType.split(" ").join("")}-form`}>
+                    {
+                        this.props.formType === SIGN_UP ? (
                             <input type="text"
+                                placeholder="Name"
                                 value={this.state.name}
-                                onChange={this.update("name")} />
-                        </label>
-                    ) : (
-                        <div>
-                            <Link to="/signup">Don't have an account yet? Get started.</Link>
-                            <Link to="/movies" onClick={this.handleDemoLogin}>DEMO LOGIN</Link>
-                        </div>
-                    )
-                }
+                                onChange={this.update("name")}
+                                className="field" />
+                        ) : null
+                    }
 
-                <label>Email Address
                     <input type="text"
-                           value={this.state.email}
-                           onChange={this.update("email")} />
-                </label>
+                        placeholder="Email Address"
+                        value={this.state.email}
+                        onChange={this.update("email")}
+                        className="field" />
 
-                <label>Password
                     <input type="password"
+                        placeholder="Password"
                         value={this.state.password}
-                        onChange={this.update("password")} />
-                </label>
+                        onChange={this.update("password")}
+                        className="field" />
 
-                <ul>
+                    <div className="buttons">
+                        <input type="submit"
+                            value={this.props.formType}
+                            className="left-button right" />
+                        <Link to="/movies" 
+                            onClick={this.handleDemoLogin} 
+                            className="right-button left">demo login</Link>
+                    </div>
+                    
+                </form>
+                
+                <ul className="errors">
                     {
                         this.props.errors.map((error, idx) => (
                             <li key={idx}>{error}</li>
                         ))
                     }
                 </ul>
-
-                <input type="submit" value={this.props.formType} />
-            </form>
+            </div>
         )
     }
 }

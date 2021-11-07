@@ -1,0 +1,136 @@
+.main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    > * {
+        width: 560px;
+    }
+}
+
+.header {
+    display: flex;
+    flex-direction: column;
+    // width: 50%;
+    height: 100px;
+    margin-top: 80px;
+
+    .form-type-header {
+        font-family: $sans-serif;
+        font-size: 36px;
+        font-weight: bold;
+        text-transform: capitalize;
+        letter-spacing: .04em;
+
+        padding-bottom: 8px;
+        border-bottom: 1px solid rgba(166, 166, 166, .2);
+        margin-bottom: 8px;
+    }
+
+    .get-started-header {
+        font-family: $sans-serif;
+        font-size: 14px;
+        text-align: right;
+        color: $orange;
+    }
+}
+
+.divider {
+    height: 10px;
+    width: 100vw;
+    border-bottom: .02px solid rgba(0, 0, 0, 0.1);
+    filter: blur(1px);
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    margin-bottom: 40px;
+}
+
+.login-form {
+    height: 260px;
+
+    > * {
+        height: 22%;
+    }
+}
+
+.signup-form {
+    height: 300px;
+
+    > * {
+        height: 18%;
+    }
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;    
+
+    .field {
+        font-family: $field-font;
+        font-size: 14px;
+        color: rgba(0, 0, 0, 0.8);
+        
+        width: 100%;
+        box-sizing:border-box;
+        padding-left: 16px;
+        border-radius: 4px;
+        box-shadow: 0 0 0 0 rgba(0, 0, 0, 10%), 
+            2px 2px 4px 0 rgba(0, 0, 0, 20%);
+
+        &::placeholder {
+            font-family: $field-font;
+            color: rgba(0, 0, 0, 0.3);
+        }
+
+        &:focus {
+            box-shadow: 0 0 0 0 rgba(0, 0, 0, 10%), 
+            2px 2px 4px 0 rgba(0, 0, 0, 28%);
+        }
+    }
+
+    .buttons {
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        align-items: center;
+        transition: .3s;
+
+        .left-button, .right-button {
+            font-family: $sans-serif;
+            font-size: 16px;
+            color: $white;
+            letter-spacing: .04em;
+            text-transform: uppercase;
+            cursor: pointer;
+
+            width: 48%;
+            background-color: $orange;
+            border-radius: 4px;
+            padding: 20px;
+
+            &:hover {
+                background-color: $orange-hover;
+            }
+        }
+
+        .left-button {
+            margin-right: 10px;
+        }
+
+        .right-button {
+            margin-left: 10px;
+        }
+    }
+}
+
+.errors {
+    margin-top: 12px;
+    line-height: 20px;
+
+    font-family: $sans-serif;
+    font-size: 14px;
+    color: rgba(0, 0, 0, 0.6);
+}

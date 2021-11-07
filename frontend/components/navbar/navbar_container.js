@@ -1,10 +1,12 @@
 import { connect } from "react-redux";
 import Navbar from "./navbar";
 import { logout } from "../../actions/session_actions";
+import { withRouter } from "react-router";
 
 const mSTP = state => {
     return {
-        currentUser: state.entities.users[state.session.currentUserId]
+        currentUser: state.entities.users[state.session.currentUserId],
+        genres: Object.values(state.entities.genres)
     }
 };
 
@@ -14,4 +16,4 @@ const mDTP = dispatch => {
     }
 };
 
-export default connect(mSTP, mDTP)(Navbar);
+export default withRouter(connect(mSTP, mDTP)(Navbar));

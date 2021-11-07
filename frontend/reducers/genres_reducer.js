@@ -1,6 +1,6 @@
 import { RECEIVE_ALL_GENRES, RECEIVE_GENRE } from "../actions/genre_actions";
 
-const genreReducer = (oldState = {}, action) => {
+const genresReducer = (oldState = {}, action) => {
     Object.freeze(oldState);
     let nextState = Object.assign({}, oldState);
 
@@ -16,4 +16,4 @@ const genreReducer = (oldState = {}, action) => {
     }
 };
 
-export default genreReducer;
+export default genresReducer;

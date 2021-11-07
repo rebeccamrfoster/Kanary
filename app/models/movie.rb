@@ -14,7 +14,7 @@
 class Movie < ApplicationRecord
     validates :title, :year, :duration, :description, :director, presence: true
 
-    has_one_attached :video_url
+    has_one_attached :video
     has_one_attached :thumbnail
 
     has_many :watchlists,

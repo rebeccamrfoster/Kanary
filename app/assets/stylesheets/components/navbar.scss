@@ -1,0 +1,230 @@
+$navbar-margin: 5%;
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    background-color: black;
+    color: $white;
+    width: 100vw;
+
+    .logo {
+        font-family: $serif;
+        font-size: 40px;
+        margin-left: $navbar-margin;
+    }
+
+    .login {
+        font-family: $sans-serif;
+        font-size: 12px;
+        width: 80px;
+        height: 30px;
+        margin-right: $navbar-margin;
+        border: 2px solid $white;
+        border-radius: 1px;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+
+.searchbar {
+    background-color: $white;
+    width: 35%;
+    height: 36px;
+    border-radius: 1px;
+
+    display: flex;
+    justify-content: space-between;
+
+    input {
+        height: 100%;
+        width: 90%;
+        padding-left: 16px;
+
+        &::placeholder {
+            font-family: $field-font;
+            color: rgba(0, 0, 0, 0.3);
+        }
+
+        &:focus::placeholder {
+            color: rgba(0, 0, 0, 0.8);
+        }
+    }
+
+    button {
+        height: 100%;
+        padding: 8px 10px;
+        cursor: pointer;
+
+        img {
+            height: 16px;
+            width: 16px;
+        }
+    }
+}
+
+@media all and (max-width: 700px) {
+    .searchbar {
+        display: none;
+    }
+}
+
+// DROPDOWN MENUS
+
+.dropdown-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 16%;
+    margin-right: $navbar-margin;
+}
+
+@media all and (max-width: 1200px) {
+    .dropdown-container {
+        width: 20%;
+    }
+}
+
+.browse-dropdown-btn, .name-dropdown-btn {
+    cursor: pointer;
+    position: relative;
+    
+    height: 36px;
+    display: flex;
+    align-items: center;
+
+    h1 {
+        color: $white;
+        font-family: $sans-serif;
+        font-weight: 500;
+        letter-spacing: .06em;
+        text-transform: uppercase;
+        font-size: 14px;
+    }
+
+    .caret {
+        height: 100%;
+        padding: 20px 0 0 5px;
+
+        img {
+            height: 14px;
+            width: 14px;
+        }
+    }
+}
+
+.browse-dropdown, .name-dropdown {
+    position: absolute;
+    top: 36px;
+    right: 0;
+    background-color: black;
+    
+    width: max-content;
+    height: 0;
+    opacity: 0;
+    transition: all 0.3s ease;
+
+    border: 1px solid #404040;
+    box-shadow: 0px 2px 4px 0px rgba(34, 36, 38, 12%), 
+        0px 2px 10px 0px rgba(34, 36, 38, 15%);
+
+    // visibility: hidden;
+    // transition: opacity 0.1s ease;
+    // z-index: 11;
+    // will-change: transform, opacity;
+    // animation-duration: 300ms;
+    // animation-timing-function: ease;
+    // animation-fill-mode: both;
+    // -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+
+    li {
+        // border: 1px solid white;
+        padding: 2px 8px;
+        color: $white;
+        font-size: 14px;
+        font-family: $sans-serif;
+        border-left: 3px solid black;
+        line-height: 30px;
+
+        &:hover {
+            border-color: $white;
+        }
+    }
+}
+
+.browse-dropdown-btn:hover, .name-dropdown-btn:hover {
+    
+    .browse-dropdown, .name-dropdown {
+        visibility: visible;
+        height: fit-content;
+        opacity: 1;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// .browse:hover .browse-dropdown,
+//     .name:hover .name-dropdown {
+//     height: 120px;
+//     visibility: visible;
+//     opacity: 1;
+// }
+
+// .browse-dropdown, .name-dropdown {
+//     text-transform: capitalize;
+//     position: absolute;
+//     // display: none;
+//     top: 50px;
+//     right: 20px;
+
+//     background-color: black;
+//     border: .01px solid $off-white;
+//     border-radius: 2px;
+//     padding: 8px;
+//     z-index: 1;
+
+//     visibility: hidden;
+//     opacity: 0;
+//     transition: opacity 40ms ease-in, visibility 0ms ease-in 40ms;
+
+//     height: 0px;
+//     overflow: hidden;
+//     -webkit-transition: all 0.5s ease-in-out;
+//     -moz-transition: all 0.5s ease-in-out;
+//     -o-transition: all 0.5s ease-in-out;
+//     transition: all 0.5s ease-in-out;
+
+//     li {
+//         font-family: $sans-serif;
+//         font-weight: 400;
+//         font-size: 14px;
+//         color: $off-white;
+//         line-height: 30px;
+//     }
+// }
+
+// .browse-dropdown {
+//     width: 180px;
+// }
+
+// .name-dropdown {
+//     width: 130px;
+// }
