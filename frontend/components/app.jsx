@@ -24,7 +24,7 @@ const App = () => {
                 <ProtectedRoute path="/movies" component={MovieIndexContainer} />
             </Switch>
 
-            <Footer />
+            <ProtectedRoute component={Footer} />
         </div>
 
     )
