@@ -67,20 +67,21 @@ class MovieShow extends React.Component {
         return (
             <div className="movie-show">
                 <div className="main-movie-show">
+                    
                     {/* <video className="main-video" src={video}>
                         <p>Your browser doesn't support HTML5 video.</p>
                     </video> */}
                     <video className="main-video">
                         <p>Your browser doesn't support HTML5 video.</p>
                     </video>
+                    <div className="main-video-controls">
+                        <button type="button" className="play-pause">Play</button>
+                        <input type="range" className="seek-bar" value="0"/>
+                        <button type ="button" className="mute">Mute</button>
+                        <input type ="range" className="volume-bar" min="0" max="1" step="0.1" value="1"/>
+                        <button type ="button" className="full-screen">Full-Screen</button>
+                    </div>
 
-                    {/* <div id="video-controls">
-                        <button type="button" id="play-pause">Play</button>
-                        <input type="range" id="seek-bar" value="0"/>
-                        <button type ="button" id="mute">Mute</button>
-                        <input type ="range" id="volume-bar" min="0" max="1" step="0.1" value="1"/>
-                        <button type ="button" id="full-screen">Full-Screen</button>
-                    </div> */}
 
                     <h1 className="main-title">{title}</h1>
                     <button className="main-button" onClick={this.handleClick}>
@@ -113,19 +114,10 @@ class MovieShow extends React.Component {
                     </div>
                 </div>
 
-                {
-                    this.state.icon === window.plus_icon ? (
-                        <Popup key={this.props.movie.id}
-                            added={true}
-                            title={this.props.movie.title} />
-                    ) : (
-                        <Popup key={this.props.movie.id}
-                            added={false}
-                            title={this.props.movie.title} />
-                    )
-                }
                 
-
+                <Popup key={this.props.movie.id}
+                    added={this.state.icon === window.plus_icon}
+                    title={title} />
             </div>
         )
     }
