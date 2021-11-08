@@ -25,7 +25,7 @@ class MovieIndex extends React.Component {
         return (
             <div className="movie-index">
                 <div className="movie-index-banner">
-                    <p>Enjoy critically-acclaimed movies, inspiring 
+                    <p className="banner-text">Enjoy critically-acclaimed movies, inspiring 
                         documentaries, award-winning foreign films and more</p>
                     <img src={window.movie_index_banner}/>
                 </div>
