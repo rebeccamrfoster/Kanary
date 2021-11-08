@@ -6,6 +6,7 @@ import MovieIndexContainer from "./movie_index/movie_index_container";
 import MovieShowContainer from "./movie_show/movie_show_container";
 import { AuthRoute, ProtectedRoute } from "../utils/route_util";
 import { Route, Switch } from "react-router";
+import WatchlistIndexContainer from "./watchlist_index/watchlist_index_container";
 import Splash from "./splash/splash";
 import Footer from "./footer/footer";
 
@@ -22,6 +23,7 @@ const App = () => {
                 <AuthRoute exact path="/login" component={LoginFormContainer} />
                 <ProtectedRoute path="/movies/:movieId" component={MovieShowContainer} />
                 <ProtectedRoute path="/movies" component={MovieIndexContainer} />
+                <ProtectedRoute path="/watchlists" component={WatchlistIndexContainer} />
             </Switch>
 
             <ProtectedRoute component={Footer} />
