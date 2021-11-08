@@ -62,7 +62,7 @@ class GenreCarouselItem extends React.Component {
 
                 <div className="carousel-item-btns">
                     <Link to={`/movies/${movie.id}`} className="left-btn">
-                        <img src={window.play_icon} />
+                        <img src={window.white_play_icon} />
                         <h1>Watch</h1>
                     </Link>
                     <button onClick={this.handleClick}
