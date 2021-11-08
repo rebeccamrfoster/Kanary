@@ -46,23 +46,17 @@ class MovieShow extends React.Component {
     }
 
     render() {
-        if (!this.props.movie || !this.props.genres || !this.state) return <div className="movie-show"></div>;
-
-        // const {
-        //     movie: { title, year, duration, description, director, genreIds },
-        //     genres
-        // } = this.props;
+        if (!this.props.movie || !this.props.genres || !this.state) {
+            return <div className="movie-show"></div>;
+        }
 
         const {
-            title,
-            year,
-            duration,
-            description,
-            director,
-            genreIds,
-            video
-         } = this.props.movie;
-        const { genres } = this.props;
+            movie: { title, year, duration, description, director, genreIds },
+            genres: genres
+        } = this.props;
+
+        // const { title, year, duration, description, director, genreIds } = this.props.movie;
+        // const { genres } = this.props;
 
         return (
             <div className="movie-show">
