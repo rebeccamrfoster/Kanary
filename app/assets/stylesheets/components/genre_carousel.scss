@@ -1,42 +1,3 @@
-.movie-index {
-    background-color: $dark-gray;
-    width: 100vw;
-    overflow: hidden;
-
-    .movie-index-banner {
-        height: 150px;
-        width: 100%;
-        overflow: hidden;
-        position: relative;
-
-        display: flex;
-        justify-content: center;
-        align-items: center;
-
-        > p {
-            width: 40%;
-            color: $white;
-            font-size: 24px;
-            font-family: $field-font;
-            font-weight: 700;
-            line-height: 30px;
-            text-align: center;
-
-            position: absolute;
-            z-index: 2;
-        }
-
-        > img {
-            width: 100%;
-            position: absolute;
-            bottom: -394px;
-            z-index: 1;
-        }
-    }
-}
-
-// GENRE CAROUSELS
-
 .carousel {
     margin-top: 20px;
     margin-bottom: 20px;
@@ -61,8 +22,6 @@
     }
 }
 
-// GENRE CAROUSEL ITEMS
-
 .carousel-item {
     display: inline-block;
     margin-right: 10px;
@@ -71,129 +30,118 @@
     height: 260px;
     width: 170px;
     position: relative;
+}
 
-    // .carousel-item-link {
-    //     position: absolute;
-    //     top: 0;
-    //     height: 100%;
-    //     width: 100%;
-    //     z-index: 20;
-    // }
+.carousel-item-thumbnail {
+    position: relative;
+    height: 90%;
+    width: 100%;
+    overflow: hidden;
 
-    .thumbnail {
-        position: relative;
-        height: 90%;
+    .thumbnail-image {
         width: 100%;
-        overflow: hidden;
-
-        .thumbnail-image {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            z-index: -1;
-        }
-
-        .thumbnail-overlay {
-            position: absolute;
-            height: 100%;
-            width: 100%;
-            background-color: rgba(0, 0, 0, .5);
-            top: 0;
-            left: 0;
-
-            transition: .2s ease;
-            visibility: hidden;
-            opacity: 0;
-        }
-
-        .info {
-            white-space: normal;
-
-            position: absolute;
-            top: 0;
-            padding: 10px 10px;
-            z-index: 1;
-
-            visibility: hidden;
-            
-            > p {
-                color: $white;
-                font-family: $sans-serif;
-                font-weight: 400;
-                margin-bottom: 2px;
-                line-height: 18px;
-            }
-
-            .info-duration, .info-description {
-                font-size: 12px;
-            }
-
-            .info-title {
-                font-size: 14px;
-            }
-        }
+        height: 100%;
+        object-fit: cover;
+        z-index: -1;
     }
 
-    .carousel-item-buttons {
-        height: 10%;
+    .thumbnail-overlay {
+        position: absolute;
+        height: 100%;
         width: 100%;
+        background-color: rgba(0, 0, 0, .5);
+        top: 0;
+        left: 0;
+
+        transition: .2s ease;
+        visibility: hidden;
+        opacity: 0;
+    }
+
+    .thumbnail-info {
+        white-space: normal;
+
+        position: absolute;
+        top: 0;
+        padding: 10px 10px;
+        z-index: 1;
+
+        visibility: hidden;
+        
+        > p {
+            color: $white;
+            font-family: $sans-serif;
+            font-weight: 400;
+            margin-bottom: 2px;
+            line-height: 18px;
+            font-size: 12px;
+        }
+
+        .thumbnail-info-title {
+            font-size: 14px;
+        }
+    }
+}
+
+.carousel-item-btns {
+    height: 10%;
+    width: 100%;
+
+    display: flex;
+    z-index: 2;
+    visibility: hidden;
+
+    .left-btn, .right-btn {
+        width: 50%;
+        height: 100%;
 
         display: flex;
-        z-index: 2;
-        visibility: hidden;
-
-        .left-button, .right-button {
-            width: 50%;
-            height: 100%;
-
-            display: flex;
-            align-items: center;
-            justify-content: center;
-
-            color: $white;
-            font-size: 12px;
-            font-family: $sans-serif;
-            cursor: pointer;
-
-            .icon-button {
-                height: 12px;
-                width: 12px;
-                margin-right: 4px;
-            }
-        }
-
-        .left-button {
-            background-color: $orange;
-
-            &:hover {
-                background-color: $orange-hover;
-            }
-        }
-
-        .right-button {
-            background-color: $gray-button;
-
-            &:hover {
-                background-color: $gray-button-hover;
-            }
-        }
-    }
-
-    .lower-title {
-        position: absolute;
-        bottom: -5px;
-        width: 100%;
-        height: 10%;
+        align-items: center;
+        justify-content: center;
 
         color: $white;
-        font-size: 14px;
+        font-size: 12px;
         font-family: $sans-serif;
-        font-weight: 300;
-        letter-spacing: .03em;
-        text-overflow: ellipsis;
-        white-space: nowrap;
-        overflow: hidden;
+        cursor: pointer;
+
+        img {
+            height: 12px;
+            width: 12px;
+            margin-right: 4px;
+        }
     }
+
+    .left-btn {
+        background-color: $orange;
+
+        &:hover {
+            background-color: $orange-hover;
+        }
+    }
+
+    .right-btn {
+        background-color: $gray-button;
+
+        &:hover {
+            background-color: $gray-button-hover;
+        }
+    }
+}
+
+.carousel-item-title {
+    position: absolute;
+    bottom: -5px;
+    width: 100%;
+    height: 10%;
+
+    color: $white;
+    font-size: 14px;
+    font-family: $sans-serif;
+    font-weight: 300;
+    letter-spacing: .03em;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
 }
 
 .carousel-item:hover {
@@ -209,15 +157,15 @@
         opacity: 1;
     }
 
-    .info {
+    .thumbnail-info {
         visibility: visible;
     }
 
-    .carousel-item-buttons {
+    .carousel-item-btns {
         visibility: visible;
     }
 
-    .lower-title {
+    .carousel-item-title {
         display: none;
     }
 }

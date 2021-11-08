@@ -45,30 +45,30 @@ class GenreCarouselItem extends React.Component {
                 {/* <div className="carousel-item-link">
                     <Link to={`/movies/${movie.id}`}></Link>
                 </div> */}
-                <div className="thumbnail" onClick={() => this.props.history.push(`/movies/${movie.id}`)}>
+                <div className="carousel-item-thumbnail" onClick={() => this.props.history.push(`/movies/${movie.id}`)}>
                     {/* <img key={movie.id}
                         src={movie.thumbnail}
                         className="thumbnail-image" /> */}
                     <img className="thumbnail-image" src="https://m.media-amazon.com/images/M/MV5BODhkZGE0NDQtZDc0Zi00YmQ4LWJiNmUtYTY1OGM1ODRmNGVkXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_.jpg" />
                     <div className="thumbnail-overlay"></div>
                     
-                    <div className="info">
-                        <p className="info-title">{movie.title}</p>
-                        <p className="info-duration">{movie.duration} mins</p>
-                        <p className="info-description">{movie.description}</p>
+                    <div className="thumbnail-info">
+                        <p className="thumbnail-info-title">{movie.title}</p>
+                        <p>{movie.duration} mins</p>
+                        <p>{movie.description}</p>
                     </div>
                 </div>
 
 
-                <div className="carousel-item-buttons">
-                    <Link to={`/movies/${movie.id}`} className="left-button">
-                        <img src={window.play_icon} className="icon-button" />
-                        <h1 className="text-button">Watch</h1>
+                <div className="carousel-item-btns">
+                    <Link to={`/movies/${movie.id}`} className="left-btn">
+                        <img src={window.play_icon} />
+                        <h1>Watch</h1>
                     </Link>
                     <button onClick={this.handleClick}
-                        className="right-button">
-                        <img src={this.state.icon} className="icon-button" />
-                        <h1 className="text-button">My List</h1>
+                        className="right-btn">
+                        <img src={this.state.icon} />
+                        <h1>My List</h1>
                     </button>
 
                     {/* <button className="left-button">Watch</button>
@@ -76,7 +76,7 @@ class GenreCarouselItem extends React.Component {
                         onClick={() => handleWatchlist(currentUser, movie)}>My List</button> */}
                 </div>
 
-                <p className="lower-title">{movie.title}</p>
+                <p className="carousel-item-title">{movie.title}</p>
             </div>
         )
     }
