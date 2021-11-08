@@ -32,6 +32,7 @@ export const fetchWatchlists = () => dispatch => {
 
 export const handleWatchlist = (user, movie) => dispatch => {
     const watchlist = { user_id: user.id, movie_id: movie.id }
+    
     if (user.movieIds.includes(movie.id)) {
         return WatchlistApiUtil.deleteWatchlist(watchlist)
             .then(watchlist => dispatch(removeWatchlist(watchlist)))
