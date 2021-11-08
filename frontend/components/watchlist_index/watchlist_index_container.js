@@ -7,13 +7,15 @@ import { handleWatchlist } from "../../actions/watchlist_actions";
 const mSTP = state => {
     return {
         currentUser: state.entities.users[state.session.currentUserId],
-        movies: state.entities.movies
+        movies: state.entities.movies,
+        watchlists: state.entities.watchlists
     }
 };
 
 const mDTP = dispatch => {
     return {
         fetchMovies: () => dispatch(fetchMovies()),
+        fetchWatchlists: () => dispatch(fetchWatchlists),
         handleWatchlist: (user, movie) => dispatch(handleWatchlist(user, movie))
     }
 };
