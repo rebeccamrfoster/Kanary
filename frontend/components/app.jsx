@@ -7,6 +7,7 @@ import MovieShowContainer from "./movie_show/movie_show_container";
 import { AuthRoute, ProtectedRoute } from "../utils/route_util";
 import { Route, Switch } from "react-router";
 import Splash from "./splash/splash";
+import Footer from "./footer/footer";
 
 const App = () => {
     return (
@@ -22,6 +23,8 @@ const App = () => {
                 <ProtectedRoute path="/movies/:movieId" component={MovieShowContainer} />
                 <ProtectedRoute path="/movies" component={MovieIndexContainer} />
             </Switch>
+
+            <Footer />
         </div>
 
     )
