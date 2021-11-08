@@ -21,7 +21,8 @@ class WatchlistIndex extends React.Component {
                 <div className="watchlist-index-main">
                     {
                         currentUser.movieIds.map(movieId => (
-                            <WatchlistIndexItem currentUser={currentUser}
+                            <WatchlistIndexItem key={movieId}
+                                currentUser={currentUser}
                                 movie={movies[movieId]}
                                 handleWatchlist={handleWatchlist} />
                         ))
