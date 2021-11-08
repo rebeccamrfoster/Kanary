@@ -24,6 +24,9 @@ class MovieIndex extends React.Component {
         
         return (
             <div className="movie-index">
+                <div className="movie-index-banner">
+                    <img src={window.movie_index_banner}/>
+                </div>
                 {
                     genres.map(genre => (
                         <GenreCarousel key={genre.id}
