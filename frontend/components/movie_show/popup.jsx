@@ -6,13 +6,13 @@ class Popup extends React.Component {
         super(props);
     }
 
-    clearPopup() {
+    // clearPopup() {
         // $("#popup").fadeOut(3000);
 
         // const div = document.getElementById("popup");
         // document.querySelector(".popup").classList.add("hide");
         // div.parentNode.removeChild(div);
-    }
+    // }
 
     // componentDidMount() {
         // const div = document.getElementById("popup");
@@ -29,27 +29,16 @@ class Popup extends React.Component {
         const { added, title } = this.props;
 
         return(
-            added ? (
-                <div className="popup">
-                    <div className="header-popup">
-                        <h1>Video added</h1>
-                        <img src={window.close_icon} onClick={this.clearPopup} />
-                    </div>
-                    <p className="body-popup">
-                        <i>{title}</i> has been added to your watchlist
-                    </p>
+            <div className="popup">
+                <div className="header-popup">
+                    <h1>Video {added ? "added" : "removed"}</h1>
+                    <img src={window.close_icon} onClick={this.clearPopup} />
                 </div>
-            ) : (
-                <div className="popup">
-                    <div className="header-popup">
-                        <h1>Video removed</h1>
-                        <img src={window.close_icon} onClick={this.clearPopup} />
-                    </div>
-                    <p className="body-popup">
-                        <i>{title}</i> has been removed from your watchlist
-                    </p>
-                </div>
-            )
+                <p className="body-popup">
+                    <i>{title}</i> has been 
+                    {added ? " added to" : " removed from"} your watchlist
+                </p>
+            </div>
         )
     }
 }
