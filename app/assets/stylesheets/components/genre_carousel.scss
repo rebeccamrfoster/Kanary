@@ -2,6 +2,19 @@
     background-color: $dark-gray;
     width: 100vw;
     overflow: hidden;
+
+    .movie-index-banner {
+        height: 150px;
+        width: 100%;
+        overflow: hidden;
+        position: relative;
+
+        > img {
+            width: 100%;
+            position: absolute;
+            bottom: -390px;
+        }
+    }
 }
 
 // GENRE CAROUSELS
@@ -9,6 +22,7 @@
 .carousel {
     margin-top: 20px;
     margin-bottom: 20px;
+    margin-left: 20px;
 
     .carousel-title {
         color: $off-white;
@@ -26,7 +40,6 @@
 
     .carousel-main {
         white-space: nowrap;
-
     }
 }
 
