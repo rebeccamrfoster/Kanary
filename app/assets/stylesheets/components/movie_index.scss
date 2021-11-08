@@ -1,0 +1,38 @@
+.movie-index {
+    background-color: $dark-gray;
+    width: 100vw;
+    overflow: hidden;
+
+    .movie-index-banner {
+        height: 150px;
+        width: 100%;
+        overflow: hidden;
+        position: relative;
+
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+
+        > p {
+            width: 50%;
+            color: $white;
+            font-size: 24px;
+            font-family: $field-font;
+            font-weight: 700;
+            line-height: 30px;
+            text-align: right;
+            margin-right: 8%;
+
+            position: absolute;
+            z-index: 2;
+        }
+
+        > img {
+            width: 100%;
+            position: absolute;
+            bottom: -394px;
+            z-index: 1;
+            transform: scaleX(-1);
+        }
+    }
+}
