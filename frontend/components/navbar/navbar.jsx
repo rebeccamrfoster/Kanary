@@ -47,7 +47,7 @@ const Navbar = (props) => {
 
                         <ul className="name-dropdown">
                             <li>
-                                <Link to="/">My Watchlist</Link>
+                                <Link to="/watchlists">My Watchlist</Link>
                             </li>
                             <li>
                                 <a onClick={() => props.logout()}>Log out</a>
