@@ -3,7 +3,7 @@ import ReactDOM from "react-dom";
 import configureStore from "./store/store";
 import Root from "./components/root";
 
-import { handleWatchlist, fetchWatchlists } from "./actions/watchlist_actions";
+import { selectMoviesBySearch } from "./utils/movie_selector";
 
 document.addEventListener("DOMContentLoaded", () => {
     let store;
@@ -26,6 +26,5 @@ document.addEventListener("DOMContentLoaded", () => {
     ReactDOM.render(<Root store={store} />, root);
 
     window.store = store;
-    window.handleWatchlist = handleWatchlist;
-    window.fetchWatchlists = fetchWatchlists;
+    window.selectMoviesBySearch = selectMoviesBySearch;
 })
