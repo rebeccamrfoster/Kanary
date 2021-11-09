@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import SearchIndexContainer from "../search_index/search_index_container";
 
 const Navbar = (props) => {
     if (!props.currentUser) {
@@ -15,13 +16,15 @@ const Navbar = (props) => {
             <nav className="navbar">
                 <Link to="/movies" className="logo">kanary</Link>
 
-                <div className="searchbar">
+                <SearchIndexContainer />
+
+                {/* <div className="searchbar">
                     <input type="text"
                         placeholder="Search videos, subjects..." />
                     <button>
                         <img src={window.search_icon} />
                     </button>
-                </div>
+                </div> */}
 
                 <div className="dropdown-container">
                     <div className="browse-dropdown-btn">
