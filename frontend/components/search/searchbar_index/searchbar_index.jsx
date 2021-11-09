@@ -1,7 +1,7 @@
 import React from "react";
-import SearchIndexItem from "./search_index_item";
+import SearchbarIndexItem from "./searchbar_index_item";
 
-class SearchIndex extends React.Component {
+class SearchbarIndex extends React.Component {
     constructor(props) {
         super(props);
         this.state = { query: "", movies: [] };
@@ -9,12 +9,6 @@ class SearchIndex extends React.Component {
         this.handleUpdate = this.handleUpdate.bind(this);
         this.handleSearchResults = this.handleSearchResults.bind(this);
     }
-
-    // componentDidUpdate(prevState) {
-    //     if (prevState.query != this.state.query) {
-    //         this.props.selectMoviesBySearch(this.props.movies, this.state.query)
-    //     }
-    // }
 
     handleUpdate(event) {
         const query = event.target.value;
@@ -54,7 +48,7 @@ class SearchIndex extends React.Component {
                                 <div onClick={this.handleSearchResults}>
                                     {
                                         moviesToDisplay.map(movie => (
-                                            <SearchIndexItem key={movie.id} movie={movie} />
+                                            <SearchbarIndexItem key={movie.id} movie={movie} />
                                         ))
                                     }
                                     <button className="search-index-btn">
@@ -75,17 +69,7 @@ class SearchIndex extends React.Component {
                 </div>         
             </div>
         )
-
-
-        // <div>
-        //     <input type="text" onChange={this.handleUpdate} />
-        //     {/* {
-        //         moviesToDisplay.map(movie => (
-        //             <SearchIndexItem movie={movie} />
-        //         ))
-        //     } */}
-        // </div>
     }
 }
 
-export default SearchIndex;
+export default SearchbarIndex;

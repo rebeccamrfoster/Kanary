@@ -9,6 +9,7 @@ import { Route, Switch } from "react-router";
 import WatchlistIndexContainer from "./watchlist_index/watchlist_index_container";
 import Splash from "./splash/splash";
 import Footer from "./footer/footer";
+import SearchResultsIndexContainer from "./search/search_result_index/search_result_index_container";
 
 const App = () => {
     return (
@@ -24,6 +25,7 @@ const App = () => {
                 <ProtectedRoute path="/movies/:movieId" component={MovieShowContainer} />
                 <ProtectedRoute path="/movies" component={MovieIndexContainer} />
                 <ProtectedRoute path="/watchlists" component={WatchlistIndexContainer} />
+                <ProtectedRoute path="/search/:query" component={SearchResultsIndexContainer} />
             </Switch>
 
             <ProtectedRoute component={Footer} />

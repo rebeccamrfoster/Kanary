@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import SearchIndexContainer from "../search_index/search_index_container";
+import SearchbarIndexContainer from ".././search/searchbar_index/searchbar_index_container";
 
 const Navbar = (props) => {
     if (!props.currentUser) {
@@ -16,7 +16,7 @@ const Navbar = (props) => {
             <nav className="navbar">
                 <Link to="/movies" className="logo">kanary</Link>
 
-                <SearchIndexContainer />
+                <SearchbarIndexContainer />
 
                 {/* <div className="searchbar">
                     <input type="text"

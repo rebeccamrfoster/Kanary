@@ -1,7 +1,7 @@
 import { connect } from "react-redux";
 import { withRouter } from "react-router";
-import SearchIndex from "./search_index";
-import { selectMoviesBySearch, selectMoviesByGenre } from "../../utils/movie_selector";
+import SearchbarIndex from "./searchbar_index";
+import { selectMoviesBySearch } from "../../../utils/movie_selector";
 
 const mSTP = (state, ownProps) => {
     return {
@@ -19,4 +19,4 @@ const mDTP = state => {
     }
 };
 
-export default withRouter(connect(mSTP, mDTP)(SearchIndex));
+export default withRouter(connect(mSTP, mDTP)(SearchbarIndex));

@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const SearchIndexItem = ({ movie }) => {
+const SearchbarIndexItem = ({ movie }) => {
     
     return (
         <Link to={`/movies/${movie.id}`} className="search-index-item">
@@ -20,4 +20,4 @@ const SearchIndexItem = ({ movie }) => {
     )
 };
 
-export default SearchIndexItem;
+export default SearchbarIndexItem;
