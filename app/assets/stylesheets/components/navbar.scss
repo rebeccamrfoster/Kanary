@@ -30,12 +30,13 @@ $navbar-margin: 5%;
     }
 }
 
-
 .searchbar {
     background-color: $white;
     width: 35%;
     height: 36px;
     border-radius: 1px;
+
+    position: relative;
 
     display: flex;
     justify-content: space-between;
