@@ -27,8 +27,13 @@ class WatchlistIndexItem extends React.Component {
     render() {
         if (!this.state.movieIds.includes(this.props.movie.id)) return null;
 
-        const { movie: movie, movie: {title, description} } = this.props;
+        const { watchlists, currentUser, movie: movie, movie: {title, description} } = this.props;
 
+        const currWatchlistId = watchlists.find(watchlist => ( // THIS IS AN ARRAY METHOD
+            watchlist.user_id === currentUser.id &&
+            watchlist.movie_id === movie.id
+        )).id;
+        
         return (
             <div className="watchlist-index-item">
                 <div className="watchlist-left">
