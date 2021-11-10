@@ -1,0 +1,32 @@
+.genre-index {
+    min-height: 100vh;
+    width: 100%;
+    background-color: $dark-gray;
+
+    > h1 {
+        background-color: black;
+        font-family: $field-font;
+        font-weight: 400;
+        font-size: 34px;
+        color: $white;
+        text-align: center;
+
+        padding: 22px;
+        margin-bottom: 22px;
+    }
+}
+
+.genre-index-main.carousel-main {
+    white-space: normal;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.genre-index-main.carousel {
+    margin-left: 60px;
+}
+
+.genre-index-movies.carousel-main {
+    white-space: normal;
+    overflow: hidden;
+}
