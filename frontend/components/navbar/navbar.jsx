@@ -28,7 +28,11 @@ const Navbar = (props) => {
                         <ul className="browse-dropdown">
                             {
                                 props.genres.map(genre => (
-                                    <li key={genre.id}>{genre.name}</li>
+                                    <li key={genre.id}>
+                                        <Link to={`/genres/${genre.id}`}>
+                                            {genre.name}
+                                        </Link>
+                                    </li>
                                 ))
                             }
                         </ul>
