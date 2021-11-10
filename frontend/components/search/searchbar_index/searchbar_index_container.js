@@ -3,9 +3,8 @@ import { withRouter } from "react-router";
 import SearchbarIndex from "./searchbar_index";
 import { selectMoviesBySearch } from "../../../utils/movie_selector";
 
-const mSTP = (state, ownProps) => {
+const mSTP = state => {
     return {
-        // movies: selectMoviesBySearch(state, ownProps.match.params.query)
         movies: state.entities.movies,
         genres: state.entities.genres
     }
