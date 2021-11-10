@@ -7,8 +7,8 @@ const SearchbarIndexItem = ({ movie }) => {
         <Link to={`/movies/${movie.id}`} className="search-index-item">
             <div className="search-thumbnail">
                 <div className="search-thumbnail-inner">
-                    {/* <img key={movie.id} src={movie.thumbnail} /> */}
-                    <img src="https://m.media-amazon.com/images/M/MV5BODhkZGE0NDQtZDc0Zi00YmQ4LWJiNmUtYTY1OGM1ODRmNGVkXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_.jpg" />
+                    <img key={movie.id} src={movie.thumbnail} />
+                    {/* <img src="https://m.media-amazon.com/images/M/MV5BODhkZGE0NDQtZDc0Zi00YmQ4LWJiNmUtYTY1OGM1ODRmNGVkXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_.jpg" /> */}
                 </div>
             </div>
 

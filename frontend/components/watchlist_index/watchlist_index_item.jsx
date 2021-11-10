@@ -44,8 +44,8 @@ class WatchlistIndexItem extends React.Component {
             <div className="watchlist-index-item">
                 <div className="watchlist-left">
                     <div className="watchlist-left-thumbnail">
-                        {/* <img key={movie.id} src={movie.thumbnail} /> */}
-                        <img src="https://m.media-amazon.com/images/M/MV5BODhkZGE0NDQtZDc0Zi00YmQ4LWJiNmUtYTY1OGM1ODRmNGVkXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_.jpg" />
+                        <img key={movie.id} src={movie.thumbnail} />
+                        {/* <img src="https://m.media-amazon.com/images/M/MV5BODhkZGE0NDQtZDc0Zi00YmQ4LWJiNmUtYTY1OGM1ODRmNGVkXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_.jpg" /> */}
                     </div>
                 </div>
     
