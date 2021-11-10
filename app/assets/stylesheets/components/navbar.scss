@@ -31,12 +31,15 @@ $navbar-margin: 5%;
 }
 
 .searchbar {
-    background-color: $white;
     width: 35%;
+    position: relative;
+}
+
+.searchbar-input {
+    background-color: $white;
+    // width: 35%;
     height: 36px;
     border-radius: 1px;
-
-    position: relative;
 
     display: flex;
     justify-content: space-between;
@@ -156,67 +159,3 @@ $navbar-margin: 5%;
         opacity: 1;
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// .browse:hover .browse-dropdown,
-//     .name:hover .name-dropdown {
-//     height: 120px;
-//     visibility: visible;
-//     opacity: 1;
-// }
-
-// .browse-dropdown, .name-dropdown {
-//     text-transform: capitalize;
-//     position: absolute;
-//     // display: none;
-//     top: 50px;
-//     right: 20px;
-
-//     background-color: black;
-//     border: .01px solid $off-white;
-//     border-radius: 2px;
-//     padding: 8px;
-//     z-index: 1;
-
-//     visibility: hidden;
-//     opacity: 0;
-//     transition: opacity 40ms ease-in, visibility 0ms ease-in 40ms;
-
-//     height: 0px;
-//     overflow: hidden;
-//     -webkit-transition: all 0.5s ease-in-out;
-//     -moz-transition: all 0.5s ease-in-out;
-//     -o-transition: all 0.5s ease-in-out;
-//     transition: all 0.5s ease-in-out;
-
-//     li {
-//         font-family: $sans-serif;
-//         font-weight: 400;
-//         font-size: 14px;
-//         color: $off-white;
-//         line-height: 30px;
-//     }
-// }
-
-// .browse-dropdown {
-//     width: 180px;
-// }
-
-// .name-dropdown {
-//     width: 130px;
-// }
