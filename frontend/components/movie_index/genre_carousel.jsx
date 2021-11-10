@@ -22,7 +22,7 @@ const GenreCarousel = (props) => {
     //     prevArrow: <img src={window.prev_arrow_icon} />,
     //     nextArrow: <img src={window.next_arrow_icon} />
     // };
-    debugger
+    
     return (
         <div className="carousel">
             <Link to={`/genres/${genre.id}`}>
