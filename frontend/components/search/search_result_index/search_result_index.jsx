@@ -26,10 +26,8 @@ class SearchResultIndex extends React.Component {
     }
 
     render() {
-        if (
-            Object.values(this.props.movies).length === 0 ||
-            Object.values(this.props.genres).length === 0
-        ) return null;
+        if (Object.values(this.props.movies).length === 0) return null;
+        if (Object.values(this.props.genres).length === 0) return null;
         
         return(
             <div className="search-result-index">
