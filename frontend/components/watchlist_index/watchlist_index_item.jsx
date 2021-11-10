@@ -6,19 +6,21 @@ class WatchlistIndexItem extends React.Component {
         super(props);
         this.state = { movieIds: this.props.currentUser.movieIds };
 
-        this.handleClick = this.handleClick.bind(this);
+        this.handleRemoveWatchlist = this.handleRemoveWatchlist.bind(this);
     }
 
-    handleClick() {
+    handleRemoveWatchlist() {
         const { currentUser, movie, handleWatchlist } = this.props;
 
         const nextMovieIds = this.state.movieIds.slice();
-        if (this.state.movieIds.includes(movie.id)) {
-            nextMovieIds.splice(nextMovieIds.indexOf(movie.id), 1);
-        }
-        else {
-            nextMovieIds.push(movie.id);
-        }
+        nextMovieIds.splice(nextMovieIds.indexOf(movie.id), 1);
+
+        // if (this.state.movieIds.includes(movie.id)) {
+        //     nextMovieIds.splice(nextMovieIds.indexOf(movie.id), 1);
+        // }
+        // else {
+        //     nextMovieIds.push(movie.id);
+        // }
 
         this.setState({ movieIds: nextMovieIds });
         handleWatchlist(currentUser, movie);
@@ -29,10 +31,14 @@ class WatchlistIndexItem extends React.Component {
 
         const { watchlists, currentUser, movie: movie, movie: {title, description} } = this.props;
 
-        const currWatchlistId = watchlists.find(watchlist => ( // THIS IS AN ARRAY METHOD
+        const currWatchlistId = Object.values(watchlists).find(watchlist => (
             watchlist.user_id === currentUser.id &&
             watchlist.movie_id === movie.id
         )).id;
+        
+        const formattedDate = this.props.formattedDate(
+            watchlists[currWatchlistId].created_at
+        );
         
         return (
             <div className="watchlist-index-item">
@@ -46,7 +52,7 @@ class WatchlistIndexItem extends React.Component {
                 <div className="watchlist-right">
                     <h1>{title}</h1>
                     <p>{description}</p>
-                    <p>{movie.created_at}</p>
+                    <p className="watchlist-right-date">{formattedDate}</p>
     
                     <div className="watchlist-right-btns">
                         <Link to={`/movies/${movie.id}`} className="watch-btn">
@@ -54,7 +60,7 @@ class WatchlistIndexItem extends React.Component {
                             <p>Watch now</p>
                         </Link>
                         <button className="remove-btn" 
-                            onClick={this.handleClick}>
+                            onClick={this.handleRemoveWatchlist}>
                             <img src={window.trash_icon} />
                             <p>Remove</p>
                         </button>
