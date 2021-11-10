@@ -12,9 +12,9 @@ class WatchlistIndex extends React.Component {
     }
 
     render() {
-        if (Object.keys(this.props.movies).length === 0) return null;
-        if (Object.keys(this.props.watchlists).length === 0) return null;
-
+        if (Object.values(this.props.movies).length === 0) return null;
+        if (Object.values(this.props.watchlists).length === 0) return null;
+        
         const { currentUser, movies, watchlists, handleWatchlist } = this.props;
 
         return (
@@ -27,7 +27,8 @@ class WatchlistIndex extends React.Component {
                                 currentUser={currentUser}
                                 movie={movies[movieId]}
                                 watchlists={watchlists}
-                                handleWatchlist={handleWatchlist} />
+                                handleWatchlist={handleWatchlist}
+                                formattedDate={formattedDate} />
                         ))
                     }
                 </div>
