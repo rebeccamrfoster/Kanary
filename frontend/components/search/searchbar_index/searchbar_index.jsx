@@ -59,7 +59,7 @@ class SearchbarIndex extends React.Component {
                                             <SearchbarIndexItem key={movie.id} movie={movie} />
                                         ))
                                     }
-                                    <Link to="/search/hello" className="search-index-btn">
+                                    <Link to={`/search/${this.state.query}`} className="search-index-btn">
                                         <img src={window.search_icon_white} />
                                         <h1>View all results</h1>
                                     </Link>
