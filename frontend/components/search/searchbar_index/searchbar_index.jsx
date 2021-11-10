@@ -1,5 +1,6 @@
 import React from "react";
 import SearchbarIndexItem from "./searchbar_index_item";
+import { Link } from "react-router-dom";
 
 class SearchbarIndex extends React.Component {
     constructor(props) {
@@ -7,7 +8,7 @@ class SearchbarIndex extends React.Component {
         this.state = { query: "", movies: [] };
 
         this.handleUpdate = this.handleUpdate.bind(this);
-        this.handleSearchResults = this.handleSearchResults.bind(this);
+        this.handleClearSearchbar = this.handleClearSearchbar.bind(this);
     }
 
     handleUpdate(event) {
@@ -20,41 +21,46 @@ class SearchbarIndex extends React.Component {
         this.setState({ query: query, movies: matched });
     }
 
-    handleSearchResults() {
+    handleClearSearchbar() {
         this.setState({ query: "", movies: [] });
         const input = document.querySelector(".searchbar input");
         input.value = "";
     }
-
+    
     render() {
         const { movies, genres } = this.props;
         if (!movies || !genres ) return null;
     
         const moviesToDisplay = this.state.movies.slice(0, 5);
-
+        
         return (
             <div className="searchbar">
-                <input type="text"
-                    placeholder="Search videos, subjects..."
-                    onChange={this.handleUpdate} />
-                <button>
-                    <img src={window.search_icon_black} />
-                </button>
+                <form className="searchbar-input" onSubmit={() => {
+                    this.handleClearSearchbar();
+                    this.props.history.push(`/search/${this.state.query}`)
+                }}>
+                    <input type="text"
+                        placeholder="Search videos, subjects..."
+                        onChange={this.handleUpdate} />
+                    <button type="submit">
+                        <img src={window.search_icon_black} />
+                    </button>
+                </form>
 
                 <div className="search-index">
                     {
                         this.state.query === "" ? null : (
                             moviesToDisplay.length !== 0 ? (
-                                <div onClick={this.handleSearchResults}>
+                                <div onClick={this.handleClearSearchbar}>
                                     {
                                         moviesToDisplay.map(movie => (
                                             <SearchbarIndexItem key={movie.id} movie={movie} />
                                         ))
                                     }
-                                    <button className="search-index-btn">
+                                    <Link to="/search/hello" className="search-index-btn">
                                         <img src={window.search_icon_white} />
                                         <h1>View all results</h1>
-                                    </button>
+                                    </Link>
                                 </div>
                             ) : (
                                 <div className="search-index-item empty">
