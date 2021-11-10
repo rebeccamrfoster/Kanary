@@ -10,6 +10,7 @@ import WatchlistIndexContainer from "./watchlist_index/watchlist_index_container
 import Splash from "./splash/splash";
 import Footer from "./footer/footer";
 import SearchResultIndexContainer from "./search/search_result_index/search_result_index_container";
+import GenreIndexContainer from "./genre_index/genre_index_container";
 
 const App = () => {
     return (
@@ -24,6 +25,7 @@ const App = () => {
                 <AuthRoute exact path="/login" component={LoginFormContainer} />
                 <ProtectedRoute path="/movies/:movieId" component={MovieShowContainer} />
                 <ProtectedRoute path="/movies" component={MovieIndexContainer} />
+                <ProtectedRoute path="/genres/:genreId" component={GenreIndexContainer} />
                 <ProtectedRoute path="/watchlists" component={WatchlistIndexContainer} />
                 <ProtectedRoute path="/search/:query" component={SearchResultIndexContainer} />
             </Switch>
