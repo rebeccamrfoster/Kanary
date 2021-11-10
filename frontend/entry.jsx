@@ -4,6 +4,7 @@ import configureStore from "./store/store";
 import Root from "./components/root";
 
 import { selectMoviesBySearch } from "./utils/movie_selector";
+import { formattedDate } from "./utils/date_util";
 
 document.addEventListener("DOMContentLoaded", () => {
     let store;
@@ -27,4 +28,5 @@ document.addEventListener("DOMContentLoaded", () => {
 
     window.store = store;
     window.selectMoviesBySearch = selectMoviesBySearch;
+    window.formattedDate = formattedDate;
 })
