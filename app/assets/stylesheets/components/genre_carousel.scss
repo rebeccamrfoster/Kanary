@@ -19,6 +19,12 @@
 
     .carousel-main {
         white-space: nowrap;
+        overflow-x: scroll;
+        overflow-y: hidden;
+
+        &::-webkit-scrollbar {
+            display: none;
+        }
     }
 }
 
