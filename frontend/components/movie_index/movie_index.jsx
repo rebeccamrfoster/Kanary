@@ -20,7 +20,7 @@ class MovieIndex extends React.Component {
             history
         } = this.props;
         
-        if (genres.length === 0 || Object.keys(movies).length === 0) return null;
+        if (genres.length === 0 || Object.values(movies).length === 0) return null;
         
         return (
             <div className="movie-index">
