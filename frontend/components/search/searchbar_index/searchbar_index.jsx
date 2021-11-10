@@ -36,8 +36,10 @@ class SearchbarIndex extends React.Component {
         return (
             <div className="searchbar">
                 <form className="searchbar-input" onSubmit={() => {
-                    this.handleClearSearchbar();
-                    this.props.history.push(`/search/${this.state.query}`);
+                    if (this.state.query !== "") {
+                        this.handleClearSearchbar();
+                        this.props.history.push(`/search/${this.state.query}`);
+                    }
                 }}>
                     <input type="text"
                         placeholder="Search videos, subjects..."
