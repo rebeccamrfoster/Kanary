@@ -17,15 +17,7 @@ const Navbar = (props) => {
                 <Link to="/movies" className="logo">kanary</Link>
 
                 <SearchbarIndexContainer />
-
-                {/* <div className="searchbar">
-                    <input type="text"
-                        placeholder="Search videos, subjects..." />
-                    <button>
-                        <img src={window.search_icon} />
-                    </button>
-                </div> */}
-
+                
                 <div className="dropdown-container">
                     <div className="browse-dropdown-btn">
                         <h1>Browse</h1>
