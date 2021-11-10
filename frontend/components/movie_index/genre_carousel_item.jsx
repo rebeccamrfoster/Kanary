@@ -10,8 +10,7 @@ class GenreCarouselItem extends React.Component {
     }
 
     componentDidMount() {
-        const { currentUser, movie } = this.props;
-        const icon = currentUser.movieIds.includes(movie.id) ? (
+        const icon = this.props.currentUser.movieIds.includes(this.props.movie.id) ? (
             window.check_icon
         ) : (
             window.plus_icon
