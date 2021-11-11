@@ -6,21 +6,12 @@ class MovieIndex extends React.Component {
         super(props);
     }
 
-    componentDidMount() {
-        this.props.fetchMovies();
-        this.props.fetchGenres();
-    }
-
     render() {
-        const {
-            currentUser,
-            genres,
-            movies,
-            handleWatchlist,
-            history
-        } = this.props;
+        const { currentUser, genres, movies, handleWatchlist, history} = this.props;
         
-        if (genres.length === 0 || Object.values(movies).length === 0) return null;
+        const nullRender = <div className="null-render"></div>;
+        if (Object.values(movies).length === 0) return nullRender;
+        if (!genres) return nullRender;
         
         return (
             <div className="movie-index">
