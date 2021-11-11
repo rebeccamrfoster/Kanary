@@ -11,6 +11,10 @@ class SearchbarIndex extends React.Component {
         this.handleClearSearchbar = this.handleClearSearchbar.bind(this);
     }
 
+    componentDidMount() {
+        this.props.fetchMovies();
+    }
+
     handleUpdate(event) {
         const query = event.target.value;
         
