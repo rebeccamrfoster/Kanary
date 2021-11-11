@@ -7,8 +7,8 @@ const SearchResultItem = ({ movie }) => {
             <div className="search-result-thumbnail">
                 <div className="search-result-thumbnail-inner">
                     <Link to={`/movies/${movie.id}`}>
-                        {/* <img key={movie.id} src={movie.thumbnail} /> */}
-                        <img src="https://m.media-amazon.com/images/M/MV5BODhkZGE0NDQtZDc0Zi00YmQ4LWJiNmUtYTY1OGM1ODRmNGVkXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_.jpg" />
+                        <img key={movie.id} src={movie.thumbnail} />
+                        {/* <img src="https://m.media-amazon.com/images/M/MV5BODhkZGE0NDQtZDc0Zi00YmQ4LWJiNmUtYTY1OGM1ODRmNGVkXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_.jpg" /> */}
                     </Link>
                 </div>
             </div>
