@@ -12,18 +12,24 @@ const Footer = props => {
                 </div>
 
                 <div className="upper-footer-info">
-                    <ul>Rebecca Foster</ul>
+                    <ul>Rebecca Foster
+                        <li><a className="footer-icon-link"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            href="https://github.com/rebeccamrfoster">GitHub</a></li>
+                        <li><a className="footer-icon-link"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            href="https://www.linkedin.com/in/rebecca-foster-791448203/">LinkedIn</a></li>
+                    </ul>
                     <ul>Technologies
                         <li>React</li>
                         <li>Redux</li>
-                        <li>JavaScript</li>
+                        <li>Ruby on Rails</li>
+                        <li>JavaScript, HTML, & CSS</li>
+                        <li>Amazon S3</li>
                     </ul>
                 </div>
-
-                
-
-                {/* <p>Rebecca Foster</p>
-                <p>Technologies</p> */}
 
                 <div className="footer-icons">
                     <a className="footer-icon-link"
