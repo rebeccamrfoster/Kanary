@@ -1,7 +1,6 @@
 import { connect } from "react-redux";
-import { fetchWatchlists } from "../../actions/watchlist_actions";
 import WatchlistIndex from "./watchlist_index";
-import { fetchMovies } from "../../actions/movie_actions";
+import { fetchWatchlists } from "../../actions/watchlist_actions";
 import { handleWatchlist } from "../../actions/watchlist_actions";
 import { formattedDate } from "../../utils/date_util";
 
@@ -15,7 +14,6 @@ const mSTP = state => {
 
 const mDTP = dispatch => {
     return {
-        fetchMovies: () => dispatch(fetchMovies()),
         fetchWatchlists: () => dispatch(fetchWatchlists()),
         handleWatchlist: (user, movie) => dispatch(handleWatchlist(user, movie)),
         formattedDate: timestamp => formattedDate(timestamp)
