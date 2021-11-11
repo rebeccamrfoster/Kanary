@@ -1,3 +1,44 @@
+.searchbar {
+    width: 35%;
+    position: relative;
+}
+
+.searchbar-input {
+    background-color: $white;
+    // width: 35%;
+    height: 36px;
+    border-radius: 1px;
+
+    display: flex;
+    justify-content: space-between;
+
+    input {
+        height: 100%;
+        width: 90%;
+        padding-left: 16px;
+
+        &::placeholder {
+            font-family: $field-font;
+            color: rgba(0, 0, 0, 0.3);
+        }
+
+        &:focus::placeholder {
+            color: rgba(0, 0, 0, 0.8);
+        }
+    }
+
+    button {
+        height: 100%;
+        padding: 8px 10px;
+        cursor: pointer;
+
+        img {
+            height: 16px;
+            width: 16px;
+        }
+    }
+}
+
 .search-index {
     position: absolute;
     width: 115%;
@@ -99,5 +140,11 @@
     &:hover {
         cursor: auto;
         background-color: $white;
+    }
+}
+
+@media all and (max-width: 700px) {
+    .searchbar {
+        display: none;
     }
 }
