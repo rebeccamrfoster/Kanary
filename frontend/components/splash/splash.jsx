@@ -21,7 +21,7 @@ const Splash = () => {
                 </Link>
             </div>
 
-            <img src={window.splashUrl} />
+            <img src={window.splash} />
         </div>
     )
 };
