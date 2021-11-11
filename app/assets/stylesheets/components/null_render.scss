@@ -6,14 +6,20 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+}
 
-    h1:last-child {
-        color: $white;
-        font-family: $field-font;
-        font-weight: 400;
-        font-size: 22px;
-        text-align: center;
-    }
+.null-render-text {
+    color: $white;
+    font-family: $field-font;
+    font-weight: 400;
+    font-size: 22px;
+    text-align: center;
+    line-height: 30px;
+}
+
+p.null-render-text {
+    font-size: 16px;
+    color: $off-white;
 }
 
 .meh {
