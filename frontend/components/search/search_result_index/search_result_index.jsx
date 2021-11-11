@@ -4,30 +4,38 @@ import SearchResultItem from "./search_result_item";
 class SearchResultIndex extends React.Component {
     constructor(props) {
         super(props);
-        this.state = { query: this.props.query, movies: [] };
+        this.state = { query: this.props.query, movies: null };
     }
 
     componentDidMount() {
-        this.props.fetchMovies()
-            .then(this.props.fetchGenres())
-            .then(() => {
-                const { movies, genres, query, selectMoviesBySearch } = this.props;
-                const matched = selectMoviesBySearch(movies, genres, query);
-                this.setState({ query: this.props.query, movies: matched });
-            });
+        const { movies, genres, query, selectMoviesBySearch } = this.props;
+        const matched = selectMoviesBySearch(movies, genres, query);
+        this.setState({ query: this.props.query, movies: matched });
+
+        // this.props.fetchMovies()
+        //     .then(this.props.fetchGenres())
+        //     .then(() => {
+        //         const { movies, genres, query, selectMoviesBySearch } = this.props;
+        //         const matched = selectMoviesBySearch(movies, genres, query);
+        //         this.setState({ query: this.props.query, movies: matched });
+        //     });
     }
 
     componentDidUpdate(prevProps) {
-        if (prevProps.query !== this.props.query) {
-            const { movies, genres, query, selectMoviesBySearch } = this.props;
+        const { movies, genres, query, selectMoviesBySearch } = this.props;
+        if (prevProps.query !== query && query !== "") {
             const matched = selectMoviesBySearch(movies, genres, query);
-            this.setState({ query: this.props.query, movies: matched });
+            this.setState({ query: query, movies: matched });
         }
     }
 
     render() {
-        if (Object.values(this.props.movies).length === 0) return null;
-        if (Object.values(this.props.genres).length === 0) return null;
+        const { movies, genres } = this.props;
+
+        const nullRender = <div className="null-render"></div>;
+        if (!this.state.movies) return nullRender;
+        if (Object.values(movies).length === 0) return nullRender;
+        if (Object.values(genres).length === 0) return nullRender;
         
         return(
             <div className="search-result-index">
