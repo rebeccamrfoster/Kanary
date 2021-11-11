@@ -21,7 +21,7 @@ class WatchlistIndex extends React.Component {
                     <div className="meh">
                         <img src={window.meh_icon} />
                     </div>
-                    <h1>You haven't added any videos to your Watchlist yet!</h1>
+                    <h1 className="null-render-text">You haven't added any videos to your Watchlist yet!</h1>
                 </div>
             )
         }
