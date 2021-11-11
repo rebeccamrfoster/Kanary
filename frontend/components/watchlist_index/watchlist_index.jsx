@@ -7,15 +7,28 @@ class WatchlistIndex extends React.Component {
     }
 
     componentDidMount() {
-        this.props.fetchMovies();
+        // this.props.fetchMovies();
         this.props.fetchWatchlists();
     }
 
     render() {
-        if (Object.values(this.props.movies).length === 0) return null;
-        if (Object.values(this.props.watchlists).length === 0) return null;
-        
         const { currentUser, movies, watchlists, handleWatchlist } = this.props;
+
+        if (currentUser.movieIds.length === 0) {
+            return (
+                <div className="null-render">
+                    <h1 className="watchlist-index-title">My Watchlist</h1>
+                    <div className="meh">
+                        <img src={window.meh_icon} />
+                    </div>
+                    <h1>You haven't added any videos to your Watchlist yet!</h1>
+                </div>
+            )
+        }
+
+        const nullRender = <div className="null-render"></div>;
+        if (Object.values(movies).length === 0) return nullRender;
+        if (Object.values(watchlists).length === 0) return nullRender;
 
         return (
             <div className="watchlist-index">
