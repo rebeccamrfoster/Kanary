@@ -1,5 +1,3 @@
-$navbar-margin: 5%;
-
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -12,7 +10,7 @@ $navbar-margin: 5%;
     .logo {
         font-family: $serif;
         font-size: 40px;
-        margin-left: $navbar-margin;
+        margin-left: 5vw;
     }
 
     .login {
@@ -20,7 +18,7 @@ $navbar-margin: 5%;
         font-size: 12px;
         width: 80px;
         height: 30px;
-        margin-right: $navbar-margin;
+        margin-right: 5vw;
         border: 2px solid $white;
         border-radius: 1px;
 
@@ -30,66 +28,17 @@ $navbar-margin: 5%;
     }
 }
 
-.searchbar {
-    width: 35%;
-    position: relative;
-}
-
-.searchbar-input {
-    background-color: $white;
-    // width: 35%;
-    height: 36px;
-    border-radius: 1px;
-
-    display: flex;
-    justify-content: space-between;
-
-    input {
-        height: 100%;
-        width: 90%;
-        padding-left: 16px;
-
-        &::placeholder {
-            font-family: $field-font;
-            color: rgba(0, 0, 0, 0.3);
-        }
-
-        &:focus::placeholder {
-            color: rgba(0, 0, 0, 0.8);
-        }
-    }
-
-    button {
-        height: 100%;
-        padding: 8px 10px;
-        cursor: pointer;
-
-        img {
-            height: 16px;
-            width: 16px;
-        }
-    }
-}
-
-@media all and (max-width: 700px) {
-    .searchbar {
-        display: none;
-    }
-}
-
 // DROPDOWN MENUS
 
 .dropdown-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 16%;
-    margin-right: $navbar-margin;
-}
+    width: fit-content;
+    margin-right: 5vw;
 
-@media all and (max-width: 1200px) {
-    .dropdown-container {
-        width: 20%;
+    .browse-dropdown-btn {
+        margin-right: 5vw;
     }
 }
 
@@ -126,8 +75,9 @@ $navbar-margin: 5%;
     top: 36px;
     right: 0;
     background-color: black;
-    z-index: 10;
+    z-index: 30;
     
+    display: none;
     width: max-content;
     height: 0;
     opacity: 0;
@@ -154,7 +104,8 @@ $navbar-margin: 5%;
 .browse-dropdown-btn:hover, .name-dropdown-btn:hover {
     
     .browse-dropdown, .name-dropdown {
-        visibility: visible;
+        display: block;
+        // visibility: visible;
         height: fit-content;
         opacity: 1;
     }
