@@ -5,9 +5,11 @@ import Popup from "./popup";
 class MovieShow extends React.Component {
     constructor(props) {
         super(props);
+        this.state = { displayPopup: false };
 
         this.handleToggleWatchlist = this.handleToggleWatchlist.bind(this);
         this.toggleIcon = this.toggleIcon.bind(this);
+        this.displayPopup = this.displayPopup.bind(this);
     }
 
     componentDidMount() {
@@ -38,7 +40,8 @@ class MovieShow extends React.Component {
     handleToggleWatchlist() {
         const { currentUser, movie, handleWatchlist } = this.props;
         handleWatchlist(currentUser, movie)
-            .then(this.toggleIcon);
+            .then(this.toggleIcon)
+            .then(this.displayPopup);
     }
 
     toggleIcon() {
@@ -48,6 +51,10 @@ class MovieShow extends React.Component {
         else {
             this.setState({ icon: window.plus_icon });
         }
+    }
+
+    displayPopup() {
+        this.setState({ displayPopup: true });
     }
 
     render() {
@@ -63,7 +70,7 @@ class MovieShow extends React.Component {
                 <div className="main-movie-show">
                     
                     <video controls preload="auto" className="main-video">
-                        <source src={movie.video} type="video/mp4" />
+                        {/* <source src={movie.video} type="video/mp4" /> */}
                         <p>Your browser doesn't support HTML5 video.</p>
                     </video>
                     {/* <video className="main-video">
@@ -100,10 +107,14 @@ class MovieShow extends React.Component {
                         </div>
                     </div>
                 </div>
-
-                {/* <Popup key={this.props.movie.id}
-                    added={this.state.icon === window.plus_icon}
-                    title={title} /> */}
+                
+                {/* {
+                    this.state.displayPopup ? (
+                        <Popup key={movie.id}
+                            added={this.state.icon === window.check_icon}
+                            title={movie.title} />
+                    ) : null
+                } */}
             </div>
         )
     }
