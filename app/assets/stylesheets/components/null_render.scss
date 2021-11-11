@@ -1,0 +1,28 @@
+.null-render {
+    min-height: 100vh;
+    width: 100vw;
+    background-color: $dark-gray;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    h1:last-child {
+        color: $white;
+        font-family: $field-font;
+        font-weight: 400;
+        font-size: 22px;
+        text-align: center;
+    }
+}
+
+.meh {
+    height: 80px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+
+    img {
+        height: 100%;
+        width: auto;
+    }
+}
