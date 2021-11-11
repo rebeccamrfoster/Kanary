@@ -14,8 +14,6 @@ const mSTP = (state, ownProps) => {
 
 const mDTP = dispatch => {
     return {
-        fetchMovie: movieId => dispatch(fetchMovie(movieId)),
-        fetchGenres: () => dispatch(fetchGenres()),
         fetchWatchlists: () => dispatch(fetchWatchlists()),
         handleWatchlist: (user, movie) => dispatch(handleWatchlist(user, movie))
     }
