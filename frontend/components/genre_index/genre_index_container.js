@@ -1,7 +1,5 @@
 import { connect } from "react-redux";
 import { withRouter } from "react-router";
-import { fetchGenre } from "../../actions/genre_actions";
-import { fetchMovies } from "../../actions/movie_actions";
 import { handleWatchlist } from "../../actions/watchlist_actions";
 import GenreIndex from "./genre_index";
 
@@ -15,8 +13,6 @@ const mSTP = (state, ownProps) => {
 
 const mDTP = dispatch => {
     return {
-        fetchGenre: genreId => dispatch(fetchGenre(genreId)),
-        fetchMovies: () => dispatch(fetchMovies()),
         handleWatchlist: (user, movie) => dispatch(handleWatchlist(user, movie))
     }
 };
