@@ -36,18 +36,33 @@ class SearchResultIndex extends React.Component {
         if (!this.state.movies) return nullRender;
         if (Object.values(movies).length === 0) return nullRender;
         if (Object.values(genres).length === 0) return nullRender;
-        
-        return(
+
+        return (
             <div className="search-result-index">
                 <div className="search-result-main">
-                    <h1>Videos</h1>
-                    <div className="search-result-group">
-                        {
-                            this.state.movies.map(movie => (
-                                <SearchResultItem key={movie.id} movie={movie} />
-                            ))
-                        }
-                    </div>
+                    <h1 className="search-result-main-title">Videos</h1>
+                    {
+                        this.state.movies.length !== 0 ? (
+                            <>
+                            <div className="search-result-group">
+                                {
+                                    this.state.movies.map(movie => (
+                                        <SearchResultItem key={movie.id}
+                                            movie={movie} />
+                                    ))
+                                }
+                            </div>
+                            </>
+                        ) : (
+                            <>
+                            <div className="meh">
+                                <img src={window.meh_icon} />
+                            </div>
+                            <h1 className="null-render-text">We couldn't find any results for "{this.state.query}"</h1>
+                            <p className="null-render-text">Try using keywords like "love", "race", or "women".</p>
+                            </>
+                        )
+                    }   
                 </div>
             </div>
         )
