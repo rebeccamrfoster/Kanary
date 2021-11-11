@@ -42,9 +42,6 @@ moonlight.thumbnail.attach(io: file, filename: "moonlight.jpg")
 file = open("https://kanary-seeds.s3.us-east-2.amazonaws.com/videos/moonlight.mov")
 moonlight.video.attach(io: file, filename: "moonlight.mov")
 
-# video_file = open("https://kanary-bucket.s3.us-east-2.amazonaws.com/video_1.mov")
-# moonlight.video_url.attach(io: video_file, filename: "video_1.mov")
-
 amazing_grace = Movie.create!(
     title: "Amazing Grace",
     year: 2019,
@@ -57,6 +54,8 @@ amazing_grace = Movie.create!(
 
 file = open("https://kanary-seeds.s3.us-east-2.amazonaws.com/thumbnails/amazing_grace.jpg")
 amazing_grace.thumbnail.attach(io: file, filename: "amazing_grace.jpg")
+file = open("https://kanary-seeds.s3.us-east-2.amazonaws.com/videos/amazing_grace.mov")
+amazing_grace.video.attach(io: file, filename: "amazing_grace.mov")
 
 twentieth_century_women = Movie.create!(
     title: "20th Century Women",
@@ -71,6 +70,8 @@ twentieth_century_women = Movie.create!(
 
 file = open("https://kanary-seeds.s3.us-east-2.amazonaws.com/thumbnails/twentieth_century_women.jpg")
 twentieth_century_women.thumbnail.attach(io: file, filename: "twentieth_century_women.jpg")
+file = open("https://kanary-seeds.s3.us-east-2.amazonaws.com/videos/twentieth_century_women.mov")
+twentieth_century_women.video.attach(io: file, filename: "twentieth_century_women.mov")
 
 lady_bird = Movie.create!(
     title: "Lady Bird",
@@ -86,6 +87,8 @@ lady_bird = Movie.create!(
 
 file = open("https://kanary-seeds.s3.us-east-2.amazonaws.com/thumbnails/lady_bird.jpg")
 lady_bird.thumbnail.attach(io: file, filename: "lady_bird.jpg")
+file = open("https://kanary-seeds.s3.us-east-2.amazonaws.com/videos/lady_bird.mov")
+lady_bird.video.attach(io: file, filename: "lady_bird.mov")
 
 hearts_beat_loud = Movie.create!(
     title: "Hearts Beat Loud",
@@ -104,6 +107,8 @@ hearts_beat_loud = Movie.create!(
 
 file = open("https://kanary-seeds.s3.us-east-2.amazonaws.com/thumbnails/hearts_beat_loud.jpg")
 hearts_beat_loud.thumbnail.attach(io: file, filename: "hearts_beat_loud.jpg")
+file = open("https://kanary-seeds.s3.us-east-2.amazonaws.com/videos/hearts_beat_loud.mov")
+hearts_beat_loud.video.attach(io: file, filename: "hearts_beat_loud.mov")
 
 i_am_not_your_negro = Movie.create!(
     title: "I Am Not Your Negro",
@@ -133,6 +138,8 @@ i_am_not_your_negro = Movie.create!(
 
 file = open("https://kanary-seeds.s3.us-east-2.amazonaws.com/thumbnails/i_am_not_your_negro.jpg")
 i_am_not_your_negro.thumbnail.attach(io: file, filename: "i_am_not_your_negro.jpg")
+file = open("https://kanary-seeds.s3.us-east-2.amazonaws.com/videos/i_am_not_your_negro.mov")
+i_am_not_your_negro.video.attach(io: file, filename: "i_am_not_your_negro.mov")
 
 some_girls = Movie.create!(
     title: "Some Girls",
@@ -151,6 +158,8 @@ some_girls = Movie.create!(
 
 file = open("https://kanary-seeds.s3.us-east-2.amazonaws.com/thumbnails/some_girls.jpg")
 some_girls.thumbnail.attach(io: file, filename: "some_girls.jpg")
+file = open("https://kanary-seeds.s3.us-east-2.amazonaws.com/videos/some_girls.mp4")
+some_girls.video.attach(io: file, filename: "some_girls.mp4")
 
 love_gilda = Movie.create!(
     title: "Love, Gilda",
@@ -165,6 +174,8 @@ love_gilda = Movie.create!(
 
 file = open("https://kanary-seeds.s3.us-east-2.amazonaws.com/thumbnails/love_gilda.jpg")
 love_gilda.thumbnail.attach(io: file, filename: "love_gilda.jpg")
+file = open("https://kanary-seeds.s3.us-east-2.amazonaws.com/videos/love_gilda.mov")
+love_gilda.video.attach(io: file, filename: "love_gilda.mov")
 
 no_maps_on_my_taps = Movie.create!(
     title: "No Maps on My Taps",
@@ -184,6 +195,8 @@ no_maps_on_my_taps = Movie.create!(
 
 file = open("https://kanary-seeds.s3.us-east-2.amazonaws.com/thumbnails/no_maps_on_my_taps.jpg")
 no_maps_on_my_taps.thumbnail.attach(io: file, filename: "no_maps_on_my_taps.jpg")
+file = open("https://kanary-seeds.s3.us-east-2.amazonaws.com/videos/no_maps_on_my_taps.mp4")
+no_maps_on_my_taps.video.attach(io: file, filename: "no_maps_on_my_taps.mp4")
 
 the_last_black_man_in_san_francisco = Movie.create!(
     title: "The Last Black Man in San Francisco",
@@ -206,6 +219,8 @@ the_last_black_man_in_san_francisco = Movie.create!(
 
 file = open("https://kanary-seeds.s3.us-east-2.amazonaws.com/thumbnails/the_last_black_man_in_san_francisco.jpg")
 the_last_black_man_in_san_francisco.thumbnail.attach(io: file, filename: "the_last_black_man_in_san_francisco.jpg")
+file = open("https://kanary-seeds.s3.us-east-2.amazonaws.com/videos/the_last_black_man_in_san_francisco.mov")
+the_last_black_man_in_san_francisco.video.attach(io: file, filename: "the_last_black_man_in_san_francisco.mov")
 
 gloria_bell = Movie.create!(
     title: "Gloria Bell",
@@ -219,6 +234,8 @@ gloria_bell = Movie.create!(
 
 file = open("https://kanary-seeds.s3.us-east-2.amazonaws.com/thumbnails/gloria_bell.jpg")
 gloria_bell.thumbnail.attach(io: file, filename: "gloria_bell.jpg")
+file = open("https://kanary-seeds.s3.us-east-2.amazonaws.com/videos/gloria_bell.mp4")
+gloria_bell.video.attach(io: file, filename: "gloria_bell.mp4")
 
 hereditary = Movie.create!(
     title: "Hereditary",
@@ -239,6 +256,8 @@ hereditary = Movie.create!(
 
 file = open("https://kanary-seeds.s3.us-east-2.amazonaws.com/thumbnails/hereditary.jpg")
 hereditary.thumbnail.attach(io: file, filename: "hereditary.jpg")
+file = open("https://kanary-seeds.s3.us-east-2.amazonaws.com/videos/hereditary.mov")
+hereditary.video.attach(io: file, filename: "hereditary.mov")
 
 a_long_way_from_home = Movie.create!(
     title: "A Long Way From Home",
@@ -255,6 +274,8 @@ a_long_way_from_home = Movie.create!(
 
 file = open("https://kanary-seeds.s3.us-east-2.amazonaws.com/thumbnails/a_long_way_from_home.jpg")
 a_long_way_from_home.thumbnail.attach(io: file, filename: "a_long_way_from_home.jpg")
+file = open("https://kanary-seeds.s3.us-east-2.amazonaws.com/videos/a_long_way_from_home.mp4")
+a_long_way_from_home.video.attach(io: file, filename: "a_long_way_from_home.mp4")
 
 the_girls_in_the_band = Movie.create!(
     title: "The Girls in the Band",
@@ -281,6 +302,8 @@ the_girls_in_the_band = Movie.create!(
 
 file = open("https://kanary-seeds.s3.us-east-2.amazonaws.com/thumbnails/the_girls_in_the_band.jpg")
 the_girls_in_the_band.thumbnail.attach(io: file, filename: "the_girls_in_the_band.jpg")
+file = open("https://kanary-seeds.s3.us-east-2.amazonaws.com/videos/the_girls_in_the_band.mp4")
+the_girls_in_the_band.video.attach(io: file, filename: "the_girls_in_the_band.mp4")
 
 no_ordinary_man = Movie.create!(
     title: "No Ordinary Man",
@@ -304,6 +327,8 @@ no_ordinary_man = Movie.create!(
 
 file = open("https://kanary-seeds.s3.us-east-2.amazonaws.com/thumbnails/no_ordinary_man.jpg")
 no_ordinary_man.thumbnail.attach(io: file, filename: "no_ordinary_man.jpg")
+file = open("https://kanary-seeds.s3.us-east-2.amazonaws.com/videos/no_ordinary_man.mov")
+no_ordinary_man.video.attach(io: file, filename: "no_ordinary_man.mov")
 
 lorraine_hansberry = Movie.create!(
     title: "Lorraine Hansberry: Sighted Eyes/Feeling Heart",
@@ -323,6 +348,8 @@ lorraine_hansberry = Movie.create!(
 
 file = open("https://kanary-seeds.s3.us-east-2.amazonaws.com/thumbnails/lorraine_hansberry.jpg")
 lorraine_hansberry.thumbnail.attach(io: file, filename: "lorraine_hansberry.jpg")
+file = open("https://kanary-seeds.s3.us-east-2.amazonaws.com/videos/lorraine_hansberry.mp4")
+lorraine_hansberry.video.attach(io: file, filename: "lorraine_hansberry.mp4")
 
 portrait_of_a_lady_on_fire = Movie.create!(
     title: "Portrait of a Lady On Fire",
@@ -336,6 +363,8 @@ portrait_of_a_lady_on_fire = Movie.create!(
 
 file = open("https://kanary-seeds.s3.us-east-2.amazonaws.com/thumbnails/portrait_of_a_lady_on_fire.jpg")
 portrait_of_a_lady_on_fire.thumbnail.attach(io: file, filename: "portrait_of_a_lady_on_fire.jpg")
+file = open("https://kanary-seeds.s3.us-east-2.amazonaws.com/videos/portrait_of_a_lady_on_fire.mov")
+portrait_of_a_lady_on_fire.video.attach(io: file, filename: "portrait_of_a_lady_on_fire.mov")
 
 the_watermelon_woman = Movie.create!(
     title: "The Watermelon Woman",
@@ -358,6 +387,8 @@ the_watermelon_woman = Movie.create!(
 
 file = open("https://kanary-seeds.s3.us-east-2.amazonaws.com/thumbnails/the_watermelon_woman.jpg")
 the_watermelon_woman.thumbnail.attach(io: file, filename: "the_watermelon_woman.jpg")
+file = open("https://kanary-seeds.s3.us-east-2.amazonaws.com/videos/the_watermelon_woman.mp4")
+the_watermelon_woman.video.attach(io: file, filename: "the_watermelon_woman.mp4")
 
 ida = Movie.create!(
     title: "Ida",
@@ -382,6 +413,8 @@ ida = Movie.create!(
 
 file = open("https://kanary-seeds.s3.us-east-2.amazonaws.com/thumbnails/ida.jpg")
 ida.thumbnail.attach(io: file, filename: "ida.jpg")
+file = open("https://kanary-seeds.s3.us-east-2.amazonaws.com/videos/ida.mp4")
+ida.video.attach(io: file, filename: "ida.mp4")
 
 the_bookshop = Movie.create!(
     title: "The Bookshop",
@@ -401,6 +434,8 @@ the_bookshop = Movie.create!(
 
 file = open("https://kanary-seeds.s3.us-east-2.amazonaws.com/thumbnails/the_bookshop.jpg")
 the_bookshop.thumbnail.attach(io: file, filename: "the_bookshop.jpg")
+file = open("https://kanary-seeds.s3.us-east-2.amazonaws.com/videos/the_bookshop.mov")
+the_bookshop.video.attach(io: file, filename: "the_bookshop.mov")
 
 ammonite = Movie.create!(
     title: "Ammonite",
@@ -414,6 +449,8 @@ ammonite = Movie.create!(
 
 file = open("https://kanary-seeds.s3.us-east-2.amazonaws.com/thumbnails/ammonite.jpg")
 ammonite.thumbnail.attach(io: file, filename: "ammonite.jpg")
+file = open("https://kanary-seeds.s3.us-east-2.amazonaws.com/videos/ammonite.mov")
+ammonite.video.attach(io: file, filename: "ammonite.mov")
 
 scotty_and_the_secret_history_of_hollywood = Movie.create!(
     title: "Scotty and the Secret History of Hollywood",
@@ -435,6 +472,8 @@ scotty_and_the_secret_history_of_hollywood = Movie.create!(
 
 file = open("https://kanary-seeds.s3.us-east-2.amazonaws.com/thumbnails/scotty_and_the_secret_history_of_hollywood.jpg")
 scotty_and_the_secret_history_of_hollywood.thumbnail.attach(io: file, filename: "scotty_and_the_secret_history_of_hollywood.jpg")
+file = open("https://kanary-seeds.s3.us-east-2.amazonaws.com/videos/scotty_and_the_secret_history_of_hollywood.mov")
+scotty_and_the_secret_history_of_hollywood.video.attach(io: file, filename: "scotty_and_the_secret_history_of_hollywood.mov")
 
 love_is_all = Movie.create!(
     title: "Love is All",
@@ -455,31 +494,8 @@ love_is_all = Movie.create!(
 
 file = open("https://kanary-seeds.s3.us-east-2.amazonaws.com/thumbnails/love_is_all.jpg")
 love_is_all.thumbnail.attach(io: file, filename: "love_is_all.jpg")
-
-white_like_me = Movie.create!(
-    title: "White Like Me",
-    year: 2013,
-    duration: 69,
-    description: %{White Like Me, based on the work of acclaimed anti-racist 
-        educator and author Tim Wise, explores race and racism in the US through 
-        the lens of whiteness and white privilege. In a stunning reassessment of 
-        the American ideal of meritocracy and claims that we've entered a 
-        post-racial society, Wise offers a fascinating look back at the 
-        race-based white entitlement programs that built the American middle 
-        class, and argues that our failure as a society to come to terms with 
-        this legacy of white privilege continues to perpetuate racial inequality 
-        and race-driven political resentments today. For years, Tim Wise's 
-        bestselling books and spellbinding lectures have challenged some of our 
-        most basic assumptions about race in America. White Like Me is the first 
-        film to bring the full range of his work to the screen -- to show how 
-        white privilege continues to shape individual attitudes, electoral 
-        politics, and government policy in ways too many white people never stop 
-        to think about.}.squish,
-    director: "Jeremy Young"
-)
-
-file = open("https://kanary-seeds.s3.us-east-2.amazonaws.com/thumbnails/white_like_me.jpg")
-white_like_me.thumbnail.attach(io: file, filename: "white_like_me.jpg")
+file = open("https://kanary-seeds.s3.us-east-2.amazonaws.com/videos/love_is_all.mp4")
+love_is_all.video.attach(io: file, filename: "love_is_all.mp4")
 
 raising_bertie = Movie.create!(
     title: "Raising Bertie",
@@ -497,6 +513,8 @@ raising_bertie = Movie.create!(
 
 file = open("https://kanary-seeds.s3.us-east-2.amazonaws.com/thumbnails/raising_bertie.jpg")
 raising_bertie.thumbnail.attach(io: file, filename: "raising_bertie.jpg")
+file = open("https://kanary-seeds.s3.us-east-2.amazonaws.com/videos/raising_bertie.mov")
+raising_bertie.video.attach(io: file, filename: "raising_bertie.mov")
 
 cold_case_hammarskjold = Movie.create!(
     title: "Cold Case Hammarskjold",
@@ -511,6 +529,8 @@ cold_case_hammarskjold = Movie.create!(
 
 file = open("https://kanary-seeds.s3.us-east-2.amazonaws.com/thumbnails/cold_case_hammarskjold.jpg")
 cold_case_hammarskjold.thumbnail.attach(io: file, filename: "cold_case_hammarskjold.jpg")
+file = open("https://kanary-seeds.s3.us-east-2.amazonaws.com/videos/cold_case_hammarskjold.mov")
+cold_case_hammarskjold.video.attach(io: file, filename: "cold_case_hammarskjold.mov")
 
 portrait_of_jason = Movie.create!(
     title: "Portrait of Jason",
@@ -532,6 +552,8 @@ portrait_of_jason = Movie.create!(
 
 file = open("https://kanary-seeds.s3.us-east-2.amazonaws.com/thumbnails/portrait_of_jason.jpg")
 portrait_of_jason.thumbnail.attach(io: file, filename: "portrait_of_jason.jpg")
+file = open("https://kanary-seeds.s3.us-east-2.amazonaws.com/videos/portrait_of_jason.mp4")
+portrait_of_jason.video.attach(io: file, filename: "portrait_of_jason.mp4")
 
 in_jackson_heights = Movie.create!(
     title: "In Jackson Heights",
@@ -553,6 +575,8 @@ in_jackson_heights = Movie.create!(
 
 file = open("https://kanary-seeds.s3.us-east-2.amazonaws.com/thumbnails/in_jackson_heights.jpg")
 in_jackson_heights.thumbnail.attach(io: file, filename: "in_jackson_heights.jpg")
+file = open("https://kanary-seeds.s3.us-east-2.amazonaws.com/videos/in_jackson_heights.mp4")
+in_jackson_heights.video.attach(io: file, filename: "in_jackson_heights.mp4")
 
 stolen_education = Movie.create!(
     title: "Stolen Education",
@@ -574,6 +598,8 @@ stolen_education = Movie.create!(
 
 file = open("https://kanary-seeds.s3.us-east-2.amazonaws.com/thumbnails/stolen_education.jpg")
 stolen_education.thumbnail.attach(io: file, filename: "stolen_education.jpg")
+file = open("https://kanary-seeds.s3.us-east-2.amazonaws.com/videos/stolen_education.mp4")
+stolen_education.video.attach(io: file, filename: "stolen_education.mp4")
 
 on_a_knife_edge = Movie.create!(
     title: "On a Knife Edge",
@@ -593,6 +619,8 @@ on_a_knife_edge = Movie.create!(
 
 file = open("https://kanary-seeds.s3.us-east-2.amazonaws.com/thumbnails/on_a_knife_edge.jpg")
 on_a_knife_edge.thumbnail.attach(io: file, filename: "on_a_knife_edge.jpg")
+file = open("https://kanary-seeds.s3.us-east-2.amazonaws.com/videos/on_a_knife_edge.mp4")
+on_a_knife_edge.video.attach(io: file, filename: "on_a_knife_edge.mp4")
 
 #--------------------GENRES--------------------#
 
@@ -613,17 +641,18 @@ Moviegenre.create!(movie_id: hereditary.id, genre_id: independent_cinema.id)
 Moviegenre.create!(movie_id: the_watermelon_woman.id, genre_id: independent_cinema.id)
 Moviegenre.create!(movie_id: ida.id, genre_id: independent_cinema.id)
 Moviegenre.create!(movie_id: the_bookshop.id, genre_id: independent_cinema.id)
+Moviegenre.create!(movie_id: amazing_grace.id, genre_id: independent_cinema.id)
 
 Moviegenre.create!(movie_id: i_am_not_your_negro.id, genre_id: ethnicity_and_identity.id)
 Moviegenre.create!(movie_id: some_girls.id, genre_id: ethnicity_and_identity.id)
 Moviegenre.create!(movie_id: a_long_way_from_home.id, genre_id: ethnicity_and_identity.id)
 Moviegenre.create!(movie_id: the_girls_in_the_band.id, genre_id: ethnicity_and_identity.id)
 Moviegenre.create!(movie_id: lorraine_hansberry.id, genre_id: ethnicity_and_identity.id)
-Moviegenre.create!(movie_id: white_like_me.id, genre_id: ethnicity_and_identity.id)
 Moviegenre.create!(movie_id: raising_bertie.id, genre_id: ethnicity_and_identity.id)
 Moviegenre.create!(movie_id: in_jackson_heights.id, genre_id: ethnicity_and_identity.id)
 Moviegenre.create!(movie_id: stolen_education.id, genre_id: ethnicity_and_identity.id)
 Moviegenre.create!(movie_id: on_a_knife_edge.id, genre_id: ethnicity_and_identity.id)
+Moviegenre.create!(movie_id: portrait_of_jason.id, genre_id: ethnicity_and_identity.id)
 
 Moviegenre.create!(movie_id: amazing_grace.id, genre_id: historical_perspectives.id)
 Moviegenre.create!(movie_id: i_am_not_your_negro.id, genre_id: historical_perspectives.id)
