@@ -10,8 +10,20 @@ const Footer = props => {
                 <div className="footer-portrait">
                     <img src={window.portrait} />
                 </div>
-                <p>Rebecca Foster</p>
-                <p>Technologies</p>
+
+                <div className="upper-footer-info">
+                    <ul>Rebecca Foster</ul>
+                    <ul>Technologies
+                        <li>React</li>
+                        <li>Redux</li>
+                        <li>JavaScript</li>
+                    </ul>
+                </div>
+
+                
+
+                {/* <p>Rebecca Foster</p>
+                <p>Technologies</p> */}
 
                 <div className="footer-icons">
                     <a className="footer-icon-link"
