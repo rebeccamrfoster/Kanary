@@ -1,6 +1,7 @@
 import { connect } from "react-redux";
 import { withRouter } from "react-router";
 import SearchbarIndex from "./searchbar_index";
+import { fetchMovies } from "../../../actions/movie_actions";
 import { selectMoviesBySearch } from "../../../utils/movie_selector";
 
 const mSTP = state => {
@@ -10,8 +11,9 @@ const mSTP = state => {
     }
 };
 
-const mDTP = state => {
+const mDTP = dispatch => {
     return {
+        fetchMovies: () => dispatch(fetchMovies()),
         selectMoviesBySearch: (movies, genres, query) => (
             selectMoviesBySearch(movies, genres, query)
         )
