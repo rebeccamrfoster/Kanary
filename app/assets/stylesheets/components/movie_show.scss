@@ -3,7 +3,6 @@ $movie-show-padding: 14px;
 .movie-show {
     display: flex;
     flex-direction: column;
-    // justify-content: space-between;
     align-items: center;
     background-color: $dark-gray;
 
@@ -28,17 +27,18 @@ $movie-show-padding: 14px;
         background-color: black;
         // width: 500px;
         height: 75%;
+        object-fit: cover;
     }
 
-    .main-video-controls {
-        border: 1px solid red;
-        position: absolute;
-        bottom: 150px;
-        margin-left: 100px;
-    }
+    // .main-video-controls {
+    //     border: 1px solid red;
+    //     position: absolute;
+    //     bottom: 150px;
+    //     margin-left: 100px;
+    // }
 
     .main-title {
-        font-family: $sans-serif;
+        font-family: $field-font;
         font-weight: 400;
         font-size: 20px;
         color: $white;
@@ -61,7 +61,7 @@ $movie-show-padding: 14px;
         }
 
         .main-button-text {
-            font-family: $sans-serif;
+            font-family: $field-font;
             font-weight: 400;
             font-size: 14px;
             color: $white;
@@ -76,14 +76,16 @@ $movie-show-padding: 14px;
 .info-movie-show {
     background-color: $medium-gray;
     padding: $movie-show-padding;
-    color: $off-white;
-    font-family: $sans-serif;
-    font-weight: 400;
-    font-size: 13px;
-    line-height: 1.4em;
-    // height: 200px;
     width: 600px;
     margin-top: 20px;
+
+    * {
+        color: $off-white;
+        font-family: $field-font;
+        font-weight: 400;
+        font-size: 13px;
+        line-height: 1.4em;    
+    }
 
     .description {
         margin-bottom: 16px;
