@@ -42,10 +42,10 @@ class GenreCarouselItem extends React.Component {
             <div className="carousel-item">
                 <div className="carousel-item-thumbnail"
                     onClick={() => this.props.history.push(`/movies/${movie.id}`)}>
-                    <img key={movie.id}
+                    {/* <img key={movie.id}
                         src={movie.thumbnail}
-                        className="thumbnail-image" />
-                    {/* <img className="thumbnail-image" src="https://m.media-amazon.com/images/M/MV5BODhkZGE0NDQtZDc0Zi00YmQ4LWJiNmUtYTY1OGM1ODRmNGVkXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_.jpg" /> */}
+                        className="thumbnail-image" /> */}
+                    <img className="thumbnail-image" src="https://m.media-amazon.com/images/M/MV5BODhkZGE0NDQtZDc0Zi00YmQ4LWJiNmUtYTY1OGM1ODRmNGVkXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_.jpg" />
                     <div className="thumbnail-overlay"></div>
                     
                     <div className="thumbnail-info">
@@ -57,7 +57,7 @@ class GenreCarouselItem extends React.Component {
 
                 <div className="carousel-item-btns">
                     <Link to={`/movies/${movie.id}`} className="left-btn">
-                        <img src={window.white_play_icon} />
+                        <img src={window.play_icon_white} />
                         <h1>Watch</h1>
                     </Link>
                     <button onClick={this.handleClick}
