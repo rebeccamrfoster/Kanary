@@ -1,6 +1,16 @@
-.fade-in {
-    visibility: visible;
+// .fade-in {
+//     visibility: visible;
+//     opacity: 1;
+// }
+
+#fade-in {
     opacity: 1;
+    transition: opacity .6s ease;
+}
+
+#fade-out {
+    opacity: 0;
+    transition: opacity .6s ease;
 }
 
 .popup {
@@ -12,9 +22,8 @@
     bottom: 20px;
     right: 20px;
 
-    // opacity: 0;
-    // visibility: hidden;
-    transition: 2s opacity;
+    opacity: 0;
+    transition: .6s opacity;
 
     // visibility: hidden;
     // opacity: 0;
