@@ -9,7 +9,6 @@ export const formattedDate = timestamp => {
 
     let secondsElapsed = milliElapsed / MILLIS_IN_SECOND;
     if (secondsElapsed < SECONDS_IN_MINUTE) {
-        debugger
         let unit = Math.floor(secondsElapsed) === 1 ? "sec" : "secs";
         return `${Math.floor(secondsElapsed)} ${unit} ago`;
     }
