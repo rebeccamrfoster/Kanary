@@ -23,6 +23,9 @@
     right: 20px;
     cursor: pointer;
 
+    z-index: 100;
+    white-space: normal;
+
     opacity: 0;
     transition: .6s opacity;
 
