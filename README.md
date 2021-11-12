@@ -1,7 +1,8 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+[Kanary Live!](https://kanary-rf.herokuapp.com/#/)
+
+Kanary is a clone of Kanopy. Intended for use in an educational setting, Kanary is a video streaming service that provides access to documentaries and independent films with a unique social, cultural, or political impact.
 
 Things you may want to cover:
 
