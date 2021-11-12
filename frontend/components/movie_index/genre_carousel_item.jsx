@@ -1,12 +1,15 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import Popup from "../movie_show/popup";
 
 class GenreCarouselItem extends React.Component {
     constructor(props) {
         super(props);
+        this.state = { displayPopup: false };
 
-        this.handleClick = this.handleClick.bind(this);
+        this.handleClickWatchlist = this.handleClickWatchlist.bind(this);
         this.toggleIcon = this.toggleIcon.bind(this);
+        this.displayPopup = this.displayPopup.bind(this);
     }
 
     componentDidMount() {
@@ -18,10 +21,14 @@ class GenreCarouselItem extends React.Component {
         this.setState({ icon });
     }
 
-    handleClick() {
+    handleClickWatchlist() {
+        const el = document.querySelector(".popup");
+        if (el) el.id = "fade-in";
+
         const { currentUser, movie, handleWatchlist } = this.props;
         handleWatchlist(currentUser, movie)
-            .then(this.toggleIcon);
+            .then(this.toggleIcon)
+            .then(this.displayPopup);
     }
 
     toggleIcon() {
@@ -33,8 +40,12 @@ class GenreCarouselItem extends React.Component {
         }
     }
 
+    displayPopup() {
+        this.setState({ displayPopup: true });
+    }
+
     render() {
-        if (!this.state) return null;
+        if (!this.state.icon) return null;
 
         const { movie } = this.props;
         
@@ -60,7 +71,7 @@ class GenreCarouselItem extends React.Component {
                         <img src={window.play_icon_white} />
                         <h1>Watch</h1>
                     </Link>
-                    <button onClick={this.handleClick}
+                    <button onClick={this.handleClickWatchlist}
                         className="right-btn">
                         <img src={this.state.icon} />
                         <h1>My List</h1>
@@ -68,6 +79,14 @@ class GenreCarouselItem extends React.Component {
                 </div>
 
                 <p className="carousel-item-title">{movie.title}</p>
+
+                {
+                    this.state.displayPopup ? (
+                        <Popup key={movie.id}
+                            added={this.state.icon === window.check_icon}
+                            title={movie.title} />
+                    ) : null
+                }
             </div>
         )
     }
