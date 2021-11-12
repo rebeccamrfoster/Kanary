@@ -6,10 +6,6 @@ Kanary is full stack, single-page web application inspired by Kanopy. It is a vi
 
 ![Screen Shot 2021-11-12 at 9 30 10 AM](https://user-images.githubusercontent.com/88195745/141483916-99507227-fd2f-4d9c-acdd-2f902fdf1ce4.png)
 
-<p align="center">
-  <img src="https://user-images.githubusercontent.com/88195745/141476463-bf9d27fa-c600-40af-8595-d69b61f5246b.gif" width="600">
-</p>
-
 ## Table of Contents
 
 ## Technologies
@@ -28,6 +24,9 @@ The backend of Kanary is built with the Ruby on Rails framework and a PostgreSQL
 ## Features
 
 ### Searchbar
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/88195745/141476463-bf9d27fa-c600-40af-8595-d69b61f5246b.gif" width="400">
+</p>
 
 ### My Watchlist
 
