@@ -3,9 +3,10 @@
 Kanary is a clone of Kanopy. It is a video streaming service that provides access to documentaries and independent films with a unique social, cultural, and political impact.
 
 [Kanary Live!](https://kanary-rf.herokuapp.com/#/)
+![Screen Shot 2021-11-12 at 9 30 10 AM](https://user-images.githubusercontent.com/88195745/141483141-472d1113-2ec9-418a-9f3d-bae4acef1319.png)
 
-![Screen Shot 2021-11-12 at 8 26 32 AM](https://user-images.githubusercontent.com/88195745/141474394-69d63765-b46c-4984-a0fd-f776ffb36b38.png)
-![5tx6tu](https://user-images.githubusercontent.com/88195745/141476463-bf9d27fa-c600-40af-8595-d69b61f5246b.gif)
+
+![5tx6tu](https://user-images.githubusercontent.com/88195745/141476463-bf9d27fa-c600-40af-8595-d69b61f5246b.gif | width=200)
 
 ## Table of Contents
 
