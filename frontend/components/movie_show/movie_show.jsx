@@ -61,7 +61,7 @@ class MovieShow extends React.Component {
                 <div className="main-movie-show">
                     
                     <video controls preload="auto" className="main-video">
-                        {/* <source src={movie.video} type="video/mp4" /> */}
+                        <source src={movie.video} type="video/mp4" />
                         <p>Your browser doesn't support HTML5 video.</p>
                     </video>
                     {/* <video className="main-video">
