@@ -1,6 +1,6 @@
 # README
 
-Kanary is a clone of Kanopy. It is a video streaming service that provides access to documentaries and independent films with a unique social, cultural, and political impact.
+Kanary is full stack, single-page web application inspired by Kanopy. It is a video streaming service that provides access to documentaries and independent films with a unique social, cultural, and political impact.
 
 [Kanary Live!](https://kanary-rf.herokuapp.com/#/)
 
@@ -13,9 +13,23 @@ Kanary is a clone of Kanopy. It is a video streaming service that provides acces
 ## Table of Contents
 
 ## Technologies
+- React-Redux
+- Ruby on Rails
+- JavaScript, HTML, & SCSS
+- PostgreSQL
+- Node.js
+- jQuery
+- jBuilder
+- Webpack
+- Amazon S3
+
+The backend of Kanary is built with the Ruby on Rails framework and a PostgreSQL database. Thumbnails and videos are implemented using Active Storage and hosted by Amazon's S3 cloud service.
 
 ## Features
 
+### Searchbar
+
+### My Watchlist
 
 
 
