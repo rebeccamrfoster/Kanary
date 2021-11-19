@@ -1,6 +1,6 @@
 # README
 
-Kanary is full stack, single-page web application inspired by Kanopy. It is a video streaming service that provides access to documentaries and independent films with a unique social, cultural, and political impact.
+Kanary is a full stack, single-page web application inspired by Kanopy. It is a video streaming service that provides access to documentaries and independent films with a unique social, cultural, and political impact.
 
 [Kanary Live!](https://kanary-rf.herokuapp.com/#/)
 
