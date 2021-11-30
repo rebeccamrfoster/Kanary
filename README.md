@@ -16,7 +16,7 @@ Kanary is a full stack, single-page web application inspired by Kanopy. It is a 
 </p>
 
 # Technologies
-- React-Redux
+- React/Redux
 - Ruby on Rails
 - JavaScript, HTML, & SCSS
 - PostgreSQL
@@ -24,9 +24,9 @@ Kanary is a full stack, single-page web application inspired by Kanopy. It is a 
 - jQuery
 - jBuilder
 - Webpack
-- Amazon S3
+- Amazon Web Services S3
 
-The backend of Kanary is built with the Ruby on Rails framework and a PostgreSQL database. Thumbnails and videos are implemented using Active Storage and hosted by Amazon's S3 cloud service.
+Kanary is built with the React framework and Redux architecture on the frontend, supported by Ruby on Rails and a PostgreSQL database on the backend. Thumbnails and videos are implemented using Active Storage and hosted by Amazon Web Services S3.
 
 # Features
 
