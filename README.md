@@ -1,12 +1,17 @@
 # <img src="https://user-images.githubusercontent.com/88195745/144126607-717a4270-c3aa-42cd-ac49-b42512be51a8.png" width="300" height="auto" />
 
-Kanary is a full stack, single-page web application inspired by Kanopy. It is a video streaming service that provides access to documentaries and independent films with a unique social, cultural, and political impact.
-
 [Kanary Live!](https://kanary-rf.herokuapp.com/#/)
 
-![Screen Shot 2021-11-12 at 9 30 10 AM](https://user-images.githubusercontent.com/88195745/141483916-99507227-fd2f-4d9c-acdd-2f902fdf1ce4.png)
-
 ## Table of Contents
+- [Description](#description)
+- [Technologies](#technologies)
+- [Features](#features)
+- [Challenges](#challenges)
+
+## Description
+Kanary is a full stack, single-page web application inspired by Kanopy. It is a video streaming service that provides access to documentaries and independent films with a unique social, cultural, and political impact.
+
+![Screen Shot 2021-11-12 at 9 30 10 AM](https://user-images.githubusercontent.com/88195745/141483916-99507227-fd2f-4d9c-acdd-2f902fdf1ce4.png)
 
 ## Technologies
 - React-Redux
@@ -30,27 +35,4 @@ The backend of Kanary is built with the Ruby on Rails framework and a PostgreSQL
 
 ### My Watchlist
 
-
-
-
-
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## Challenges
