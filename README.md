@@ -11,7 +11,7 @@
 # Description
 Kanary is a full stack, single-page web application inspired by Kanopy. It is a video streaming service that provides access to documentaries and independent films with a unique social, cultural, and political impact.
 
-![Screen Shot 2021-11-12 at 9 30 10 AM](https://user-images.githubusercontent.com/88195745/141483916-99507227-fd2f-4d9c-acdd-2f902fdf1ce4.png)
+<img src="https://user-images.githubusercontent.com/88195745/141483916-99507227-fd2f-4d9c-acdd-2f902fdf1ce4.png" width="300" height="auto" />
 
 # Technologies
 - React-Redux
