@@ -6,7 +6,7 @@
 - [Description](#description)
 - [Technologies](#technologies)
 - [Features](#features)
-- [Challenges](#challenges)
+- [Technical Challenges](#technical-challenges)
 
 # Description
 Kanary is a full stack, single-page web application inspired by Kanopy. It is a video streaming service that provides access to documentaries and independent films with a unique social, cultural, and political impact.
@@ -30,11 +30,18 @@ Kanary is built with the React framework and Redux architecture on the frontend,
 
 # Features
 
+## Video Playback
+Utilized Amazon Web Services S3 (AWS) and Rails Active Storage to store and fetch videos and images from the cloud, preloading videos upon entering the video show page to minimize wait time for end users.
+
 ## Searchbar
 <p align="center">
   <img src="https://user-images.githubusercontent.com/88195745/141476463-bf9d27fa-c600-40af-8595-d69b61f5246b.gif" width="400">
 </p>
+Designed a search bar feature using lifecycle methods and selector functions that allows users to search by director, description, and genre and ensures that the search results dynamically update as users type.
 
 ## My Watchlist
 
-# Challenges
+## Popup
+Constructed a Popup component using React hooks to insert and clear a Popup element from the DOM whenever users add or remove films from their watchlists through CRUD actions, thus enhancing user experience.
+
+# Technical Challenges
