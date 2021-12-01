@@ -20,9 +20,8 @@ class GenreIndex extends React.Component {
                 <div className="genre-index-main">
                     {
                         genre.movieIds.map(movieId => (
-                            <div className="genre-index-item">
-                                <GenreCarouselItem key={movieId}
-                                    currentUser={currentUser}
+                            <div key={movieId} className="genre-index-item">
+                                <GenreCarouselItem currentUser={currentUser}
                                     movie={movies[movieId]}
                                     handleWatchlist={handleWatchlist}
                                     history={history} />
