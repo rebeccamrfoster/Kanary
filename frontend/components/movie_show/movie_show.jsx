@@ -10,6 +10,7 @@ class MovieShow extends React.Component {
         this.handleClickWatchlist = this.handleClickWatchlist.bind(this);
         this.toggleIcon = this.toggleIcon.bind(this);
         this.displayPopup = this.displayPopup.bind(this);
+        this.clearPopup = this.clearPopup.bind(this);
     }
 
     componentDidMount() {
@@ -46,6 +47,10 @@ class MovieShow extends React.Component {
 
     displayPopup() {
         this.setState({ displayPopup: true });
+    }
+
+    clearPopup() {
+        this.setState({ displayPopup: false });
     }
 
     render() {
@@ -103,7 +108,8 @@ class MovieShow extends React.Component {
                     this.state.displayPopup ? (
                         <Popup key={movie.id}
                             added={this.state.icon === window.check_icon}
-                            title={movie.title} />
+                            title={movie.title}
+                            clearPopup={this.clearPopup} />
                     ) : null
                 }
             </div>
