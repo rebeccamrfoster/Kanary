@@ -17,7 +17,6 @@ const Popup = ({ added, title, clearPopup }) => {
     useEffect(() => {
         const delay = setTimeout(() => {
             const el = document.querySelector(".popup");
-            if (!el) return;
             if (el.id === "") {
                 el.id = "fade-in"
             }
