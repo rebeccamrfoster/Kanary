@@ -23,11 +23,12 @@ const Footer = props => {
                             href="https://www.linkedin.com/in/rebecca-foster-791448203/">LinkedIn</a></li>
                     </ul>
                     <ul>Technologies
-                        <li>React</li>
-                        <li>Redux</li>
+                        <li>React/Redux</li>
                         <li>Ruby on Rails</li>
-                        <li>JavaScript, HTML, & CSS</li>
-                        <li>Amazon S3</li>
+                        <li>PostgreSQL</li>
+                        <li>Node</li>
+                        <li>JavaScript, HTML, & SCSS</li>
+                        <li>Amazon Web Services S3</li>
                     </ul>
                 </div>
 
