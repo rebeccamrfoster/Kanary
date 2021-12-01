@@ -11,14 +11,16 @@ const watchlistsReducer = (oldState = {}, action) => {
     switch (action.type) {
         case RECEIVE_ALL_WATCHLISTS:
             nextState = action.watchlists;
+            debugger
             return nextState;
         case RECEIVE_WATCHLIST:
             nextState[action.watchlist.id] = action.watchlist;
+            debugger
             return nextState;
         case REMOVE_WATCHLIST:
             const watchlists = Object.values(nextState);
             if (watchlists.length === 0) return {};
-
+            debugger
             const toRemove = watchlists.find(watchlist => (
                 watchlist.user_id === action.watchlist.user_id &&
                 watchlist.movie_id === action.watchlist.movie_id
