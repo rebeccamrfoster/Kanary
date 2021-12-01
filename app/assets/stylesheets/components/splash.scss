@@ -20,11 +20,14 @@ $splash-margin: 5%;
         right: $splash-margin;
         top: $splash-margin;
 
+        font-family: $sans-serif;
+        font-weight: 500;
+
         padding: 10px 10px 7px 10px;
         border: 4px solid $white;
         border-radius: 1px;
         box-shadow: 4px 4px 10px 0 rgba(0, 0, 0, 40%);
-        letter-spacing: .05em;
+        letter-spacing: .07em;
     }
 
     .content {
@@ -38,15 +41,20 @@ $splash-margin: 5%;
         align-items: flex-start;
 
         .header-content {
+            display: block;
             font-size: 36px;
             font-family: $sans-serif;
+            font-weight: 700;
+            letter-spacing: .03em;
             line-height: 42px;
             margin-bottom: 20px;
         }
 
         .body-content {
+            display: block;
             font-size: 20px;
             font-family: $sans-serif;
+            font-weight: 500;
             line-height: 30px;
             margin-bottom: 30px;
             letter-spacing: .04em;
@@ -69,12 +77,21 @@ $splash-margin: 5%;
     }
 
     img {
-        // position: fixed;
         z-index: -1;
         height: 100vh;
         width: 100vw;
         top: 0;
         right: 0;
         object-fit: cover;
+    }
+}
+
+@media only screen and (max-height: 470px) {
+    .splash .content .header-content {
+        display: none;
+    }
+
+    .splash .content .body-content {
+        display: none;
     }
 }
