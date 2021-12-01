@@ -22,9 +22,6 @@
         justify-content: space-between;
         gap: 10vw;
 
-        // position: relative;
-        // top: 26px;
-
         ul {
             color: white;
             font-family: $field-font;
@@ -32,6 +29,7 @@
             text-transform: uppercase;
             font-size: 14px;
             line-height: 24px;
+            transition: all .3s ease;
 
             li, li a {
                 color: #949599;
@@ -40,6 +38,10 @@
                 text-transform: initial;
                 font-size: 12px;
                 margin-right: 4px;
+            }
+
+            li a:hover {
+                color: white;
             }
         }
     }
@@ -63,7 +65,6 @@
     }
 
     .footer-icons {
-        // width: 16%;
         display: flex;
         justify-content: space-around;
         gap: 5vw;
@@ -74,7 +75,6 @@
 
             > img {
                 height: 100%;
-                // width: auto;
             }
         }        
     }
