@@ -1,13 +1,13 @@
-export const fetchGenres = () => {
-    return $.ajax({
+export const fetchGenres = () => (
+    $.ajax({
         method: "GET",
         url: "/api/genres"
     })
-};
+);
 
-export const fetchGenre = genreId => {
-    return $.ajax({
+export const fetchGenre = genreId => (
+    $.ajax({
         method: "GET",
         url: `/api/genres/${genreId}`
     })
-};
+);
