@@ -4,18 +4,14 @@ import { handleWatchlist } from "../../actions/watchlist_actions";
 
 import { withRouter } from "react-router";
 
-const mSTP = state => {
-    return {
-        currentUser: state.entities.users[state.session.currentUserId],
-        movies: state.entities.movies,
-        genres: Object.values(state.entities.genres),
-    }
-};
+const mSTP = state => ({
+    currentUser: state.entities.users[state.session.currentUserId],
+    movies: state.entities.movies,
+    genres: Object.values(state.entities.genres),
+});
 
-const mDTP = dispatch => {
-    return {
-        handleWatchlist: (user, movie) => dispatch(handleWatchlist(user, movie))
-    }
-};
+const mDTP = dispatch => ({
+    handleWatchlist: (user, movie) => dispatch(handleWatchlist(user, movie))
+});
 
 export default withRouter(connect(mSTP, mDTP)(MovieIndex));
