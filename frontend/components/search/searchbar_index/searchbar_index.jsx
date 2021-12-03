@@ -22,7 +22,7 @@ class SearchbarIndex extends React.Component {
             this.props.movies, this.props.genres, query
         );
 
-        this.setState({ query: query, movies: matched });
+        this.setState({ query, movies: matched });
     }
 
     handleClearSearchbar() {
