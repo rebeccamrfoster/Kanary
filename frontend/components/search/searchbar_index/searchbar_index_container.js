@@ -4,20 +4,16 @@ import SearchbarIndex from "./searchbar_index";
 import { fetchMovies } from "../../../actions/movie_actions";
 import { selectMoviesBySearch } from "../../../utils/movie_selector";
 
-const mSTP = state => {
-    return {
-        movies: state.entities.movies,
-        genres: state.entities.genres
-    }
-};
+const mSTP = state => ({
+    movies: state.entities.movies,
+    genres: state.entities.genres
+});
 
-const mDTP = dispatch => {
-    return {
-        fetchMovies: () => dispatch(fetchMovies()),
-        selectMoviesBySearch: (movies, genres, query) => (
-            selectMoviesBySearch(movies, genres, query)
-        )
-    }
-};
+const mDTP = dispatch => ({
+    fetchMovies: () => dispatch(fetchMovies()),
+    selectMoviesBySearch: (movies, genres, query) => (
+        selectMoviesBySearch(movies, genres, query)
+    )
+});
 
 export default withRouter(connect(mSTP, mDTP)(SearchbarIndex));
