@@ -5,13 +5,13 @@ import { withRouter } from "react-router";
 import { fetchGenres } from "../../actions/genre_actions";
 
 const mSTP = state => ({
-        currentUser: state.entities.users[state.session.currentUserId],
-        genres: Object.values(state.entities.genres)
+    currentUser: state.entities.users[state.session.currentUserId],
+    genres: Object.values(state.entities.genres)
 });
 
 const mDTP = dispatch => ({
-        logout: () => dispatch(logout()),
-        fetchGenres: () => dispatch(fetchGenres())
+    logout: () => dispatch(logout()),
+    fetchGenres: () => dispatch(fetchGenres())
 });
 
 export default withRouter(connect(mSTP, mDTP)(Navbar));
