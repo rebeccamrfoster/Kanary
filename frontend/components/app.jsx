@@ -14,6 +14,7 @@ import MovieIndexContainer from "./movie_index/movie_index_container";
 import GenreIndexContainer from "./genre_index/genre_index_container";
 import WatchlistIndexContainer from "./watchlist_index/watchlist_index_container";
 import SearchResultIndexContainer from "./search/search_result_index/search_result_index_container";
+import NotFound from "./not_found";
 
 const App = () => (
     <div>
@@ -31,6 +32,7 @@ const App = () => (
             <ProtectedRoute path="/genres/:genreId" component={GenreIndexContainer} />
             <ProtectedRoute path="/watchlists" component={WatchlistIndexContainer} />
             <ProtectedRoute path="/search/:query" component={SearchResultIndexContainer} />
+            <NotFound />
         </Switch>
 
         <ProtectedRoute component={Footer} />
