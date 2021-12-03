@@ -18,7 +18,6 @@ class SearchResultIndex extends React.Component {
 
     componentDidUpdate(prevProps, prevState) {
         const { movies, genres, query, selectMoviesBySearch } = this.props;
-        debugger
         if (prevProps.query !== query && query !== "") {
             const matched = selectMoviesBySearch(movies, genres, query);
             this.setState({ query, movies: matched });
@@ -32,7 +31,7 @@ class SearchResultIndex extends React.Component {
         if (!this.state.movies) return nullRender;
         if (Object.values(movies).length === 0) return nullRender;
         if (Object.values(genres).length === 0) return nullRender;
-        debugger
+        
         return (
             <div className="search-result-index">
                 <div className="search-result-main">
