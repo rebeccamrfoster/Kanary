@@ -1,6 +1,4 @@
 export const selectMoviesBySearch = (movies, genres, query) => {
-    // Object.freeze(state);
-    // const movies = Object.values(state.entities.movies);
     query = query.toLowerCase();
 
     return Object.values(movies).filter(movie => {
@@ -15,9 +13,5 @@ export const selectMoviesBySearch = (movies, genres, query) => {
 };
 
 const selectGenresByMovie = (genres, movie) => {
-    // Object.freeze(state);
-    // const movie = state.entities.movies[movieId];
-    // const genres = state.entities.genres;
-
     return movie.genreIds.map(genreId => genres[genreId].name)
 };
