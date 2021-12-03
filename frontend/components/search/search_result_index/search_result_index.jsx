@@ -8,27 +8,31 @@ class SearchResultIndex extends React.Component {
     }
 
     componentDidMount() {
-        const { movies, genres, query, selectMoviesBySearch } = this.props;
-        const matched = selectMoviesBySearch(movies, genres, query);
-        this.setState({ query: this.props.query, movies: matched });
+        this.props.fetchMovies()
+            .then(() => {
+                const { movies, genres, query, selectMoviesBySearch } = this.props;
+                const matched = selectMoviesBySearch(movies, genres, query);
+                this.setState({ query: this.props.query, movies: matched });
+            })
     }
 
-    componentDidUpdate(prevProps) {
+    componentDidUpdate(prevProps, prevState) {
         const { movies, genres, query, selectMoviesBySearch } = this.props;
+        debugger
         if (prevProps.query !== query && query !== "") {
             const matched = selectMoviesBySearch(movies, genres, query);
-            this.setState({ query: query, movies: matched });
+            this.setState({ query, movies: matched });
         }
     }
 
     render() {
         const { movies, genres } = this.props;
-
+        
         const nullRender = <div className="null-render"></div>;
         if (!this.state.movies) return nullRender;
         if (Object.values(movies).length === 0) return nullRender;
         if (Object.values(genres).length === 0) return nullRender;
-
+        debugger
         return (
             <div className="search-result-index">
                 <div className="search-result-main">
