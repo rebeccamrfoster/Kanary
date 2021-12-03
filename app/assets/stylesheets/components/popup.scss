@@ -1,8 +1,3 @@
-// .fade-in {
-//     visibility: visible;
-//     opacity: 1;
-// }
-
 #fade-in {
     opacity: 1;
     transition: opacity .6s ease;
@@ -28,10 +23,6 @@
 
     opacity: 0;
     transition: .6s opacity;
-
-    // visibility: hidden;
-    // opacity: 0;
-    // transition: opacity 650ms ease-in, visibility 0ms ease-in 650ms;
 
     > * {
         font-family: $sans-serif;
