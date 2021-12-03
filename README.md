@@ -60,6 +60,41 @@ export const selectMoviesBySearch = (movies, genres, query) => {
 };
 ```
 
+```javascript
+handleUpdate(event) {
+    const query = event.target.value;
+
+    const matched = this.props.selectMoviesBySearch(
+        this.props.movies, this.props.genres, query
+    );
+
+    this.setState({ query, movies: matched });
+}
+```
+
+I conditionally render the Popup component based on the Boolean value of `displayPopup`, which is stored in the state, passing in the `clearPopup` function, which, when called in the Popup component, toggles the state of the parent component, `GenreCarouselItem` or `MovieShow`, causing it to be removed from the DOM entirely. But only after the Popup component is faded out, assigning it an id of fade-out.
+```javascript
+{
+    this.state.displayPopup ? (
+        <Popup key={movie.id}
+            added={this.state.icon === window.check_icon}
+            title={movie.title} 
+            clearPopup={this.clearPopup} />
+    ) : null
+}
+```
+
+```javascript
+const handleClearPopup = () => {
+    const el = document.querySelector(".popup");
+    el.id = "fade-out";
+    setTimeout(() => {
+        clearPopup();
+    }, 600)
+};
+```
+
+
 ## My Watchlist
 Implemented CRUD functionality and prefetched Active Record associations, enabling users to add and delete films from their watchlist while avoiding N + 1 queries
 
