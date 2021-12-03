@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import GenreCarouselItem from "./genre_carousel_item";
 
-const GenreCarousel = (props) => {
+const GenreCarousel = props => {
     const {
         currentUser,
         genre,
@@ -18,15 +18,13 @@ const GenreCarousel = (props) => {
             </Link>
             <div className="carousel-main">
                 {
-                    genre.movieIds.map(movieId => {
-                        return (
-                            <GenreCarouselItem key={movieId}
-                                currentUser={currentUser}
-                                movie={movies[movieId]}
-                                handleWatchlist={handleWatchlist}
-                                history={history} />
-                        )
-                    })
+                    genre.movieIds.map(movieId => (
+                        <GenreCarouselItem key={movieId}
+                            currentUser={currentUser}
+                            movie={movies[movieId]}
+                            handleWatchlist={handleWatchlist}
+                            history={history} />
+                    ))
                 }
             </div>
         </div>
