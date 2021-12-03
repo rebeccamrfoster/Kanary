@@ -1,8 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 
 const Popup = ({ added, title, clearPopup }) => {
-    // const [fadeProp, setFadeProp] = useState({ fade: "" });
-
     const el = document.querySelector(".popup");
     if (el) clearPopup();
 
