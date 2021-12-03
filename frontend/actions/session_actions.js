@@ -9,45 +9,37 @@ export const REMOVE_SESSION_ERRORS = "REMOVE_SESSION_ERRORS";
 export const SIGN_UP = "sign up";
 export const LOG_IN = "log in";
 
-const receiveCurrentUser = currentUser => {
-    return {
+const receiveCurrentUser = currentUser => ({
         type: RECEIVE_CURRENT_USER,
         currentUser
-    }
-};
+});
 
-const removeCurrentUser = () => {
-    return {
+const removeCurrentUser = () => ({
         type: REMOVE_CURRENT_USER,
-    }
-};
+});
 
-export const receiveErrors = errors => {
-    return {
+export const receiveErrors = errors => ({
         type: RECEIVE_SESSION_ERRORS,
         errors
-    }
-};
+});
 
-export const removeErrors = () => {
-    return {
+export const removeErrors = () => ({
         type: REMOVE_SESSION_ERRORS
-    }
-}
+});
 
-export const signup = user => dispatch => {
-    return SessionApiUtil.createUser(user)
+export const signup = user => dispatch => (
+    SessionApiUtil.createUser(user)
         .then(user => dispatch(receiveCurrentUser(user)),
         errors => dispatch(receiveErrors(errors.responseJSON)))
-};
+);
 
-export const login = user => dispatch => {
-    return SessionApiUtil.createSession(user)
+export const login = user => dispatch => (
+    SessionApiUtil.createSession(user)
         .then(user => dispatch(receiveCurrentUser(user)),
         errors => dispatch(receiveErrors(errors.responseJSON)))
-};
+);
 
-export const logout = () => dispatch => {
-    return SessionApiUtil.deleteSession()
+export const logout = () => dispatch => (
+    SessionApiUtil.deleteSession()
         .then(dispatch(removeCurrentUser()))
-};
+);

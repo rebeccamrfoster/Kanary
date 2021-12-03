@@ -4,31 +4,25 @@ export const RECEIVE_ALL_WATCHLISTS = "RECEIVE_ALL_WATCHLISTS";
 export const RECEIVE_WATCHLIST = "RECEIVE_WATCHLIST";
 export const REMOVE_WATCHLIST = "REMOVE_WATCHLIST";
 
-const receiveWatchlists = watchlists => {
-    return {
+const receiveWatchlists = watchlists => ({
         type: RECEIVE_ALL_WATCHLISTS,
         watchlists
-    }
-};
+});
 
-const receiveWatchlist = watchlist => {
-    return {
+const receiveWatchlist = watchlist => ({
         type: RECEIVE_WATCHLIST,
         watchlist
-    }
-};
+});
 
-const removeWatchlist = watchlist => {
-    return {
+const removeWatchlist = watchlist => ({
         type: REMOVE_WATCHLIST,
         watchlist
-    }
-};
+});
 
-export const fetchWatchlists = () => dispatch => {
-    return WatchlistApiUtil.fetchWatchlists()
+export const fetchWatchlists = () => dispatch => (
+    WatchlistApiUtil.fetchWatchlists()
         .then(watchlists => dispatch(receiveWatchlists(watchlists)))
-};
+);
 
 export const handleWatchlist = (user, movie) => dispatch => {
     const watchlist = { user_id: user.id, movie_id: movie.id }
