@@ -4,13 +4,13 @@ export const RECEIVE_ALL_GENRES = "RECEIVE_ALL_GENRES";
 export const RECEIVE_GENRE = "RECEIVE_GENRE";
 
 const receiveGenres = genres => ({
-        type: RECEIVE_ALL_GENRES,
-        genres
+    type: RECEIVE_ALL_GENRES,
+    genres
 });
 
 const receiveGenre = genre => ({
-        type: RECEIVE_GENRE,
-        genre
+    type: RECEIVE_GENRE,
+    genre
 });
 
 export const fetchGenres = () => dispatch => (

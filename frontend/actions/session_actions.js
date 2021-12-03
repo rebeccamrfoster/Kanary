@@ -10,21 +10,21 @@ export const SIGN_UP = "sign up";
 export const LOG_IN = "log in";
 
 const receiveCurrentUser = currentUser => ({
-        type: RECEIVE_CURRENT_USER,
-        currentUser
+    type: RECEIVE_CURRENT_USER,
+    currentUser
 });
 
 const removeCurrentUser = () => ({
-        type: REMOVE_CURRENT_USER,
+    type: REMOVE_CURRENT_USER,
 });
 
 export const receiveErrors = errors => ({
-        type: RECEIVE_SESSION_ERRORS,
-        errors
+    type: RECEIVE_SESSION_ERRORS,
+    errors
 });
 
 export const removeErrors = () => ({
-        type: REMOVE_SESSION_ERRORS
+    type: REMOVE_SESSION_ERRORS
 });
 
 export const signup = user => dispatch => (

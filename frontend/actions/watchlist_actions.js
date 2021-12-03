@@ -5,18 +5,18 @@ export const RECEIVE_WATCHLIST = "RECEIVE_WATCHLIST";
 export const REMOVE_WATCHLIST = "REMOVE_WATCHLIST";
 
 const receiveWatchlists = watchlists => ({
-        type: RECEIVE_ALL_WATCHLISTS,
-        watchlists
+    type: RECEIVE_ALL_WATCHLISTS,
+    watchlists
 });
 
 const receiveWatchlist = watchlist => ({
-        type: RECEIVE_WATCHLIST,
-        watchlist
+    type: RECEIVE_WATCHLIST,
+    watchlist
 });
 
 const removeWatchlist = watchlist => ({
-        type: REMOVE_WATCHLIST,
-        watchlist
+    type: REMOVE_WATCHLIST,
+    watchlist
 });
 
 export const fetchWatchlists = () => dispatch => (
