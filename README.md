@@ -43,6 +43,7 @@ If the user deletes their search such that the query becomes an empty string, it
 If nothing matches the query, an appropriate message is shown with suggestions as to what they could type to find matches.
 If the user presses enter on an empty string, it does nothing. Otherwise it navigates to the search results index with the movies that match the search.
 Upon submission, a `handleClearSearchbar` function is fired to reset the searchbar query to the empty string such that the dropdown is null.
+
 ```javascript
 export const selectMoviesBySearch = (movies, genres, query) => {
     query = query.toLowerCase();
