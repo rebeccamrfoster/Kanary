@@ -11,10 +11,12 @@ import Splash from "./splash/splash";
 import Footer from "./footer/footer";
 import SearchResultIndexContainer from "./search/search_result_index/search_result_index_container";
 import GenreIndexContainer from "./genre_index/genre_index_container";
+import ScrollToTop from "./scroll_to_top";
 
 const App = () => {
     return (
         <div>
+            <ScrollToTop />
             <Switch>
                 <Route exact path="/" component={Splash} />
                 <NavbarContainer />
