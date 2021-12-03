@@ -1,8 +1,4 @@
 json.extract! movie, :id, :title, :year, :duration, :description, :director
 json.genreIds movie.genres.pluck(:id)
-if movie.thumbnail.attached?
-    json.thumbnail url_for(movie.thumbnail)
-end
-if movie.video.attached?
-    json.video url_for(movie.video)
-end
+json.thumbnail movie.thumbnail.attached ? url_for(movie.thumbnail) : ""
+json.video movie.video.attached ? url_for(movie.video) : ""
