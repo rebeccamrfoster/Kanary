@@ -11,7 +11,7 @@ class WatchlistIndex extends React.Component {
     }
 
     render() {
-        const { currentUser, movies, watchlists, handleWatchlist } = this.props;
+        const { currentUser, movies, watchlists, handleWatchlist, formattedDate } = this.props;
 
         if (currentUser.movieIds.length === 0) {
             return (
