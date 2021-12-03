@@ -7,7 +7,6 @@ class WatchlistIndex extends React.Component {
     }
 
     componentDidMount() {
-        // this.props.fetchMovies();
         this.props.fetchWatchlists();
     }
 
