@@ -10,18 +10,6 @@ const GenreCarousel = (props) => {
         handleWatchlist,
         history
     } = props;
-
-    // var settings = {
-    //     infinite: true,
-    //     speed: 500,
-    //     slidesToShow: 6,
-    //     slidesToScroll: 1,
-    //     centerPadding: "10px",
-    //     arrows: true,
-    //     variableWidth: false,
-    //     prevArrow: <img src={window.prev_arrow_icon} />,
-    //     nextArrow: <img src={window.next_arrow_icon} />
-    // };
     
     return (
         <div className="carousel">
