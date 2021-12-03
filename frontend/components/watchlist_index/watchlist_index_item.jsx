@@ -15,13 +15,6 @@ class WatchlistIndexItem extends React.Component {
         const nextMovieIds = this.state.movieIds.slice();
         nextMovieIds.splice(nextMovieIds.indexOf(movie.id), 1);
 
-        // if (this.state.movieIds.includes(movie.id)) {
-        //     nextMovieIds.splice(nextMovieIds.indexOf(movie.id), 1);
-        // }
-        // else {
-        //     nextMovieIds.push(movie.id);
-        // }
-
         this.setState({ movieIds: nextMovieIds });
         handleWatchlist(currentUser, movie);
     }
@@ -29,8 +22,7 @@ class WatchlistIndexItem extends React.Component {
     render() {
         if (!this.state.movieIds.includes(this.props.movie.id)) return null;
 
-        const { watchlists, currentUser, movie: movie, movie: {title, description} } = this.props;
-
+        const { watchlists, currentUser, movie } = this.props;
         const currWatchlistId = Object.values(watchlists).find(watchlist => (
             watchlist.user_id === currentUser.id &&
             watchlist.movie_id === movie.id
@@ -50,8 +42,8 @@ class WatchlistIndexItem extends React.Component {
                 </div>
     
                 <div className="watchlist-right">
-                    <h1>{title}</h1>
-                    <p>{description}</p>
+                    <h1>{movie.title}</h1>
+                    <p>{movie.description}</p>
                     <p className="watchlist-right-date">{formattedDate}</p>
     
                     <div className="watchlist-right-btns">
