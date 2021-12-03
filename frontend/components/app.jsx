@@ -32,6 +32,7 @@ const App = () => (
             <ProtectedRoute path="/genres/:genreId" component={GenreIndexContainer} />
             <ProtectedRoute path="/watchlists" component={WatchlistIndexContainer} />
             <ProtectedRoute path="/search/:query" component={SearchResultIndexContainer} />
+            <Route exact path="/" /> {/* prevents NotFound component from rendering on Splash when user is bootstrapped to window */}
             <NotFound />
         </Switch>
 
