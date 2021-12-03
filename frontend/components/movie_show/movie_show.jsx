@@ -60,7 +60,7 @@ class MovieShow extends React.Component {
         if (!this.state) return nullRender; 
         
         const { movie, genres } = this.props;
-
+        
         return (
             <div className="movie-show">
                 <div className="main-movie-show">
