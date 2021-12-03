@@ -6,4 +6,3 @@ end
 if movie.video.attached?
     json.video url_for(movie.video)
 end
-# movie.thumbnail || 
