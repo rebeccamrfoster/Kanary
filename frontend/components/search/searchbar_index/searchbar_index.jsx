@@ -41,8 +41,8 @@ class SearchbarIndex extends React.Component {
             <div className="searchbar">
                 <form className="searchbar-input" onSubmit={() => {
                     if (this.state.query !== "") {
-                        this.handleClearSearchbar();
                         this.props.history.push(`/search/${this.state.query}`);
+                        this.handleClearSearchbar();
                     }
                 }}>
                     <input type="text"
