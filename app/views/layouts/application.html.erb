@@ -5,26 +5,28 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag    'application', media: 'all' %>
-    <%= javascript_include_tag 'application' %>
+    <%= stylesheet_link_tag    "application", media: "all" %>
+    <%= javascript_include_tag "application" %>
+
+    <%= favicon_link_tag asset_path("favicon.ico") %>
 
     <script type="text/javascript">
       window.splash = "<%= image_url("splash.jpg") %>";
-      window.movie_index_banner = "<%= image_url('some_girls_banner.jpg') %>";
+      window.movie_index_banner = "<%= image_url("some_girls_banner.jpg") %>";
       
-      window.caret_icon = "<%= image_url('caret_icon.svg') %>";
-      window.search_icon_black = "<%= image_url('search_icon_black.svg') %>";
-      window.search_icon_white = "<%= image_url('search_icon_white.svg') %>";
-      window.plus_icon = "<%= image_url('plus_icon.svg') %>";
-      window.check_icon = "<%= image_url('check_icon.svg') %>";
-      window.close_icon = "<%= image_url('close_icon.svg') %>";
-      window.play_icon_white = "<%= image_url('play_icon_white.svg') %>";
-      window.play_icon_orange = "<%= image_url('play_icon_orange.svg') %>";
-      window.trash_icon = "<%= image_url('trash_icon.svg') %>";
-      window.portrait = "<%= image_url('portrait.jpg') %>";
-      window.github_icon = "<%= image_url('github_icon.png') %>";
-      window.linkedin_icon = "<%= image_url('linkedin_icon.png') %>";
-      window.meh_icon = "<%= image_url('meh_icon.svg') %>";
+      window.caret_icon = "<%= image_url("caret_icon.svg") %>";
+      window.search_icon_black = "<%= image_url("search_icon_black.svg") %>";
+      window.search_icon_white = "<%= image_url("search_icon_white.svg") %>";
+      window.plus_icon = "<%= image_url("plus_icon.svg") %>";
+      window.check_icon = "<%= image_url("check_icon.svg") %>";
+      window.close_icon = "<%= image_url("close_icon.svg") %>";
+      window.play_icon_white = "<%= image_url("play_icon_white.svg") %>";
+      window.play_icon_orange = "<%= image_url("play_icon_orange.svg") %>";
+      window.trash_icon = "<%= image_url("trash_icon.svg") %>";
+      window.portrait = "<%= image_url("portrait.jpg") %>";
+      window.github_icon = "<%= image_url("github_icon.png") %>";
+      window.linkedin_icon = "<%= image_url("linkedin_icon.png") %>";
+      window.meh_icon = "<%= image_url("meh_icon.svg") %>";
     </script>
 
     <link rel="stylesheet"
