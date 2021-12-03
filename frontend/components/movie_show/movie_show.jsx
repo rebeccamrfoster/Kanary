@@ -89,16 +89,14 @@ class MovieShow extends React.Component {
                         <p>Subjects</p>
                         <div>
                             {
-                                movie.genreIds.map(genreId => {
-                                    return (
-                                        <div key={genreId} className="genres">
-                                            <Link to={`/genres/${genreId}`}>
-                                                {`> ${genres[genreId].name}`}
-                                            </Link>
-                                            <br />
-                                        </div>
-                                    )
-                                })
+                                movie.genreIds.map(genreId => (
+                                    <div key={genreId} className="genres">
+                                        <Link to={`/genres/${genreId}`}>
+                                            {`> ${genres[genreId].name}`}
+                                        </Link>
+                                        <br />
+                                    </div>
+                                ))
                             }
                         </div>
                     </div>
