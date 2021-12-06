@@ -68,6 +68,22 @@ If the value of the input element becomes empty at any point, the component rend
 
 The `onSubmit` function also calls a `handleClearSearchbar` function. Upon submission of a valid search query, the search bar query is reset to the empty string and the dropdown becomes `null` and disappears.
 
+```javascript
+<form className="searchbar-input" onSubmit={() => {
+    if (this.state.query !== "") {
+        this.props.history.push(`/search/${this.state.query}`);
+        this.handleClearSearchbar();
+    }
+}}>
+    <input type="text"
+        placeholder="Search videos, subjects..."
+        onChange={this.handleUpdate} />
+    <button type="submit">
+        <img src={window.search_icon_black} />
+    </button>
+</form>
+```
+
 ## Popup
 Whenever a user adds or removes a film from their watchlist (via CRUD actions), a popup appears to inform them that the action was successful. The `Popup` component is constructed using React hooks to fade in when the user adds or removes a film and fade out when the user clicks anywhere on the popup, including the "X" button.
 
