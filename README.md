@@ -64,13 +64,17 @@ Initially, if the user deleted their search query from the search bar, the `sele
 ### **SOLUTION:**
 If the value of the input element becomes empty at any point, the component renders `null` rather than rendering all movies in the database. If the user tries to submit the form on an empty search query string, the submit button is nonresponsive and the user will remain on the current page. Upon submission of a valid search query, a `handleClearSearchbar` function is fired to reset the searchbar query to the empty string such that the dropdown becomes `null` and disappears.
 
-
 ## Popup
+Whenever a user adds or removes a film from their watchlist (via CRUD actions), a popup appears to inform them that the action was successful.
 
+<p>
+  <img src="https://user-images.githubusercontent.com/88195745/144902906-7e18c8e7-11f0-46f3-a138-3547711b5929.png" width="400px" />
+</p>
 
 I constructed a `Popup` component using React hooks to insert and clear a Popup element from the DOM whenever users add or remove films from their watchlists through CRUD actions, thus enhancing user experience.
 
 I conditionally render the Popup component based on the Boolean value of `displayPopup`, which is stored in the state, passing in the `clearPopup` function, which, when called in the Popup component, toggles the state of the parent component, `GenreCarouselItem` or `MovieShow`, causing it to be removed from the DOM entirely. But only after the Popup component is faded out, assigning it an id of fade-out.
+
 ```javascript
 {
     this.state.displayPopup ? (
@@ -94,8 +98,5 @@ const handleClearPopup = () => {
 
 ## My Watchlist
 Implemented CRUD functionality and prefetched Active Record associations, enabling users to add and delete films from their watchlist while avoiding N + 1 queries
-
-## Popup
-Constructed a Popup component using React hooks to insert and clear a Popup element from the DOM whenever users add or remove films from their watchlists through CRUD actions, thus enhancing user experience.
 
 # Technical Challenges
