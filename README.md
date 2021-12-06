@@ -46,27 +46,6 @@ The searchbar feature uses lifecycle methods and selector functions to enable us
 
 In order to ensure that the search results update dynamically as users type in the search bar, the state for the `SearchbarIndex` component contains two key-value pairs: (1) the search query from the text input element and (2) an array containing movie objects that match the search query. Each time the search query is updated, the selector function `selectMoviesBySearch` is invoked to select for films that match the query. The returned array is then used to set state and initiate a rerender of the `SearchbarIndex` component.
 
-If the user deletes their search such that the query becomes an empty string, it displays null rather than leaving the movies there from before.
-If nothing matches the query, an appropriate message is shown with suggestions as to what they could type to find matches.
-If the user presses enter on an empty string, it does nothing. Otherwise it navigates to the search results index with the movies that match the search.
-Upon submission, a `handleClearSearchbar` function is fired to reset the searchbar query to the empty string such that the dropdown is null.
-
-```javascript
-export const selectMoviesBySearch = (movies, genres, query) => {
-    query = query.toLowerCase();
-
-    return Object.values(movies).filter(movie => {
-        return (
-            movie.title.toLowerCase().includes(query) ||
-            movie.description.toLowerCase().includes(query) ||
-            movie.director.toLowerCase().includes(query) ||
-            selectGenresByMovie(genres, movie)
-                .some(genre => genre.toLowerCase().includes(query))
-        )
-    });
-};
-```
-
 ```javascript
 handleUpdate(event) {
     const query = event.target.value;
@@ -78,6 +57,18 @@ handleUpdate(event) {
     this.setState({ query, movies: matched });
 }
 ```
+
+#### **CHALLENGE:**
+Initially, if the user deleted their search query from the search bar, the `selectMoviesBySearch` function would select for movies whose director, description, or genre matched an empty string, which of course was all movies in the database. Furthermore, if the user submitted the form containing the input element on an empty search query string, the site would navigate to the search results page to display all those movies. If the user submitted the form when the input element was populated with a valid search query, the site would successfully navigate to the search results page but the search bar would remain populated with the user's latest query and a dropdown with the matching movies.
+
+### **SOLUTION:**
+If the value of the input element becomes empty at any point, the component renders `null` rather than rendering all movies in the database. If the user tries to submit the form on an empty search query string, the submit button is nonresponsive and the user will remain on the current page. Upon submission of a valid search query, a `handleClearSearchbar` function is fired to reset the searchbar query to the empty string such that the dropdown becomes `null` and disappears.
+
+
+## Popup
+
+
+I constructed a `Popup` component using React hooks to insert and clear a Popup element from the DOM whenever users add or remove films from their watchlists through CRUD actions, thus enhancing user experience.
 
 I conditionally render the Popup component based on the Boolean value of `displayPopup`, which is stored in the state, passing in the `clearPopup` function, which, when called in the Popup component, toggles the state of the parent component, `GenreCarouselItem` or `MovieShow`, causing it to be removed from the DOM entirely. But only after the Popup component is faded out, assigning it an id of fade-out.
 ```javascript
@@ -100,15 +91,6 @@ const handleClearPopup = () => {
     }, 600)
 };
 ```
-
-Utilized Amazon Web Services S3 (AWS) and Rails Active Storage to store and fetch videos and images from the
-cloud, preloading videos upon entering the video show page to minimize wait time for end users.
-
-Designed a search bar feature using lifecycle methods and selector functions that allows users to search by
-director, description, and genre and ensures that the search results dynamically update as users type.
-
-Constructed a Popup component using React hooks to insert and clear a Popup element from the DOM whenever
-users add or remove films from their watchlists through CRUD actions, thus enhancing user experience.
 
 ## My Watchlist
 Implemented CRUD functionality and prefetched Active Record associations, enabling users to add and delete films from their watchlist while avoiding N + 1 queries
