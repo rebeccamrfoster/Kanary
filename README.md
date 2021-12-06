@@ -61,19 +61,21 @@ handleUpdate(event) {
 #### **CHALLENGE:**
 Initially, if the user deleted their search query from the search bar, the `selectMoviesBySearch` function would select for movies whose director, description, or genre matched an empty string, which of course was all movies in the database. Furthermore, if the user submitted the form containing the input element on an empty search query string, the site would navigate to the search results page to display all those movies. If the user submitted the form when the input element was populated with a valid search query, the site would successfully navigate to the search results page but the search bar would remain populated with the user's latest query and a dropdown with the matching movies.
 
-### **SOLUTION:**
+#### **SOLUTION:**
 If the value of the input element becomes empty at any point, the component renders `null` rather than rendering all movies in the database. If the user tries to submit the form on an empty search query string, the submit button is nonresponsive and the user will remain on the current page. Upon submission of a valid search query, a `handleClearSearchbar` function is fired to reset the searchbar query to the empty string such that the dropdown becomes `null` and disappears.
 
 ## Popup
-Whenever a user adds or removes a film from their watchlist (via CRUD actions), a popup appears to inform them that the action was successful.
+Whenever a user adds or removes a film from their watchlist (via CRUD actions), a popup appears to inform them that the action was successful. The `Popup` component is constructed using React hooks to fade in when the user adds or removes a film and fade out when the user clicks anywhere on the popup, including the "X" button.
 
-<p>
+<p align="center">
   <img src="https://user-images.githubusercontent.com/88195745/144902906-7e18c8e7-11f0-46f3-a138-3547711b5929.png" width="400px" />
 </p>
 
-I constructed a `Popup` component using React hooks to insert and clear a Popup element from the DOM whenever users add or remove films from their watchlists through CRUD actions, thus enhancing user experience.
+#### **CHALLENGE:**
+Initially, when a user added or removed multiple films in succession from the `MovieIndex` page, only the popup for the first movie added or removed was visible, so the most recent action was not reflected by the information on the popup.
 
-I conditionally render the Popup component based on the Boolean value of `displayPopup`, which is stored in the state, passing in the `clearPopup` function, which, when called in the Popup component, toggles the state of the parent component, `GenreCarouselItem` or `MovieShow`, causing it to be removed from the DOM entirely. But only after the Popup component is faded out, assigning it an id of fade-out.
+#### **SOLUTION:**
+By adding a Boolean value called `displayPopup` to the state of the parent component, the `Popup` component is now conditionally rendered based on that value. The parent component passes down a `clearPopup` function to the `Popup` component. When invoked in the `Popup` component, `clearPopup` toggles the value of `displayPopup` to `false` in the parent, thus removing the previous popup from the page before rendering a new one to reflect the most recent user action.
 
 ```javascript
 {
@@ -95,8 +97,3 @@ const handleClearPopup = () => {
     }, 600)
 };
 ```
-
-## My Watchlist
-Implemented CRUD functionality and prefetched Active Record associations, enabling users to add and delete films from their watchlist while avoiding N + 1 queries
-
-# Technical Challenges
