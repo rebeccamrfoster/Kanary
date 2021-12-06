@@ -33,6 +33,10 @@ Kanary is built with the React framework and Redux architecture on the frontend,
 ## Video Playback
 I utilized Amazon Web Services S3 (AWS) and Rails Active Storage to store and fetch videos and images from the cloud, preloading videos upon entering the video show page to minimize wait time for end users.
 
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/88195745/144888505-bd3909aa-dac9-421d-ad77-58465e1630c2.png" width="400px" />
+</p>
+
 ## Searchbar
 <p align="center">
   <img src="https://user-images.githubusercontent.com/88195745/141476463-bf9d27fa-c600-40af-8595-d69b61f5246b.gif" width="400">
@@ -94,6 +98,14 @@ const handleClearPopup = () => {
 };
 ```
 
+Utilized Amazon Web Services S3 (AWS) and Rails Active Storage to store and fetch videos and images from the
+cloud, preloading videos upon entering the video show page to minimize wait time for end users.
+
+Designed a search bar feature using lifecycle methods and selector functions that allows users to search by
+director, description, and genre and ensures that the search results dynamically update as users type.
+
+Constructed a Popup component using React hooks to insert and clear a Popup element from the DOM whenever
+users add or remove films from their watchlists through CRUD actions, thus enhancing user experience.
 
 ## My Watchlist
 Implemented CRUD functionality and prefetched Active Record associations, enabling users to add and delete films from their watchlist while avoiding N + 1 queries
