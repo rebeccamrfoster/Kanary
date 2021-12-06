@@ -59,10 +59,14 @@ handleUpdate(event) {
 ```
 
 #### **CHALLENGE:**
-Initially, if the user deleted their search query from the search bar, the `selectMoviesBySearch` function would select for movies whose director, description, or genre matched an empty string, which of course was all movies in the database. Furthermore, if the user submitted the form containing the input element on an empty search query string, the site would navigate to the search results page to display all those movies. If the user submitted the form when the input element was populated with a valid search query, the site would successfully navigate to the search results page but the search bar would remain populated with the user's latest query and a dropdown with the matching movies.
+Initially, if the user deleted their search query from the search bar, the `selectMoviesBySearch` function would select for movies whose director, description, or genre matched an empty string, which of course was all movies in the database. Furthermore, if the user submitted the form containing the input element on an empty search query string, the site would navigate to the search results page to display all those movies.
+
+If the user submitted the form when the input element was populated with a valid search query, the site would successfully navigate to the search results page, but the search bar would remain populated with the user's latest query and a dropdown with the matching movies.
 
 #### **SOLUTION:**
-If the value of the input element becomes empty at any point, the component renders `null` rather than rendering all movies in the database. If the user tries to submit the form on an empty search query string, the submit button is nonresponsive and the user will remain on the current page. Upon submission of a valid search query, a `handleClearSearchbar` function is fired to reset the searchbar query to the empty string such that the dropdown becomes `null` and disappears.
+If the value of the input element becomes empty at any point, the component renders `null` rather than rendering all movies in the database. I also added a conditional statement to the `onSubmit` function so that the submit button is nonresponsive and the user remains on the current page if their search query is empty.
+
+The `onSubmit` function also calls a `handleClearSearchbar` function. Upon submission of a valid search query, the search bar query is reset to the empty string and the dropdown becomes `null` and disappears.
 
 ## Popup
 Whenever a user adds or removes a film from their watchlist (via CRUD actions), a popup appears to inform them that the action was successful. The `Popup` component is constructed using React hooks to fade in when the user adds or removes a film and fade out when the user clicks anywhere on the popup, including the "X" button.
