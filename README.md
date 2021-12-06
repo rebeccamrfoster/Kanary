@@ -38,11 +38,14 @@ I utilized Amazon Web Services S3 (AWS) and Rails Active Storage to store and fe
 </p>
 
 ## Searchbar
+The searchbar feature uses lifecycle methods and selector functions to enable users to search the site's selection of films by director, description, or genre.
+
 <p align="center">
   <img src="https://user-images.githubusercontent.com/88195745/141476463-bf9d27fa-c600-40af-8595-d69b61f5246b.gif" width="400">
 </p>
-Designed a search bar feature using lifecycle methods and selector functions that allows users to search by director, description, and genre and ensures that the search results dynamically update as users type.
-State contains query (value from text input) and movies (array containing matched movies from selector).
+
+In order to ensure that the search results update dynamically as users type in the search bar, the state for the `SearchbarIndex` component contains two key-value pairs: (1) the search query from the text input element and (2) an array containing movie objects that match the search query. Each time the search query is updated, the selector function `selectMoviesBySearch` is invoked to select for films that match the query. The returned array is then used to set state and initiate a rerender of the `SearchbarIndex` component.
+
 If the user deletes their search such that the query becomes an empty string, it displays null rather than leaving the movies there from before.
 If nothing matches the query, an appropriate message is shown with suggestions as to what they could type to find matches.
 If the user presses enter on an empty string, it does nothing. Otherwise it navigates to the search results index with the movies that match the search.
