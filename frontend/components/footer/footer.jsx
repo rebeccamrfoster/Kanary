@@ -46,7 +46,7 @@ const Footer = props => (
             </div>
         </div>
         
-        <p className="lower-footer">&#9400; 2021 Kanary</p>
+        <p className="lower-footer">&#9400; {new Date().getFullYear()} Kanary</p>
     </footer>
 );
 
