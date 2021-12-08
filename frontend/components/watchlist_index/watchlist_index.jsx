@@ -28,6 +28,7 @@ class WatchlistIndex extends React.Component {
         const nullRender = <div className="null-render"></div>;
         if (Object.values(movies).length === 0) return nullRender;
         if (Object.values(watchlists).length === 0) return nullRender;
+        if (!formattedDate) return nullRender;
 
         return (
             <div className="watchlist-index">
